@@ -6,7 +6,7 @@ description: 'To access the Trust Swiftly API, you''ll need an API key.'
 
 ### Production
 
-When you're ready to use the API in production using live data you can generate an API key in the **Developer** settings.
+When you're ready to use the API in production using live data you can generate an API key in the menu for **Developer** settings.
 
 {% hint style="warning" %}
 #### Keep your keys secure
