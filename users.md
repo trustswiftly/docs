@@ -129,7 +129,7 @@ Create a given users profile.
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="email" type="string" required=true %}
-Customers email address.
+Customer's email address.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="send\_link" type="boolean" required=false %}
