@@ -19,4 +19,5 @@
 ---
 
 * [Users](users.md)
+* [Tokens](tokens.md)
 
