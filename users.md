@@ -144,10 +144,6 @@ ID of the verification template you wish to assign to this user.
 An ID you can pass that correlates to your own system's user/account ID.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="address" type="string" required=false %}
-One line address of the given user.
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="phone" type="integer" required=false %}
 Phone including international code.
 {% endapi-method-parameter %}
