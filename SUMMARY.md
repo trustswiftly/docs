@@ -18,6 +18,8 @@
 
 ---
 
+* [Getting an API Key](getting-an-api-key.md)
+* [Authentication](authentication.md)
 * [Users](users.md)
 * [Tokens](tokens.md)
 
