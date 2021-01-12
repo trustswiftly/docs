@@ -13,7 +13,7 @@ Create a users **clientToken** to enable use of the embedded functionality.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-**Bearer token** is used for server-to-server communication to fetch sensitive data that you already have access to.
+**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -47,7 +47,7 @@ Delete token
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-**Bearer token** is used for server-to-server communication to fetch sensitive data that you already have access to.
+**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}

@@ -1,3 +1,7 @@
+---
+description: The API Key can be generated within your account settings.
+---
+
 # Users
 
 {% api-method method="get" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users" %}
@@ -13,7 +17,7 @@ List all the users currently assigned a profile.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-**Bearer token** is used for server-to-server communication to fetch sensitive data that you already have access to.
+**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -69,7 +73,7 @@ Retrieve a specific users profile.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-**Bearer token** is used for server-to-server communication to fetch sensitive data that you already have access to.
+**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -123,7 +127,7 @@ Create a given users profile.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-**Bearer token** is used for server-to-server communication to fetch sensitive data that you already have access to.
+**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -192,7 +196,7 @@ Delete a provided user.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-**Bearer token** is used for server-to-server communication to fetch sensitive data that you already have access to 
+**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to 
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
