@@ -34,5 +34,35 @@ Create a users **clientToken** to enable use of the embedded functionality.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="delete" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/token" %}
+{% api-method-summary %}
+Delete token
+{% endapi-method-summary %}
 
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+**Bearer token** is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
