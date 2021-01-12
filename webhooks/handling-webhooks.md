@@ -4,7 +4,7 @@ The first step to adding WebHooks to your account is to build your own custom en
 
 ## Key Considerations
 
-For each event occurrence, Trust Swiftly POSTs the WebHook data to your endpoint in JSON format. The full event details are included and can be used directly after parsing the JSON into an Event object. Thus, at minimum, the WebHook endpoint needs to expect data through a POST request and confirm successful receipt of that data. Beyond those two concepts, you should also…
+For each event occurrence, Trust Swiftly POSTs the WebHook data to your endpoint in JSON format. The full event details are included and can be used directly after parsing the JSON into an Event object. Thus, at minimum, the WebHook endpoint needs to expect data through a POST request and confirm successful receipt of that data. Beyond those two concepts, you should also follow these best practices.
 
 **Return a 2xx status code quickly**
 

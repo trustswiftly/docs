@@ -2,14 +2,14 @@
 
 ## General
 
-This document explains how to integrate the verification flow directly into your web application through our JavaScript component to **verify** the identity of your users. This stage might be at the **signup** page of your application, or at a later point to enrich the profiles of your users.
+This document explains how to integrate the verification flow directly into your web application through our JavaScript component to **verify** the identity of your users. This stage might be at the **signup** page of your application, or at a later point to enrich the profiles of your users. An example page of the HTML integration can be found at [https://{sub-domain}.trustswiftly.com/account/test.html](https://{sub-domain}.trustswiftly.com/account/test.html)
 
 ## 1. Importing the component
 
 Start your integration by importing the Trust Swiftly embed javascript to your HTML page.
 
 ```markup
-<script type="text/javascript" src="https://www.trustswiftly.local/account/trust-verify.js"></script>
+<script type="text/javascript" src="https://{sub-domain}.trustswiftly.com/account/trust-verify.js"></script>
 ```
 
 ## 2. Initialising the component
