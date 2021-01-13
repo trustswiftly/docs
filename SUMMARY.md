@@ -13,6 +13,7 @@
 ---
 
 * [HTML + Javascript](html-+-javascript.md)
+* [Embedded Security](embedded-security.md)
 
 ## API
 
