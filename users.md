@@ -60,6 +60,13 @@ List all the users currently assigned a profile.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+```bash
+curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
+--header 'User-Agent: TrustSwiftly/1.0'
+```
+
 {% api-method method="get" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
 {% api-method-summary %}
 Get User
@@ -113,6 +120,13 @@ Retrieve a specific users profile.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+```bash
+curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users/2' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
+--header 'User-Agent: TrustSwiftly/1.0'
+```
 
 {% api-method method="post" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users" %}
 {% api-method-summary %}
@@ -183,6 +197,16 @@ A unique username for the given users email.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+```bash
+curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/api/users' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
+--header 'User-Agent: TrustSwiftly/1.0' \
+--data-raw '{
+  "email": "testing@test.com"
+}'
+```
+
 {% api-method method="delete" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
 {% api-method-summary %}
 Delete User
@@ -214,4 +238,11 @@ Delete a provided user.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+```bash
+curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/account/api/users/1' \
+--header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
+--header 'User-Agent: TrustSwiftly/1.0' \
+--data-raw ''
+```
 
