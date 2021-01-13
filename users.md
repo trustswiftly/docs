@@ -246,3 +246,54 @@ curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/account/
 --data-raw ''
 ```
 
+{% api-method method="post" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/verify-url" %}
+{% api-method-summary %}
+Get Magic Link
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Generate a magic link used for user authentication
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+API Key is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="expiration\_hours" type="integer" required=false %}
+Hour\(s\) in which the magic link will remain alive before expiring.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "short_url": "https://tinyurl.com/y32d35rf",
+    "full_url": "https://{sub-domain}.trustswiftly.com/account/security-verify?expires=1610753625&key=7&signature=3949637e17906a42bd3d0254af80a825f2696b9ba948cdf3654f0e354a2f6cef"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+```bash
+curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/api/users/1/verify-url' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 1|GM2loELoTfc8rXC0PoC4WagW2eEQzE1AxhsqQ8Sn' \
+--header 'User-Agent: TrustSwiftly/1.0' \
+--data-raw '{
+  "expiration_hours": 24
+}'
+```
+
