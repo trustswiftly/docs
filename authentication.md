@@ -12,6 +12,7 @@ description: >-
 curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
+--user-agent 'your app name' \
 --header 'Authorization: Bearer {api_key}'
 ```
 
