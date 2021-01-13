@@ -154,7 +154,7 @@ Customer's email address.
 Send a magic link to the user.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="templateId" type="integer" required=false %}
+{% api-method-parameter name="template\_id" type="integer" required=false %}
 ID of the verification template you wish to assign to this user.
 {% endapi-method-parameter %}
 

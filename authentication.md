@@ -16,7 +16,7 @@ Each request to the API must be accompanied by a user agent request header. Typi
 curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
---header 'User-Agent: Your App Name Here' \ \
+--header 'User-Agent: TrustSwiftly/1.0' \ \
 --header 'Authorization: Bearer {api_key}'
 ```
 
