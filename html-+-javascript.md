@@ -9,7 +9,7 @@ This document explains how to integrate the verification flow directly into your
 Start your integration by importing the Trust Swiftly embed javascript to your HTML page.
 
 ```markup
-<script type="text/javascript" src="https://{sub-domain}.trustswiftly.com/account/trust-verify.js"></script>
+<script type="text/javascript" src="https://cdn.trustswiftly.com/account/trust-verify.min.js"></script>
 ```
 
 ## 2. Initialising the component
