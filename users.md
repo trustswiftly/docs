@@ -175,7 +175,7 @@ Users first name.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="username" type="string" required=false %}
-A unique username for the given users email.
+A unique username for the given user.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -204,6 +204,80 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/ap
 --header 'User-Agent: TrustSwiftly/1.0' \
 --data-raw '{
   "email": "testing@test.com"
+}'
+```
+
+{% api-method method="patch" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
+{% api-method-summary %}
+Update User 
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Update a provided user.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="username" type="string" required=false %}
+A unique username for the given user.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="first\_name" type="string" required=false %}
+Users first name
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="last\_name" type="string" required=false %}
+Users last name
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="phone" type="integer" required=false %}
+Phone including international code.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="reference\_id" type="string" required=false %}
+An ID you can pass that correlates to your own systems user/account ID.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="template\_id" type="string" required=false %}
+ID of the verification template you wish to assign to this user.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="email" type="string" required=false %}
+Customers email address.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+```bash
+curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/api/users/1' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 2|GM2loELoTfc8rXC0PoC4WagW2eEQzE1AxhsqQ8Sn' \
+--header 'User-Agent: TrustSwiftly/1.0' \
+--data-raw '{
+    "first_name": "New",
+    "last_name": "Name",
+    "template_id": 3
 }'
 ```
 
@@ -259,7 +333,7 @@ Generate a magic link used for user authentication
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-API Key is used for server-to-server communication to fetch sensitive data that you already have access to.
+**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -296,4 +370,6 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/ap
   "expiration_hours": 24
 }'
 ```
+
+
 
