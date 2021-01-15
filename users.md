@@ -32,19 +32,101 @@ List all the users currently assigned a profile.
 {
     "data": [
         {
-            "id": 1,
-            "first_name": "Trust",
-            "last_name": "Test",
-            "username": "trusttest",
-            "email": "test@trustswiftly.dev",
-            "phone": "+12524653705",
+            "id": 5,
+            "first_name": "AutoTest",
+            "last_name": "User",
+            "username": "codecept_user",
+            "email": "codecept_user@trustswiftly.dev",
+            "verifications": [
+                {
+                    "id": 1,
+                    "name": "Email",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "Phone / SMS",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "Document / ID",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                },
+                {
+                    "id": 4,
+                    "name": "PayPal",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "Video",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "Voice",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                },
+                {
+                    "id": 7,
+                    "name": "Secure Card",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                },
+                {
+                    "id": 8,
+                    "name": "Geolocation",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                },
+                {
+                    "id": 9,
+                    "name": "Social Account",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                },
+                {
+                    "id": 10,
+                    "name": "Two-Step Authentication",
+                    "status": {
+                        "value": 0,
+                        "friendly": "Pending"
+                    }
+                }
+            ],
+            "phone": null,
             "avatar": "https://cdn.trustswiftly.com/account/assets/img/profile.png",
             "address": null,
             "country_id": null,
-            "role_id": 1,
+            "role_id": 2,
             "status": "Active",
             "birthday": null,
-            "last_login": "2020-09-11 20:07:38",
+            "last_login": "2020-09-07 19:56:35",
             "two_factor_country_code": 0,
             "two_factor_phone": "",
             "two_factor_options": null,
@@ -94,25 +176,123 @@ Retrieve a specific users profile.
 ```
 {
     "data": {
-        "id": 1,
-        "first_name": "Trust",
-        "last_name": "Test",
-        "username": "trusttest",
-        "email": "test@trustswiftly.dev",
-        "phone": "+12524653705",
-        "avatar": "https://cdn.trustswiftly.com/account/assets/img/profile.png",
+        "id": 7,
+        "first_name": "New",
+        "last_name": "Name",
+        "username": "Verify_User2101131027492493",
+        "email": "testing@test.com",
+        "verifications": [
+            {
+                "id": 1,
+                "name": "Email",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 2,
+                "name": "Phone / SMS",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 3,
+                "name": "Document / ID",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 4,
+                "name": "PayPal",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 5,
+                "name": "Video",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 6,
+                "name": "Voice",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 7,
+                "name": "Secure Card",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 8,
+                "name": "Geolocation",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 9,
+                "name": "Social Account",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 10,
+                "name": "Two-Step Authentication",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 11,
+                "name": "Bank",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            },
+            {
+                "id": 12,
+                "name": "Live Video",
+                "status": {
+                    "value": 0,
+                    "friendly": "Pending"
+                }
+            }
+        ],
+        "phone": null,
+        "avatar": "https://images.trustswiftly.com/public/avatars/none.png",
         "address": null,
         "country_id": null,
-        "role_id": 1,
+        "role_id": 2,
         "status": "Active",
         "birthday": null,
-        "last_login": "2020-09-11 20:07:38",
+        "last_login": "2021-01-14 03:33:33",
         "two_factor_country_code": 0,
         "two_factor_phone": "",
         "two_factor_options": null,
         "email_verified_at": null,
-        "created_at": "2020-09-11 01:33:51",
-        "updated_at": "2020-09-11 01:33:51"
+        "created_at": "2021-01-13 22:27:49",
+        "updated_at": "2021-01-14 03:33:33"
     }
 }
 ```
