@@ -15,16 +15,28 @@
   "last_activity": "2020-11-10 12:27:16",
   "verifications": [
     {
-      "status": "Pending",
-      "verification": "Email"
+      "id": 1,
+      "name": "Email",
+      "status": {
+        "value": 1,
+        "friendly": "In Process"
+      }
     },
     {
-      "status": "Pending",
-      "verification": "Phone / SMS"
+      "id": 2,
+      "name": "Phone / SMS",
+      "status": {
+        "value": 1,
+        "friendly": "In Process"
+      }
     },
     {
-      "status": "Pending",
-      "verification": "Document / ID"
+      "id": 3,
+      "name": "Document / ID",
+      "status": {
+        "value": 1,
+        "friendly": "In Process"
+      }
     }
   ]
 }
@@ -47,7 +59,7 @@ if($computed_signature !== $received_signature) {
 }
 
 foreach($json->verifications as $verification) {
-    switch($verification->verification) {
+    switch($verification->name) {
         case "Email":
 
         break;
