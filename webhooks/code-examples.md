@@ -18,24 +18,24 @@
       "id": 1,
       "name": "Email",
       "status": {
-        "value": 1,
-        "friendly": "In Process"
+        "value": 0,
+        "friendly": "Pending"
       }
     },
     {
       "id": 2,
       "name": "Phone / SMS",
       "status": {
-        "value": 1,
-        "friendly": "In Process"
+        "value": 0,
+        "friendly": "Pending"
       }
     },
     {
       "id": 3,
       "name": "Document / ID",
       "status": {
-        "value": 1,
-        "friendly": "In Process"
+        "value": 0,
+        "friendly": "Pending"
       }
     }
   ]
