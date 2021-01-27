@@ -12,6 +12,8 @@ Each request to the API must be accompanied by a user agent request header. Typi
 
 #### Example Authenticated Request
 
+{% tabs %}
+{% tab title="Successful Request" %}
 ```text
 curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users' \
 --header 'Accept: application/json' \
@@ -19,6 +21,17 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api
 --header 'User-Agent: TrustSwiftly/1.0' \ \
 --header 'Authorization: Bearer {api_key}'
 ```
+{% endtab %}
+
+{% tab title="401 Failure Response" %}
+```
+{
+    "error_code": "000",
+    "error_message": "Api Key Wrong or Unauthorized User"
+}
+```
+{% endtab %}
+{% endtabs %}
 
 
 
