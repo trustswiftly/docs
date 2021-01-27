@@ -142,12 +142,16 @@ Succesful response
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% tabs %}
+{% tab title="cURL" %}
 ```bash
 curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
 --header 'User-Agent: TrustSwiftly/1.0'
 ```
+{% endtab %}
+{% endtabs %}
 
 {% api-method method="get" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
 {% api-method-summary %}
@@ -301,12 +305,16 @@ Retrieve a specific users profile.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% tabs %}
+{% tab title="cURL" %}
 ```bash
 curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users/2' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
 --header 'User-Agent: TrustSwiftly/1.0'
 ```
+{% endtab %}
+{% endtabs %}
 
 {% api-method method="post" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users" %}
 {% api-method-summary %}
@@ -377,6 +385,8 @@ A unique username for the given user.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% tabs %}
+{% tab title="cURL" %}
 ```bash
 curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/api/users' \
 --header 'Content-Type: application/json' \
@@ -386,6 +396,8 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/ap
   "email": "testing@test.com"
 }'
 ```
+{% endtab %}
+{% endtabs %}
 
 {% api-method method="patch" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
 {% api-method-summary %}
@@ -449,6 +461,8 @@ Customers email address.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% tabs %}
+{% tab title="cURL" %}
 ```bash
 curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/api/users/1' \
 --header 'Content-Type: application/json' \
@@ -460,6 +474,8 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/a
     "template_id": 3
 }'
 ```
+{% endtab %}
+{% endtabs %}
 
 {% api-method method="delete" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
 {% api-method-summary %}
@@ -493,12 +509,16 @@ Delete a provided user.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% tabs %}
+{% tab title="cURL" %}
 ```bash
 curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/account/api/users/1' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
 --header 'User-Agent: TrustSwiftly/1.0' \
 --data-raw ''
 ```
+{% endtab %}
+{% endtabs %}
 
 {% api-method method="post" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/verify-url" %}
 {% api-method-summary %}
@@ -541,6 +561,8 @@ Hour\(s\) in which the magic link will remain alive before expiring.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% tabs %}
+{% tab title="cURL" %}
 ```bash
 curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/api/users/1/verify-url' \
 --header 'Content-Type: application/json' \
@@ -550,6 +572,8 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/ap
   "expiration_hours": 24
 }'
 ```
+{% endtab %}
+{% endtabs %}
 
 
 

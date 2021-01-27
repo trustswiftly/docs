@@ -34,11 +34,15 @@ Create a users **clientToken** to enable use of the embedded functionality.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% tabs %}
+{% tab title="cURL" %}
 ```text
 curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/api/users/2/token' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1'
 ```
+{% endtab %}
+{% endtabs %}
 
 {% api-method method="delete" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/token" %}
 {% api-method-summary %}
@@ -72,11 +76,15 @@ Delete token
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% tabs %}
+{% tab title="cURL" %}
 ```text
 curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/account/api/users/2/token' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1'
 ```
+{% endtab %}
+{% endtabs %}
 
 
 
