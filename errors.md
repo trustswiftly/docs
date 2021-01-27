@@ -12,6 +12,12 @@
 | api\_resource\_error | Resource Not Found |
 | api\_internal\_error | Internal Error |
 
+### Rate Limiting
+
+We use rate limiting to safeguard the stability of our API. Our rate limiter allows up to 60 requests per minute. You can see your current rate limit by looking at the HTTP header `x-ratelimit-remaining`. To increase this limit, please [contact us](https://trustswiftly.com/contact-us/).
+
+Any request over the limit will return a 429 Too Many Requests error.
+
 ### Get Users
 
 ```http

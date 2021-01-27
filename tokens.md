@@ -1,3 +1,7 @@
+---
+description: Create access tokens for embed use cases.
+---
+
 # Tokens
 
 {% api-method method="post" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/token" %}
