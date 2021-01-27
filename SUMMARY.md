@@ -18,6 +18,7 @@
 * [Users](users.md)
 * [Tokens](tokens.md)
 * [Errors](errors.md)
+* [Rate Limits](rate-limits.md)
 
 ## Webhooks
 
