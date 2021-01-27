@@ -20,6 +20,12 @@ List all the users currently assigned a profile.
 **API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="" type="string" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}

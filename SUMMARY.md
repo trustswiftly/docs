@@ -18,6 +18,8 @@
 * [Users](users.md)
 * [Tokens](tokens.md)
 * [Errors](errors.md)
+* [Pagination](pagination.md)
+* [Filtering and Sorting](filtering-and-sorting.md)
 * [Rate Limits](rate-limits.md)
 
 ## Webhooks

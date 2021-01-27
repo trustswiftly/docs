@@ -1,6 +1,25 @@
+---
+description: This page describes various error responses with our API.
+---
+
 # Errors
 
  Trust Swiftly uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided \(e.g., a required parameter was omitted, a user doesn't exist, etc.\). Codes in the `5xx` range indicate an error with Trust Swiftly's servers \(these are rare\).
+
+### HTTP Status Codes <a id="http-status-codes"></a>
+
+| HTTP Status Code | Status Message | Description |
+| :--- | :--- | :--- |
+| 200 | OK | Everything worked as expected. |
+| 201 | Created | Resource was created successfully. |
+| 400 | Bad Request | The request was unacceptable, often due to missing a required parameter. |
+| 401 | Unauthorized | No valid API key provided. |
+| 403 | Forbidden | Accessing the resource is forbidden for this user. |
+| 404 | Not Found | The requested resource doesn't exist. |
+| 422 | Unprocessable Entity | Required fields are missing or cannot be processed. |
+| 500, 502, 503, 504 | Server Errors | Something went wrong on Trust Swiftly's end. |
+
+### Error Types
 
 | **Error** Type | **Description** |
 | :--- | :--- |

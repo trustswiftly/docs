@@ -8,7 +8,11 @@ description: >-
 
 #### Specifying the user agent <a id="UserAgent"></a>
 
-Each request to the API must be accompanied by a user agent request header. Typically this should be the name of the app consuming the service. A missing user agent will result in an HTTP 403 response. The user agent should accurately describe the nature of the API consumer such that it can be clearly identified in the request. Not doing so may result in the request being blocked. A valid request would look like:
+Each request to the API must be accompanied by a user agent request header. Typically this should be the name of the app consuming the service. A missing user agent will result in an HTTP 403 response. The user agent should accurately describe the nature of the API consumer such that it can be clearly identified in the request. Not doing so may result in the request being blocked. A valid request would look include the header:
+
+```text
+Authorization: Bearer {api_key}
+```
 
 #### Example Authenticated Request
 
