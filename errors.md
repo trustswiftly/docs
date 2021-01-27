@@ -7,7 +7,7 @@
 | api\_auth\_error | API Key Wrong or Unauthorized User |
 | api\_validation\_error | Validation Failed |
 | api\_template\_error | Invalid templateId provided |
-| api\_update\_error | Invalid or No Data Provided for Update |
+| api\_invalid\_error | Invalid or No Data Provided for Update |
 | api\_user\_error | User Not Found |
 | api\_resource\_error | Resource Not Found |
 | api\_internal\_error | Internal Error |
@@ -16,7 +16,7 @@
 
 ```http
 {
-  "error_code": "004",
+  "error_type": "api_user_error",
   "error_message": "User Not Found"
 }
 ```
@@ -27,7 +27,7 @@
 {% tab title="101" %}
 ```http
 {
-  "error_code": "101",
+  "error_type": "api_invalid_error",
   "error_message": "The given data was invalid.",
   "errors": {
     "email": [
@@ -41,7 +41,7 @@
 {% tab title="002" %}
 ```
 {
-    "error_code": "002",
+    "error_code": "api_template_error",
     "error_message": "Invalid templateId provided."
 }
 ```
@@ -54,7 +54,7 @@
 {% tab title="004" %}
 ```http
 {
-    "error_code": "004",
+    "error_type": "api_user_error",
     "error_message": "User Not Found"
 }
 ```
@@ -63,7 +63,7 @@
 {% tab title="003" %}
 ```
 {
-    "error_code": "003",
+    "error_code": "api_invalid_error",
     "error_message": "Invalid or No Data Provided for Update"
 }
 ```
@@ -74,7 +74,7 @@
 
 ```http
 {
-  "error_code": "004",
+  "error_type": "api_user_error",
   "error_message": "User Not Found"
 }
 ```
@@ -83,7 +83,7 @@
 
 ```http
 {
-  "error_code": "004",
+  "error_type": "api_user_error",
   "error_message": "User Not Found"
 }
 ```
@@ -92,7 +92,7 @@
 
 ```http
 {
-  "error_code": "004",
+  "error_type": "api_user_error",
   "error_message": "User Not Found"
 }
 ```
@@ -101,7 +101,7 @@
 
 ```http
 {
-  "error_code": "004",
+  "error_type": "api_user_error",
   "error_message": "User Not Found"
 }
 ```
