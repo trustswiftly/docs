@@ -17,6 +17,7 @@
 * [Authentication](authentication.md)
 * [Users](users.md)
 * [Tokens](tokens.md)
+* [Stats](stats.md)
 * [Errors](errors.md)
 * [Pagination](pagination.md)
 * [Filtering and Sorting](filtering-and-sorting.md)
