@@ -14,7 +14,7 @@ Each request to the API must be accompanied by a user agent request header. Typi
 
 {% tabs %}
 {% tab title="Successful Request" %}
-```text
+```bash
 curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \

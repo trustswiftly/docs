@@ -36,7 +36,7 @@ Create a users **clientToken** to enable use of the embedded functionality.
 
 {% tabs %}
 {% tab title="cURL" %}
-```text
+```bash
 curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/api/users/2/token' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1'
@@ -78,7 +78,7 @@ Delete token
 
 {% tabs %}
 {% tab title="cURL" %}
-```text
+```bash
 curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/account/api/users/2/token' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1'
