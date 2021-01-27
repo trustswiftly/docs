@@ -2,15 +2,15 @@
 
  Trust Swiftly uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided \(e.g., a required parameter was omitted, a user doesn't exist, etc.\). Codes in the `5xx` range indicate an error with Trust Swiftly's servers \(these are rare\).
 
-| Error Code | Description |
+| **Error** Type | **Description** |
 | :--- | :--- |
-| 000 | API Key Wrong or Unauthorized User |
-| 101 | Validation Failed |
-| 002 | Invalid templateId provided |
-| 003 | Invalid or No Data Provided for Update |
-| 004 | User Not Found |
-| 1001 | Resource Not Found |
-| 999 | Internal Error |
+| api\_auth\_error | API Key Wrong or Unauthorized User |
+| api\_validation\_error | Validation Failed |
+| api\_template\_error | Invalid templateId provided |
+| api\_update\_error | Invalid or No Data Provided for Update |
+| api\_user\_error | User Not Found |
+| api\_resource\_error | Resource Not Found |
+| api\_internal\_error | Internal Error |
 
 ### Get Users
 
