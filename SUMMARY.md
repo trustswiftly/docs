@@ -23,6 +23,7 @@
 * [Authentication](authentication.md)
 * [Users](users.md)
 * [Tokens](tokens.md)
+* [Errors](errors.md)
 
 ## Links
 
