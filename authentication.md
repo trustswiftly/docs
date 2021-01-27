@@ -23,7 +23,7 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api
 ```
 {% endtab %}
 
-{% tab title="401 Failure Response" %}
+{% tab title="Authorization Error Response" %}
 ```
 {
     "error_code": "000",

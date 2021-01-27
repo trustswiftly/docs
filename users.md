@@ -25,7 +25,7 @@ List all the users currently assigned a profile.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Succesful response
 {% endapi-method-response-example-description %}
 
 ```
