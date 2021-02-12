@@ -26,7 +26,7 @@
 ## Webhooks
 
 * [Why use WebHooks](webhooks/why-use-webhooks.md)
-* [Handling Webhooks](webhooks/handling-webhooks.md)
+* [Setup and Handling Webhooks](webhooks/handling-webhooks.md)
 * [Webhook Code Examples](webhooks/code-examples.md)
 
 ## Links
