@@ -6,6 +6,8 @@ This document explains how to integrate the verification flow directly into your
 
 ![Embed Flow Scenario](.gitbook/assets/image%20%288%29.png)
 
+![Example integrated button and embedded JS](.gitbook/assets/image%20%2811%29.png)
+
 ## 1. Importing the component
 
 Start your integration by importing the Trust Swiftly embed JavaScript to your HTML page.
