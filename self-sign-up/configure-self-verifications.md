@@ -13,5 +13,5 @@ To enable self sign up for getting verified you can enable the setting at [https
 Verify yourself at Trust Swiftly</a>
 ```
 
-![Options to enable for self sign up](../.gitbook/assets/image%20%2813%29.png)
+![Options to enable for self sign up](../.gitbook/assets/image%20%2814%29.png)
 

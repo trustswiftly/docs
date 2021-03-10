@@ -29,6 +29,10 @@
 * [Setup and Handling Webhooks](webhooks/handling-webhooks.md)
 * [Webhook Code Examples](webhooks/code-examples.md)
 
+## Hosted Link <a id="hosted"></a>
+
+* [Share hosted link](hosted/share-hosted-link.md)
+
 ## Self Sign Up
 
 * [Configure self verifications](self-sign-up/configure-self-verifications.md)
