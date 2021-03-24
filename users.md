@@ -378,6 +378,7 @@ A unique username for the given user.
 {
     "id": 7,
     "token": "MnxMeUwxUUxUWXFQTFdObVhPTm1FYnFlU1cxZ2IwOElzcE9qUmdUN1Ra"
+    "magic_link": "https:\/\/www.trustswiftly.com\/account\/security-verify?email=1&expires=1616798987&key=13srgDmUj4hjySJAaaCi2d1hPx3ETvQHFDBfAgD1o5BsEaCsdzFc&signature=330beea028779412193ada9217f14b77e6a168c3d634afbf222418e1e5022f34"
 }
 ```
 {% endapi-method-response-example %}
