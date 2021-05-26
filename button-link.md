@@ -12,10 +12,10 @@ The button link integration is a simple integration method that allows for the m
 
 ## Steps
 
-1. [Create a user](https://docs.trustswiftly.com/users#create-user) with our API
+1. [Create a user](https://docs.trustswiftly.com/users#create-user) with our API with the information to verify.
 2. Save the `magic_link` parameter to use for your button `href` value. 
 3. _\(Optional\)_ [Regenerate the magic link](https://docs.trustswiftly.com/users#get-magic-link) for page refreshes or logins where the link is expired.
-4. Display a button with the magic link. Recommended to use `target="_blank"` \([Button Generator](https://www.tutorialrepublic.com/twitter-bootstrap-button-generator.php)\)
+4. Display a button with the magic link. Recommended to use `target="_blank"` \([Example Bootstrap Button](https://www.tutorialrepublic.com/twitter-bootstrap-button-generator.php)\)
 5. _\(Optional\)_ Setup redirect URL and messages. You can direct users back to your website upon verification completion to inform them of next onboarding steps.
    1. `https://{sub-domain}.trustswiftly.com`**`/account/settings`**
 
