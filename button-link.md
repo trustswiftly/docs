@@ -27,3 +27,11 @@ Example code
 
 ![Example Verification Button](.gitbook/assets/image%20%2819%29.png)
 
+## Button Assets
+
+{% file src=".gitbook/assets/png-trust-swiftly.zip" caption="PNG Button Images" %}
+
+{% file src=".gitbook/assets/svg-trust-swiftly.zip" caption="SVG Button Images" %}
+
+![Branded Trust Swiftly Buttons](.gitbook/assets/button-group.png)
+
