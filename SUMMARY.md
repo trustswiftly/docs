@@ -7,6 +7,7 @@
 ---
 
 * [HTML + Javascript](html-+-javascript.md)
+* [Integration](integration.md)
 * [Embed Security](embedded-security.md)
 * [Button Link](button-link.md)
 * [WordPress](wordpress.md)
