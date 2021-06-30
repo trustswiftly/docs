@@ -74,7 +74,7 @@ foreach($json->verifications as $verification) {
 http_response_code(200);
 ```
 
-### Verify Signature
+### Example Signature Verification
 
 ```php
     public function verifyWebhook(Request $request)
