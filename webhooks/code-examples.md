@@ -74,3 +74,41 @@ foreach($json->verifications as $verification) {
 http_response_code(200);
 ```
 
+### Verify Signature
+
+```php
+    public function verifyWebhook(Request $request)
+    {
+
+        $computed_signature = hash_hmac(
+            'sha256', 
+            $request->getContent(), 
+            config('services.trust.key')
+        );
+
+        $received_signature = $_SERVER['HTTP_SIGNATURE'];
+
+        if($computed_signature !== $received_signature) {
+            \Log::info('received_signature wrong');
+            return response('Tampered Request', 500);
+        }
+
+        $user = User::find($request->reference_id);
+
+        if (! $user) {
+            \Log::info('not found user');
+            return response('Tampered Request', 500);
+        }
+
+        $requiredVerifications = [];
+        foreach($request->verifications as $verification) {
+            $requiredVerifications[$verification['id']] = $verification['status']['value'];
+        }
+
+        $user->required_verifications = $requiredVerifications;
+        $user->save();
+
+        return response(200);
+    }
+```
+
