@@ -38,7 +38,7 @@ The keys are only visible once so please copy and save the keys.
 
 **KEY \(`api_key`\) :** This key will be used for API calls which are done through the server of your applications. For example: [Create User API](users.md#create-user)
 
-**SECRET \(`secret`\):** This secret will be used for generating hash for using our embed integration on your application. \(See the signature generation ahead\)
+**SECRET \(`secret`\):** This secret will be used for generating signature for using our embed integration on your application. \(See the signature generation ahead\)
 
 **Embed Key \(`embedKey`\):** This key should be used in the embed integration on your application as well as part of generating the signature.
 
