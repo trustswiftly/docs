@@ -83,7 +83,7 @@ http_response_code(200);
         $computed_signature = hash_hmac(
             'sha256', 
             $request->getContent(), 
-            config('services.trust.signature_secret')
+            config('services.trustswiftly.signature_secret')
         );
 
         $received_signature = $_SERVER['HTTP_SIGNATURE'];
