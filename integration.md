@@ -77,23 +77,20 @@ Generating signature for API calls in the embed integration.
 For generating signature we use a SHA256 hash algorithm, the PHP implementation example is below:
 
 ```php
-$embedKey='xxxxxxx';
-$secret='xxxxxxxxx';
-$user_id=    xx;
-$timestamp=time();
-$payloadString=$embedKey.$user_id.$timestamp;
-$hash=hash_hmac('sha256',$payloadString,$apisecret);
-$signature='t='.$timestamp.',v2='.$hash;
-
-//Example Code
-
-$apisecret='0761ac60dadd3c0a8fe636c0b7cba4ef90c277f77a5b4b27add7cd3f572eec58';
-$userid=3239;
-$embedKey="32daa045246eaa06716ff7b4c34bbd6528df6968";
-$timestamp=time();
-$payloadString=$embedKey.$userid.$timestamp;
-$hash=hash_hmac('sha256',$payloadString,$apisecret);
-$signature='t='.$timestamp.',v2='.$hash;
+$embedKey = 'xxxxxxx';
+$secret = 'xxxxxxxxx';
+$user_id = xx;
+$timestamp = time();
+$payloadString = $embedKey . $user_id . $timestamp;
+$hash = hash_hmac('sha256', $payloadString, $apisecret);
+$signature = 't=' . $timestamp . ',v2=' . $hash;
+$apisecret = '0761ac60dadd3c0a8fe636c0b7cba4ef90c277f77a5b4b27add7cd3f572eec58';
+$userid = 3239;
+$embedKey = "32daa045246eaa06716ff7b4c34bbd6528df6968";
+$timestamp = time();
+$payloadString = $embedKey . $userid . $timestamp;
+$hash = hash_hmac('sha256', $payloadString, $apisecret);
+$signature = 't=' . $timestamp . ',v2=' . $hash;
 ```
 
 This signature is required for the next step to display the embed integration. 
