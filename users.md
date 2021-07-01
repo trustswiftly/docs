@@ -342,7 +342,7 @@ Customer's email address.
 Send a magic link to the user.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="template\_id" type="integer" required=false %}
+{% api-method-parameter name="template\_id" type="string" required=true %}
 ID of the verification template you wish to assign to this user.
 {% endapi-method-parameter %}
 
@@ -395,7 +395,8 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/ap
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
 --header 'User-Agent: TrustSwiftly/1.0' \
 --data-raw '{
-  "email": "testing@test.com"
+  "email": "testing@test.com",
+  "template_id": "tmpl_MQ"
 }'
 ```
 {% endtab %}
@@ -439,7 +440,7 @@ Phone including international code.
 An ID you can pass that correlates to your own systems user/account ID.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="template\_id" type="string" required=false %}
+{% api-method-parameter name="template\_id" type="string" required=true %}
 ID of the verification template you wish to assign to this user.
 {% endapi-method-parameter %}
 
@@ -473,7 +474,7 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/a
 --data-raw '{
     "first_name": "New",
     "last_name": "Name",
-    "template_id": 3
+    "template_id": "tmpl_MQ"
 }'
 ```
 {% endtab %}
