@@ -128,9 +128,7 @@ trustVerify.configs = {
     baseUrl: '{baseUrl}',
     type: 'page',
     verifyDivId: "trustVerify",
-    userId: {
-        user_id
-    }
+    userId: { user_id }
 };
 trustVerify.load();
 ```
@@ -148,9 +146,7 @@ trustVerify.configs = {
     baseUrl: '{baseUrl}',
     type: 'modal',
     verifyDivId: "trustVerify",
-    userId: {
-        user_id
-    }
+    userId: { user_id }
 };
 trustVerify.load();
 ```
@@ -172,9 +168,7 @@ trustVerify.configs = {
     verifyCall: 'single', //options (single,multi)
     verifyMethod: 'email', //options(email,phone,document,voice,video..) only works with single call
     verifyDivId: "trustVerify",
-    userId: {
-        user_id
-    }
+    userId: { user_id }
 };
 
 trustVerify.loadSingle();
