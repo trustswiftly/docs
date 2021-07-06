@@ -86,7 +86,7 @@ http_response_code(200);
             config('services.trustswiftly.signature_secret')
         );
 
-        $received_signature = $_SERVER['HTTP_SIGNATURE'];
+        $received_signature = $_SERVER['SIGNATURE'];
 
         if($computed_signature !== $received_signature) {
             \Log::info('received_signature wrong');
