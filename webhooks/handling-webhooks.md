@@ -19,7 +19,7 @@ To acknowledge receipt of an event, your endpoint must return a 2xx HTTP status 
 
 **Signature Verification**
 
-Your app must verify that notification messages originated from Trust Swiftly, where not altered or corrupted during transmission, where targeted for you, and contain a valid signature. For each WebHook that is sent we also include a HTTP header for you to validate against to ensure the data we send is the data you're receiving!
+Your app must verify that notification messages originated from Trust Swiftly, where not altered or corrupted during transmission, where targeted for you, and contain a valid signature. For each WebHook that is sent we also include a HTTP header for you to validate against to ensure the data we send is the data you're receiving. Use the secret generated on the webhook page.
 
 ```text
 // payload is the array passed to the `payload` method of the webhook
@@ -27,6 +27,8 @@ Your app must verify that notification messages originated from Trust Swiftly, w
 
 $payloadJson = json_encode($payload); 
 
-$signature = hash_hmac('sha256', $payloadJson, $secret);
+$signature = hash_hmac('sha256', $payloadJson, $webhook_secret);
 ```
+
+![View Webhook Secret](../.gitbook/assets/image%20%2830%29.png)
 
