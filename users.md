@@ -334,6 +334,10 @@ Create a given users profile.
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+{% api-method-parameter name="notice" type="string" required=false %}
+Display a notice on the dashboard for users such as custom instructions.
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="email" type="string" required=true %}
 Customer's email address.
 {% endapi-method-parameter %}
@@ -351,7 +355,7 @@ An ID you can pass that correlates to your own system's user/account ID.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="phone" type="integer" required=false %}
-Phone including international code.
+Phone including international code. Example +13129450121
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="last\_name" type="string" required=false %}
