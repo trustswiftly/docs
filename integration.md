@@ -55,15 +55,14 @@ Send the `template_id`in the create user request to assign the verifications req
 _Optionally_ include a `reference_id` to link created users in Trust Swiftly to your original application.
 
 ```text
-https://{Your base URL}/api/v2/users
+https://{Your base URL}/api/users
 
 {
-    "status": "success",
-    "user_id": "3139",
-    "token": "MjV8MzU3T2JHc0VnYlkxWENyRTZEUEF3RkExYURRNmNFVDVBN2xxVEV6Vw==",
-    "magic_link": "https://test.trustswiftly.local/account/security-verify?expires=1622841490&key=108EBRU5ADD0Me9wThy4Amy2sxYHgc3kjMTs2H1FrAFSk32q2ICwL&signature=145c56ab2f9229b211a1f5c05a8fef6ca91328e47a995b31a89c45cd67c7f5b2"
+  "status": "success",
+  "id": 69,
+  "user_id": "3639",
+  "magic_link": "https:\/\/test.trustswiftly.com\/account\/security-verify?expires=1625603631&key=16RWTtJRKTwjFIQCGWsdarWkW4Qq2DdvfUQhdzvug3AVwWu5mbZht&signature=768898ec51b20a623ba813969215fe9c113c3a7232204c0046265b3c6"
 }
-
 ```
 
 **Parameter to Note:** `user_id`
