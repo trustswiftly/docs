@@ -34,3 +34,9 @@ $signature = hash_hmac('sha256', $payloadJson, $webhook_secret);
 
 ![Example header with signature](../.gitbook/assets/image%20%2831%29.png)
 
+## Webhook Actions
+
+To test, view logs, edit or delete a webhook click on one of the action buttons. Sending a test webhook can be useful for debugging your setup.
+
+![](../.gitbook/assets/image%20%2832%29.png)
+
