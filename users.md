@@ -380,10 +380,10 @@ A unique username for the given user.
 
 ```javascript
 {
-    "status": "success",
-    "id": 7,
-    "token": "MnxMeUwxUUxUWXFQTFdObVhPTm1FYnFlU1cxZ2IwOElzcE9qUmdUN1Ra"
-    "magic_link": "https:\/\/www.trustswiftly.com\/account\/security-verify?email=1&expires=1616798987&key=13srgDmUj4hjySJAaaCi2d1hPx3ETvQHFDBfAgD1o5BsEaCsdzFc&signature=330beea028779412193ada9217f14b77e6a168c3d634afbf222418e1e5022f34"
+  "status": "success",
+  "id": 69,
+  "user_id": "3639",
+  "magic_link": "https:\/\/test.trustswiftly.com\/account\/security-verify?expires=1325603631&key=16RWTtJRKTwjFIQCGWDEZrWkW4Qq2DdvfUQhdadug3AVwWu5mbZht&signature=768898ec51b20a623ba813969215f23785b784f213d04c0046265b3c6"
 }
 ```
 {% endapi-method-response-example %}
