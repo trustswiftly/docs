@@ -484,6 +484,63 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/a
 {% endtab %}
 {% endtabs %}
 
+{% api-method method="patch" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/verifications" %}
+{% api-method-summary %}
+Update Verification
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Update a status of a verification
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="verification\_id" type="string" required=true %}
+The ID corresponding to the verification name
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="status" type="string" required=true %}
+The status to update the verification
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% tabs %}
+{% tab title="cURL" %}
+```bash
+curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/api/users/1' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 2|GM2loELoTfc8rXC0PoC4WagW2eEQzE1AxhsqQ8Sn' \
+--header 'User-Agent: TrustSwiftly/1.0' \
+--data-raw '{
+  "verification_id": "7",
+	"status": "2"
+}
+```
+{% endtab %}
+{% endtabs %}
+
 {% api-method method="delete" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
 {% api-method-summary %}
 Delete User
