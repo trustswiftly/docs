@@ -11,6 +11,7 @@
 * [Embed Security](embedded-security.md)
 * [Button Link](button-link.md)
 * [WordPress](wordpress.md)
+* [Example Test Page](example-test-page.md)
 
 ## API
 
