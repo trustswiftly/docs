@@ -4,8 +4,6 @@
 
 ## Web
 
-***
-
 * [HTML + Javascript](html-+-javascript.md)
 * [Integration](integration.md)
 * [Embed Security](embedded-security.md)
@@ -14,8 +12,6 @@
 * [Example Test Page](example-test-page.md)
 
 ## API
-
-***
 
 * [Getting an API Key](getting-an-api-key.md)
 * [Authentication](authentication.md)
