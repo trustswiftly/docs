@@ -5,9 +5,9 @@ The first step to adding WebHooks to your account is to build your own custom en
 ## Add Webhook Endpoint
 
 1. The first step to receiving webhooks is to enable it in your settings page. `https://{sub-domain}.trustswiftly.com/account/settings/webhooks`
-2. Click the Add Webhook button and select the events to subscribe to. You can visit [https://webhook.site/](https://webhook.site/) and receive a unique url if you want to test the webhook events.
+2. Click the Add Webhook button and select the events to subscribe to. You can visit [https://webhook.site/](https://webhook.site) and receive a unique url if you want to test the webhook events.
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](<../.gitbook/assets/image (10).png>)
 
 ## Key Considerations
 
@@ -21,7 +21,7 @@ To acknowledge receipt of an event, your endpoint must return a 2xx HTTP status 
 
 Your app must verify that notification messages originated from Trust Swiftly, where not altered or corrupted during transmission, where targeted for you, and contain a valid signature. For each WebHook that is sent we also include a HTTP header for you to validate against to ensure the data we send is the data you're receiving. The `webhook_secret` is a separate secret from your API and is uniquely generated to verify the signature.
 
-```text
+```
 // payload is the array passed to the `payload` method of the webhook
 // secret is the string given to the `signUsingSecret` method on the webhook.
 
@@ -30,13 +30,12 @@ $payloadJson = json_encode($payload);
 $signature = hash_hmac('sha256', $payloadJson, $webhook_secret);
 ```
 
-![View Webhook Secret](../.gitbook/assets/image%20%2830%29.png)
+![View Webhook Secret](<../.gitbook/assets/image (30).png>)
 
-![Example header with signature](../.gitbook/assets/image%20%2831%29.png)
+![Example header with signature](<../.gitbook/assets/image (31).png>)
 
 ## Webhook Actions
 
 To test, view logs, edit or delete a webhook click on one of the action buttons. Sending a test webhook can be useful for debugging your setup.
 
-![](../.gitbook/assets/image%20%2832%29.png)
-
+![](<../.gitbook/assets/image (32).png>)

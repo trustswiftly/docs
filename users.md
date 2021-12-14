@@ -4,30 +4,18 @@ description: The API Key can be generated within your account settings.
 
 # Users
 
-{% api-method method="get" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users" %}
-{% api-method-summary %}
-Get Users
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users" method="get" summary="Get Users" %}
+{% swagger-description %}
 List all the users currently assigned a profile.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
+**API Key**
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Succesful response
-{% endapi-method-response-example-description %}
+ is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endswagger-parameter %}
 
+{% swagger-response status="200" description="Succesful response" %}
 ```
 {
     "data": [
@@ -137,10 +125,8 @@ Succesful response
     ]
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -153,30 +139,18 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api
 {% endtab %}
 {% endtabs %}
 
-{% api-method method="get" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
-{% api-method-summary %}
-Get User
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" method="get" summary="Get User" %}
+{% swagger-description %}
 Retrieve a specific users profile.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
+**API Key**
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
+ is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endswagger-parameter %}
 
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "data": {
@@ -300,10 +274,8 @@ Retrieve a specific users profile.
     }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -316,68 +288,54 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api
 {% endtab %}
 {% endtabs %}
 
-{% api-method method="post" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users" %}
-{% api-method-summary %}
-Create User
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users" method="post" summary="Create User" %}
+{% swagger-description %}
 Create a given users profile.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
+**API Key**
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="notice" type="string" required=false %}
+ is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="notice" type="string" %}
 Display a notice on the dashboard for users such as custom instructions.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="email" type="string" required=true %}
+{% swagger-parameter in="body" name="email" type="string" %}
 Customer's email address.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="send\_link" type="boolean" required=false %}
+{% swagger-parameter in="body" name="send_link" type="boolean" %}
 Send a magic link to the user.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="template\_id" type="string" required=true %}
+{% swagger-parameter in="body" name="template_id" type="string" %}
 ID of the verification template you wish to assign to this user.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="reference\_id" type="string" required=false %}
+{% swagger-parameter in="body" name="reference_id" type="string" %}
 An ID you can pass that correlates to your own system's user/account ID.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="phone" type="integer" required=false %}
+{% swagger-parameter in="body" name="phone" type="integer" %}
 Phone including international code. Example +13129450121
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="last\_name" type="string" required=false %}
+{% swagger-parameter in="body" name="last_name" type="string" %}
 Users last name.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="first\_name" type="string" required=false %}
+{% swagger-parameter in="body" name="first_name" type="string" %}
 Users first name.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="username" type="string" required=false %}
+{% swagger-parameter in="body" name="username" type="string" %}
 A unique username for the given user.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```javascript
 {
   "status": "success",
@@ -386,10 +344,8 @@ A unique username for the given user.
   "magic_link": "https:\/\/test.trustswiftly.com\/account\/security-verify?expires=1325603631&key=16RWTtJRKTwjFIQCGWDEZrWkW4Qq2DdvfUQhdadug3AVwWu5mbZht&signature=768898ec51b20a623ba813969215f23785b784f213d04c0046265b3c6"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -406,67 +362,50 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/ap
 {% endtab %}
 {% endtabs %}
 
-{% api-method method="patch" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
-{% api-method-summary %}
-Update User 
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" method="patch" summary="Update User " %}
+{% swagger-description %}
 Update a provided user.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
+**API Key**
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="username" type="string" required=false %}
+ is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="username" type="string" %}
 A unique username for the given user.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="first\_name" type="string" required=false %}
+{% swagger-parameter in="body" name="first_name" type="string" %}
 Users first name
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="last\_name" type="string" required=false %}
+{% swagger-parameter in="body" name="last_name" type="string" %}
 Users last name
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="phone" type="integer" required=false %}
+{% swagger-parameter in="body" name="phone" type="integer" %}
 Phone including international code.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="reference\_id" type="string" required=false %}
+{% swagger-parameter in="body" name="reference_id" type="string" %}
 An ID you can pass that correlates to your own systems user/account ID.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="template\_id" type="string" required=true %}
+{% swagger-parameter in="body" name="template_id" type="string" %}
 ID of the verification template you wish to assign to this user.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="email" type="string" required=false %}
+{% swagger-parameter in="body" name="email" type="string" %}
 Customers email address.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -484,47 +423,30 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/a
 {% endtab %}
 {% endtabs %}
 
-{% api-method method="patch" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/verifications" %}
-{% api-method-summary %}
-Update Verification
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/verifications" method="patch" summary="Update Verification" %}
+{% swagger-description %}
 Update a status of a verification
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
+**API Key**
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="verification\_id" type="string" required=true %}
+ is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="verification_id" type="string" %}
 The ID corresponding to the verification name
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="status" type="string" required=true %}
+{% swagger-parameter in="body" name="status" type="string" %}
 The status to update the verification
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -541,37 +463,22 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/a
 {% endtab %}
 {% endtabs %}
 
-{% api-method method="delete" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" %}
-{% api-method-summary %}
-Delete User
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" method="delete" summary="Delete User" %}
+{% swagger-description %}
 Delete a provided user.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to 
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
+**API Key**
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
+ is used for server-to-server communication to fetch sensitive data that you already have access to 
+{% endswagger-parameter %}
 
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -584,46 +491,30 @@ curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/account/
 {% endtab %}
 {% endtabs %}
 
-{% api-method method="post" host="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/verify-url" %}
-{% api-method-summary %}
-Get Magic Link
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/verify-url" method="post" summary="Get Magic Link" %}
+{% swagger-description %}
 Generate a magic link used for user authentication
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
+**API Key**
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="expiration\_hours" type="integer" required=false %}
-Hour\(s\) in which the magic link will remain alive before expiring.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+ is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
+{% swagger-parameter in="body" name="expiration_hours" type="integer" %}
+Hour(s) in which the magic link will remain alive before expiring.
+{% endswagger-parameter %}
 
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "short_url": "https://tinyurl.com/y32d35rf",
     "full_url": "https://{sub-domain}.trustswiftly.com/account/security-verify?expires=1610753625&key=7&signature=3949637e17906a42bd3d0254af80a825f2696b9ba948cdf3654f0e354a2f6cef"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -638,6 +529,4 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/ap
 ```
 {% endtab %}
 {% endtabs %}
-
-
 

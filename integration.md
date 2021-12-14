@@ -14,39 +14,39 @@ description: >-
 
 **Parameter to Note: `baseUrl`**
 
-![](.gitbook/assets/image%20%2826%29.png)
+![](<.gitbook/assets/image (20).png>)
 
 ### Step 2
 
-Create a template\(s\) for required verification\(s\) to assign to your users. You can create multiple templates and then use those templates as conditions to invoke multiple verification combinations to your users when they are created or trigger a risk action.
+Create a template(s) for required verification(s) to assign to your users. You can create multiple templates and then use those templates as conditions to invoke multiple verification combinations to your users when they are created or trigger a risk action.
 
 **Parameter to Note: `template_id`**
 
-![Click Add Template](.gitbook/assets/image%20%2827%29.png)
+![Click Add Template](<.gitbook/assets/image (21).png>)
 
-![Input the name and enable each verification assigned to the template](.gitbook/assets/image%20%2828%29.png)
+![Input the name and enable each verification assigned to the template](<.gitbook/assets/image (22).png>)
 
-###  Step **3** <a id="step-2"></a>
+### &#x20;Step **3** <a href="#step-2" id="step-2"></a>
 
-Generate your API keys by going to the Settings -&gt; Developer, click on the create key to generate your key.
+Generate your API keys by going to the Settings -> Developer, click on the create key to generate your key.
 
-![Click Create API Key](.gitbook/assets/image%20%2825%29.png)
+![Click Create API Key](<.gitbook/assets/image (23).png>)
 
 The keys are only visible once so please copy and save the keys.
 
 
 
-**KEY \(`api_key`\) :** This key will be used for API calls which are done through the server of your applications. For example: [Create User API](users.md#create-user)
+**KEY (`api_key`) :** This key will be used for API calls which are done through the server of your applications. For example: [Create User API](users.md#create-user)
 
-**SECRET \(`secret`\):** This secret will be used for generating signature for using our embed integration on your application. \(See the signature generation ahead\)
+**SECRET (`secret`):** This secret will be used for generating signature for using our embed integration on your application. (See the signature generation ahead)
 
-**Embed Key \(`embedKey`\):** This key should be used in the embed integration on your application as well as part of generating the signature.
+**Embed Key (`embedKey`):** This key should be used in the embed integration on your application as well as part of generating the signature.
 
-![Created keys to save](.gitbook/assets/image%20%2822%29.png)
+![Created keys to save](<.gitbook/assets/image (24).png>)
 
-## Integration Flow \(Embed\)
+## Integration Flow (Embed)
 
-### Step **1** <a id="step-2"></a>
+### Step **1** <a href="#step-2" id="step-2"></a>
 
 The flow starts with creating a user through the [Create User API](users.md#create-user), which will return the `user_id`for the user.
 
@@ -54,7 +54,7 @@ Send the `template_id`in the create user request to assign the verifications req
 
 _Optionally_ include a `reference_id` to link created users in Trust Swiftly to your original application.
 
-```text
+```
 https://{Your base URL}/api/users
 
 {
@@ -67,9 +67,9 @@ https://{Your base URL}/api/users
 
 **Parameter to Note:** `user_id`
 
-Store the user id for all the further communications with the API and for rendering the embed flow. 
+Store the user id for all the further communications with the API and for rendering the embed flow.&#x20;
 
-### Step 2 <a id="step-2"></a>
+### Step 2 <a href="#step-2" id="step-2"></a>
 
 Generating signature for API calls in the embed integration.
 
@@ -91,15 +91,15 @@ $hash = hash_hmac('sha256', $payloadString, $apisecret);
 $signature = 't=' . $timestamp . ',v2=' . $hash;
 ```
 
-This signature is required for the next step to display the embed integration. 
+This signature is required for the next step to display the embed integration.&#x20;
 
-### Step 3 <a id="step-2"></a>
+### Step 3 <a href="#step-2" id="step-2"></a>
 
-There are 3 methods to display the embedded integration. 
+There are 3 methods to display the embedded integration.&#x20;
 
 1. Embed within your page
 2. Embed with a Bootstrap modal and our button
-3. \(Optional\) Use the embed in page but only possible if you have a single type of verify.
+3. (Optional) Use the embed in page but only possible if you have a single type of verify.
 
 The prerequisites for using the embed integration is to have jQuery 3.6 or up and Bootstrap 5 in your application, the CDN links are given as below.
 
@@ -135,7 +135,7 @@ trustVerify.load();
 
 This will generate the verify content in the HTML Dom element/div element with the id `trustVerify`
 
-![](.gitbook/assets/image%20%2824%29.png)
+![](<.gitbook/assets/image (25).png>)
 
 **Method 2** Use the embed integration modal in your page with the Trust Swiftly button/modal
 
@@ -153,9 +153,9 @@ trustVerify.load();
 
 This will generate the Trust Swiftly verify button which would open the Bootstrap modal within the given div element.
 
-![Example Button](.gitbook/assets/image%20%2820%29.png)
+![Example Button](<.gitbook/assets/image (26).png>)
 
-![](.gitbook/assets/image%20%2823%29.png)
+![](<.gitbook/assets/image (27).png>)
 
 **Method 3** Use the embed integration modal in your page to to directly show the specific verification. This is useful if your verification template only has one verification.
 
@@ -176,9 +176,9 @@ trustVerify.loadSingle();
 
 This will generate the verification in the same page similar to the 1st method but it will directly load the specific verification.
 
-![Direct display of verification](.gitbook/assets/image%20%2821%29.png)
+![Direct display of verification](<.gitbook/assets/image (28).png>)
 
-### Step 4 <a id="step-2"></a>
+### Step 4 <a href="#step-2" id="step-2"></a>
 
 The completion calls and updating certain verifications for your user can be monitored through callbacks and webhooks. We recommend implementing two methods to ensure changes are tracked properly.
 
@@ -202,7 +202,6 @@ onStateChange: function(data) {
 }
 ```
 
-2. Using our [webhook implementation guide](webhooks/handling-webhooks.md)
+2\. Using our [webhook implementation guide](webhooks/handling-webhooks.md)
 
-3. Using the [Get User API call](users.md#get-user)
-
+3\. Using the [Get User API call](users.md#get-user)

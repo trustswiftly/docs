@@ -4,7 +4,7 @@
 
 ## Web
 
----
+***
 
 * [HTML + Javascript](html-+-javascript.md)
 * [Integration](integration.md)
@@ -15,7 +15,7 @@
 
 ## API
 
----
+***
 
 * [Getting an API Key](getting-an-api-key.md)
 * [Authentication](authentication.md)
@@ -32,7 +32,7 @@
 * [Setup and Handling Webhooks](webhooks/handling-webhooks.md)
 * [Webhook Code Examples](webhooks/code-examples.md)
 
-## Hosted Link <a id="hosted"></a>
+## Hosted Link <a href="#hosted" id="hosted"></a>
 
 * [Share hosted link](hosted/share-hosted-link.md)
 
@@ -40,8 +40,11 @@
 
 * [Configure self verifications](self-sign-up/configure-self-verifications.md)
 
+## Single Sign On
+
+* [SAML2 SSO](single-sign-on/saml2-sso.md)
+
 ## Links
 
-* [Trustswiftly.com](https://trustswiftly.com/)
+* [Trustswiftly.com](https://trustswiftly.com)
 * [Sign Up](https://app.trustswiftly.com/account/create)
-

@@ -4,30 +4,18 @@ description: Get current stats for verifications.
 
 # Stats
 
-{% api-method method="get" host="https://{sub-domain}.trustswiftly.com/account" path="/api/stats" %}
-{% api-method-summary %}
-Get Verification Stats
-{% endapi-method-summary %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/stats" method="get" summary="Get Verification Stats" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter in="path" name="Authorization" type="string" %}
+**API Key**
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-**API Key** is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+ is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
   "users_per_month": {
@@ -78,10 +66,8 @@ Get Verification Stats
   ]
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -93,4 +79,3 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api
 ```
 {% endtab %}
 {% endtabs %}
-
