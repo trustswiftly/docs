@@ -4,7 +4,7 @@ description: Get available verification templates
 
 # Templates
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/settings/templates/verifications" method="get" summary="Get Verifications Templates" %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/settings/templates/verifications" method="get" summary="Get Verifications Templates" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -49,7 +49,7 @@ description: Get available verification templates
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/settings/templates/verifications' \
+curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/settings/templates/verifications' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {api_key}'

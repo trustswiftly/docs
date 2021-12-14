@@ -16,8 +16,8 @@ description: >-
 3. In the Create a New Application Integration dialog box, leave Web as the platform and select SAML 2.0 as the protocol. Click Create.
 4. On (1) General Settings, enter Trust Swiftly as the name of the new Application. Click Next
 5. On (2) Configure SAML, enter the following for the fields. Click Next and then leave any feedback.
-   * Single sign on URL: `https://{subdomain}.trustswiftly.com/account/auth/saml2/callback`
-   * Audience URI: `https://{subdomain}.trustswiftly.com/account/auth/saml2`
+   * Single sign on URL: `https://{subdomain}.trustswiftly.com/auth/saml2/callback`
+   * Audience URI: `https://{subdomain}.trustswiftly.com/auth/saml2`
    * Attribute Statements
      * Name: email
      * Name format: Unspecified

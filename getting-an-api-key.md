@@ -12,7 +12,7 @@ When you're ready to use the API in production using live data you can generate 
 Your API keys carry many privileges, so be sure to keep them secure! Do not share your secret API keys in publicly accessible areas such as GitHub, client-side code, and so forth.
 {% endhint %}
 
-1. Go to [https://{sub-domain}.trustswiftly.com/account/settings/developer](https://{sub-domain}.trustswiftly.com/account/settings/developer)
+1. Go to [https://{sub-domain}.trustswiftly.com/settings/developer](https://{sub-domain}.trustswiftly.com/settings/developer)
 2. Click Create Token and name it according to your service.
 3. Save the token securely as it will only be viewable one time.
 

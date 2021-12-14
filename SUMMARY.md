@@ -47,4 +47,4 @@
 ## Links
 
 * [Trustswiftly.com](https://trustswiftly.com)
-* [Sign Up](https://app.trustswiftly.com/account/create)
+* [Sign Up](https://app.trustswiftly.com/create)

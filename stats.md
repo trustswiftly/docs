@@ -4,7 +4,7 @@ description: Get current stats for verifications.
 
 # Stats
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/stats" method="get" summary="Get Verification Stats" %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/stats" method="get" summary="Get Verification Stats" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -72,7 +72,7 @@ description: Get current stats for verifications.
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/stats' \
+curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/stats' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {api_key}'

@@ -14,8 +14,8 @@ Some endpoints will return data in a paginated list. A paginated response will l
         //...
     ],
     "links": {
-        "first": "https://yourwebsite.com/account/api/users?page=1",
-        "last": "https://yourwebsite.com/account/api/users?page=1",
+        "first": "https://yourwebsite.com/api/users?page=1",
+        "last": "https://yourwebsite.com/api/users?page=1",
         "prev": null,
         "next": null
     },
@@ -23,7 +23,7 @@ Some endpoints will return data in a paginated list. A paginated response will l
         "current_page": 1,
         "from": 1,
         "last_page": 1,
-        "path": "http://yourwebsite.com/account/api/users",
+        "path": "http://yourwebsite.com/api/users",
         "per_page": 15,
         "to": 15,
         "total": 15

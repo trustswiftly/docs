@@ -4,7 +4,7 @@ The first step to adding WebHooks to your account is to build your own custom en
 
 ## Add Webhook Endpoint
 
-1. The first step to receiving webhooks is to enable it in your settings page. `https://{sub-domain}.trustswiftly.com/account/settings/webhooks`
+1. The first step to receiving webhooks is to enable it in your settings page. `https://{sub-domain}.trustswiftly.com/settings/webhooks`
 2. Click the Add Webhook button and select the events to subscribe to. You can visit [https://webhook.site/](https://webhook.site) and receive a unique url if you want to test the webhook events.
 
 ![](<../.gitbook/assets/image (10).png>)

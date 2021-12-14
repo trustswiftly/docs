@@ -16,7 +16,7 @@ function generate_trustlink(){
     if ( is_user_logged_in() ) {
         $user_id=get_current_user_id();
         $metaData=json_decode(get_user_meta($user_id,'trust_user_data',true));
-        $endpoint = 'https://test.trustswiftly.com/account/api/v1/users/'.$metaData->id.'/verify-url';
+        $endpoint = 'https://test.trustswiftly.com/api/v1/users/'.$metaData->id.'/verify-url';
         $user_info = get_userdata($user_id);
         $user_email = $user_info->user_email;
         $body = [
@@ -45,7 +45,7 @@ function generate_trustlink(){
     }
 }
 add_action('user_register', function ( $user_id ) {
-    $endpoint = 'https://test.trustswiftly.com/account/api/v1/users';
+    $endpoint = 'https://test.trustswiftly.com/api/v1/users';
     $user_info = get_userdata($user_id);
     $user_email = $user_info->user_email;
     $body = [

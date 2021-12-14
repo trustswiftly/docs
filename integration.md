@@ -61,7 +61,7 @@ https://{Your base URL}/api/users
   "status": "success",
   "id": 69,
   "user_id": "3639",
-  "magic_link": "https:\/\/test.trustswiftly.com\/account\/security-verify?expires=1625603631&key=16RWTtJRKTwjFIQCGWsdarWkW4Qq2DdvfUQhdzvug3AVwWu5mbZht&signature=768898ec51b20a623ba813969215fe9c113c3a7232204c0046265b3c6"
+  "magic_link": "https:\/\/test.trustswiftly.com\\/security-verify?expires=1625603631&key=16RWTtJRKTwjFIQCGWsdarWkW4Qq2DdvfUQhdzvug3AVwWu5mbZht&signature=768898ec51b20a623ba813969215fe9c113c3a7232204c0046265b3c6"
 }
 ```
 
@@ -106,7 +106,7 @@ The prerequisites for using the embed integration is to have jQuery 3.6 or up an
 ```markup
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"> </script>
-<script src="https://cdn.trustswiftly.com/account/trustverifyv2.js"></script>
+<script src="https://cdn.trustswiftly.com/trustverifyv2.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" crossorigin="anonymous" />
 
 ```

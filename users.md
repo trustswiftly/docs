@@ -4,7 +4,7 @@ description: The API Key can be generated within your account settings.
 
 # Users
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users" method="get" summary="Get Users" %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users" method="get" summary="Get Users" %}
 {% swagger-description %}
 List all the users currently assigned a profile.
 {% endswagger-description %}
@@ -108,7 +108,7 @@ List all the users currently assigned a profile.
                 }
             ],
             "phone": null,
-            "avatar": "https://cdn.trustswiftly.com/account/assets/img/profile.png",
+            "avatar": "https://cdn.trustswiftly.com/assets/img/profile.png",
             "address": null,
             "country_id": null,
             "role_id": 2,
@@ -131,7 +131,7 @@ List all the users currently assigned a profile.
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users' \
+curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/users' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
 --header 'User-Agent: TrustSwiftly/1.0'
@@ -139,7 +139,7 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" method="get" summary="Get User" %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}" method="get" summary="Get User" %}
 {% swagger-description %}
 Retrieve a specific users profile.
 {% endswagger-description %}
@@ -280,7 +280,7 @@ Retrieve a specific users profile.
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api/users/2' \
+curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/users/2' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
 --header 'User-Agent: TrustSwiftly/1.0'
@@ -288,7 +288,7 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/account/api
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users" method="post" summary="Create User" %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users" method="post" summary="Create User" %}
 {% swagger-description %}
 Create a given users profile.
 {% endswagger-description %}
@@ -316,7 +316,7 @@ ID of the verification template you wish to assign to this user.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="reference_id" type="string" %}
-An ID you can pass that correlates to your own system's user/account ID.
+An ID you can pass that correlates to your own system's user ID.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="phone" type="integer" %}
@@ -341,7 +341,7 @@ A unique username for the given user.
   "status": "success",
   "id": 69,
   "user_id": "3639",
-  "magic_link": "https:\/\/test.trustswiftly.com\/account\/security-verify?expires=1325603631&key=16RWTtJRKTwjFIQCGWDEZrWkW4Qq2DdvfUQhdadug3AVwWu5mbZht&signature=768898ec51b20a623ba813969215f23785b784f213d04c0046265b3c6"
+  "magic_link": "https:\/\/test.trustswiftly.com\\/security-verify?expires=1325603631&key=16RWTtJRKTwjFIQCGWDEZrWkW4Qq2DdvfUQhdadug3AVwWu5mbZht&signature=768898ec51b20a623ba813969215f23785b784f213d04c0046265b3c6"
 }
 ```
 {% endswagger-response %}
@@ -350,7 +350,7 @@ A unique username for the given user.
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/api/users' \
+curl --location --request POST 'https://{sub-domain}.trustswiftly.com/api/users' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
 --header 'User-Agent: TrustSwiftly/1.0' \
@@ -362,7 +362,7 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/ap
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" method="patch" summary="Update User " %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}" method="patch" summary="Update User " %}
 {% swagger-description %}
 Update a provided user.
 {% endswagger-description %}
@@ -390,7 +390,7 @@ Phone including international code.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="reference_id" type="string" %}
-An ID you can pass that correlates to your own systems user/account ID.
+An ID you can pass that correlates to your own systems user ID.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="template_id" type="string" %}
@@ -410,7 +410,7 @@ Customers email address.
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/api/users/1' \
+curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users/1' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 2|GM2loELoTfc8rXC0PoC4WagW2eEQzE1AxhsqQ8Sn' \
 --header 'User-Agent: TrustSwiftly/1.0' \
@@ -423,7 +423,7 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/a
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/verifications" method="patch" summary="Update Verification" %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}/verifications" method="patch" summary="Update Verification" %}
 {% swagger-description %}
 Update a status of a verification
 {% endswagger-description %}
@@ -451,7 +451,7 @@ The status to update the verification
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/api/users/1' \
+curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users/1' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 2|GM2loELoTfc8rXC0PoC4WagW2eEQzE1AxhsqQ8Sn' \
 --header 'User-Agent: TrustSwiftly/1.0' \
@@ -463,7 +463,7 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/account/a
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}" method="delete" summary="Delete User" %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}" method="delete" summary="Delete User" %}
 {% swagger-description %}
 Delete a provided user.
 {% endswagger-description %}
@@ -483,7 +483,7 @@ Delete a provided user.
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/account/api/users/1' \
+curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/api/users/1' \
 --header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
 --header 'User-Agent: TrustSwiftly/1.0' \
 --data-raw ''
@@ -491,7 +491,7 @@ curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/account/
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com/account" path="/api/users/{id}/verify-url" method="post" summary="Get Magic Link" %}
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}/verify-url" method="post" summary="Get Magic Link" %}
 {% swagger-description %}
 Generate a magic link used for user authentication
 {% endswagger-description %}
@@ -510,7 +510,7 @@ Hour(s) in which the magic link will remain alive before expiring.
 ```
 {
     "short_url": "https://tinyurl.com/y32d35rf",
-    "full_url": "https://{sub-domain}.trustswiftly.com/account/security-verify?expires=1610753625&key=7&signature=3949637e17906a42bd3d0254af80a825f2696b9ba948cdf3654f0e354a2f6cef"
+    "full_url": "https://{sub-domain}.trustswiftly.com/security-verify?expires=1610753625&key=7&signature=3949637e17906a42bd3d0254af80a825f2696b9ba948cdf3654f0e354a2f6cef"
 }
 ```
 {% endswagger-response %}
@@ -519,7 +519,7 @@ Hour(s) in which the magic link will remain alive before expiring.
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://{sub-domain}.trustswiftly.com/account/api/users/1/verify-url' \
+curl --location --request POST 'https://{sub-domain}.trustswiftly.com/api/users/1/verify-url' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 1|GM2loELoTfc8rXC0PoC4WagW2eEQzE1AxhsqQ8Sn' \
 --header 'User-Agent: TrustSwiftly/1.0' \
