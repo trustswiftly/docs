@@ -10,7 +10,7 @@ description: >-
 
 ### Step 1
 
-Following the account creation, create your branded verification site for verifying your users. Your users will be verified on this URL for hosted integrations.
+Following the account creation, create your branded verification site for verifying your users. Your users will be verified on this URL for hosted integrations.
 
 **Parameter to Note: `baseUrl`**
 
@@ -26,15 +26,13 @@ Create a template(s) for required verification(s) to assign to your users. You c
 
 ![Input the name and enable each verification assigned to the template](<.gitbook/assets/image (22).png>)
 
-### &#x20;Step **3** <a href="#step-2" id="step-2"></a>
+### Step **3** <a href="#step-2" id="step-2"></a>
 
 Generate your API keys by going to the Settings -> Developer, click on the create key to generate your key.
 
 ![Click Create API Key](<.gitbook/assets/image (23).png>)
 
 The keys are only visible once so please copy and save the keys.
-
-
 
 **KEY (`api_key`) :** This key will be used for API calls which are done through the server of your applications. For example: [Create User API](users.md#create-user)
 
@@ -67,7 +65,7 @@ https://{Your base URL}/api/users
 
 **Parameter to Note:** `user_id`
 
-Store the user id for all the further communications with the API and for rendering the embed flow.&#x20;
+Store the user id for all the further communications with the API and for rendering the embed flow.
 
 ### Step 2 <a href="#step-2" id="step-2"></a>
 
@@ -91,11 +89,11 @@ $hash = hash_hmac('sha256', $payloadString, $apisecret);
 $signature = 't=' . $timestamp . ',v2=' . $hash;
 ```
 
-This signature is required for the next step to display the embed integration.&#x20;
+This signature is required for the next step to display the embed integration.
 
 ### Step 3 <a href="#step-2" id="step-2"></a>
 
-There are 3 methods to display the embedded integration.&#x20;
+There are 3 methods to display the embedded integration.
 
 1. Embed within your page
 2. Embed with a Bootstrap modal and our button
@@ -106,9 +104,8 @@ The prerequisites for using the embed integration is to have jQuery 3.6 or up an
 ```markup
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"> </script>
-<script src="https://cdn.trustswiftly.com/trustverifyv2.js"></script>
+<script src="https://cdn.trustswiftly.com/assets/js/trustverifyv2.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" crossorigin="anonymous" />
-
 ```
 
 Next you need to place a div where you require display of the contents.
@@ -116,8 +113,6 @@ Next you need to place a div where you require display of the contents.
 ```markup
 <div id="trustVerify" class="bg-light p-5 rounded"> </div>
 ```
-
-
 
 **Method 1** Use the embed integration in your page as embedded content.
 
