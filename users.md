@@ -9,10 +9,10 @@ description: The API Key can be generated within your account settings.
 List all the users currently assigned a profile.
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
 **API Key**
 
- is used for server-to-server communication to fetch sensitive data that you already have access to.
+is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="Succesful response" %}
@@ -144,10 +144,10 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/users' 
 Retrieve a specific users profile.
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
 **API Key**
 
- is used for server-to-server communication to fetch sensitive data that you already have access to.
+is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
@@ -293,45 +293,49 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/users/2
 Create a given users profile.
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
 **API Key**
 
- is used for server-to-server communication to fetch sensitive data that you already have access to.
+is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="notice" type="string" %}
+{% swagger-parameter in="body" name="notice" type="string" required="false" %}
 Display a notice on the dashboard for users such as custom instructions.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="email" type="string" %}
+{% swagger-parameter in="body" name="email" type="string" required="false" %}
 Customer's email address.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="send_link" type="boolean" %}
-Send a magic link to the user.
+{% swagger-parameter in="body" name="send_link" type="boolean" required="false" %}
+Send a magic link to the user via email.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="template_id" type="string" %}
+{% swagger-parameter in="body" name="send_sms" type="boolean" %}
+Send a magic link to the user via SMS.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="template_id" type="string" required="false" %}
 ID of the verification template you wish to assign to this user.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="reference_id" type="string" %}
+{% swagger-parameter in="body" name="reference_id" type="string" required="false" %}
 An ID you can pass that correlates to your own system's user ID.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="phone" type="integer" %}
+{% swagger-parameter in="body" name="phone" type="integer" required="false" %}
 Phone including international code. Example +13129450121
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="last_name" type="string" %}
+{% swagger-parameter in="body" name="last_name" type="string" required="false" %}
 Users last name.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="first_name" type="string" %}
+{% swagger-parameter in="body" name="first_name" type="string" required="false" %}
 Users first name.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="username" type="string" %}
+{% swagger-parameter in="body" name="username" type="string" required="false" %}
 A unique username for the given user.
 {% endswagger-parameter %}
 
@@ -367,37 +371,37 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/api/users'
 Update a provided user.
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
 **API Key**
 
- is used for server-to-server communication to fetch sensitive data that you already have access to.
+is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="username" type="string" %}
+{% swagger-parameter in="body" name="username" type="string" required="false" %}
 A unique username for the given user.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="first_name" type="string" %}
+{% swagger-parameter in="body" name="first_name" type="string" required="false" %}
 Users first name
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="last_name" type="string" %}
+{% swagger-parameter in="body" name="last_name" type="string" required="false" %}
 Users last name
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="phone" type="integer" %}
+{% swagger-parameter in="body" name="phone" type="integer" required="false" %}
 Phone including international code.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="reference_id" type="string" %}
+{% swagger-parameter in="body" name="reference_id" type="string" required="false" %}
 An ID you can pass that correlates to your own systems user ID.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="template_id" type="string" %}
+{% swagger-parameter in="body" name="template_id" type="string" required="false" %}
 ID of the verification template you wish to assign to this user.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="email" type="string" %}
+{% swagger-parameter in="body" name="email" type="string" required="false" %}
 Customers email address.
 {% endswagger-parameter %}
 
@@ -428,17 +432,17 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users
 Update a status of a verification
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
 **API Key**
 
- is used for server-to-server communication to fetch sensitive data that you already have access to.
+is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="verification_id" type="string" %}
+{% swagger-parameter in="body" name="verification_id" type="string" required="false" %}
 The ID corresponding to the verification name
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="status" type="string" %}
+{% swagger-parameter in="body" name="status" type="string" required="false" %}
 The status to update the verification
 {% endswagger-parameter %}
 
@@ -468,10 +472,10 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users
 Delete a provided user.
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
 **API Key**
 
- is used for server-to-server communication to fetch sensitive data that you already have access to 
+is used for server-to-server communication to fetch sensitive data that you already have access to
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
@@ -496,13 +500,13 @@ curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/api/user
 Generate a magic link used for user authentication
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
 **API Key**
 
- is used for server-to-server communication to fetch sensitive data that you already have access to.
+is used for server-to-server communication to fetch sensitive data that you already have access to.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="expiration_hours" type="integer" %}
+{% swagger-parameter in="body" name="expiration_hours" type="integer" required="false" %}
 Hour(s) in which the magic link will remain alive before expiring.
 {% endswagger-parameter %}
 
@@ -529,4 +533,3 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/api/users/
 ```
 {% endtab %}
 {% endtabs %}
-
