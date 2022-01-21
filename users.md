@@ -324,7 +324,11 @@ An ID you can pass that correlates to your own system's user ID.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="phone" type="integer" required="false" %}
-Phone including international code. Example +13129450121
+Phone including international code. Example +13129450121. It must be in 
+
+[E164 format.](https://www.twilio.com/docs/glossary/what-e164)
+
+
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="last_name" type="string" required="false" %}
