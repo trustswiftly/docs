@@ -4,41 +4,37 @@
 
 ```javascript
 {
-  "id": "237d6330-f8e0-410b-b927-dd7b07bf99ec",
-  "ip": null,
-  "event": "verification.pending",
-  "trust_id": 1,
-  "created_at": "2020-09-11T01:33:51.000000Z",
-  "ip_country": null,
-  "user_status": "Active",
-  "reference_id": null,
-  "last_activity": "2020-11-10 12:27:16",
-  "verifications": [
-    {
-      "id": 1,
-      "name": "Email",
-      "status": {
-        "value": 0,
-        "friendly": "Pending"
+   "id":"7d2dde92-885b-4159-8772-0367e4e39b6f",
+   "ip":"127.0.0.1",
+   "event":"verification.pending",
+   "email":"test@example.com",
+   "trust_id":28,
+   "created_at":"2022-01-28T21:06:44.000000Z",
+   "ip_country":"US",
+   "user_status":"Active",
+   "reference_id":null,
+   "last_activity":"2022-01-28 22:46:44",
+   "verifications":[
+      {
+         "id":3,
+         "name":"Document \/ ID",
+         "status":{
+            "value":1,
+            "friendly":"Processing"
+         },
+         "attributes":{
+            "workflow":"ID + Selfie"
+         }
+      },
+      {
+         "id":1,
+         "name":"Email",
+         "status":{
+            "value":0,
+            "friendly":"Assigned"
+         }
       }
-    },
-    {
-      "id": 2,
-      "name": "Phone / SMS",
-      "status": {
-        "value": 0,
-        "friendly": "Pending"
-      }
-    },
-    {
-      "id": 3,
-      "name": "Document / ID",
-      "status": {
-        "value": 0,
-        "friendly": "Pending"
-      }
-    }
-  ]
+   ]
 }
 ```
 
@@ -111,4 +107,3 @@ http_response_code(200);
         return response(200);
     }
 ```
-
