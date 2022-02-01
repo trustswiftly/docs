@@ -47,7 +47,7 @@ $json = json_decode($payload);
 
 //first lets validate the request!
 $computed_signature = hash_hmac('sha256', file_get_contents("php://input"), $configuredSigningSecret);
-$received_signature = $_SERVER['SIGNATURE'];
+$received_signature = $_SERVER['HTTP_SIGNATURE'];
 
 if($computed_signature !== $received_signature) {
     http_response_code(500);
@@ -82,7 +82,7 @@ http_response_code(200);
             config('services.trustswiftly.signature_secret')
         );
 
-        $received_signature = $_SERVER['SIGNATURE'];
+        $received_signature = $_SERVER['HTTP_SIGNATURE'];
 
         if($computed_signature !== $received_signature) {
             \Log::info('received_signature wrong');
