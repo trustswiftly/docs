@@ -7,11 +7,9 @@ description: >-
 
 # SAML2 SSO
 
-
-
 ### Adding Trust Swiftly to Okta
 
-1. Log in to your Okta organization as a user with administrative privileges.&#x20;
+1. Log in to your Okta organization as a user with administrative privileges.
 2. Click Applications in the menu bar. Then click Add Application and then Create New App.
 3. In the Create a New Application Integration dialog box, leave Web as the platform and select SAML 2.0 as the protocol. Click Create.
 4. On (1) General Settings, enter Trust Swiftly as the name of the new Application. Click Next
@@ -24,9 +22,7 @@ description: >-
      * Value: user.email
    * Get your Identity Provider metadata XML URL for Trust Swiftly to integrate back with Okta. This can be found under the Sign On tab in the SAML 2.0 callout by clicking the Identity Provider metadata link. Copy the URL and keep it handy for the next steps. The format of the URL should look like `https://dev12345.okta.com/app/4343431a/sso/saml/metadata`
 
-``![](<../.gitbook/assets/image (39).png>)``![](<../.gitbook/assets/image (38).png>)
-
-
+``![](<../.gitbook/assets/image (38).png>)
 
 ### Completing the Okta integration in Trust Swiftly
 
