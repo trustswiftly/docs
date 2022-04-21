@@ -343,6 +343,10 @@ Users first name.
 A unique username for the given user.
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="custom_verify_data" type="json string" %}
+A json string listing any data validation requirements for a user during document verification. 
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="" %}
 ```javascript
 {
@@ -407,6 +411,10 @@ ID of the verification template you wish to assign to this user.
 
 {% swagger-parameter in="body" name="email" type="string" required="false" %}
 Customers email address.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="custom_verify_data" %}
+A json string listing any data validation requirements for a user during document verification. 
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
