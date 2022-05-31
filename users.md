@@ -492,6 +492,9 @@ is used for server-to-server communication to fetch sensitive data that you alre
 
 {% swagger-response status="200" description="" %}
 ```
+{
+    "success": true
+}
 ```
 {% endswagger-response %}
 {% endswagger %}
