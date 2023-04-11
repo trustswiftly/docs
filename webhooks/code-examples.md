@@ -38,7 +38,7 @@
 }
 ```
 
-### Example Handling
+### Example Handling (PHP)
 
 ```php
 $payload = @file_get_contents('php://input');
@@ -70,7 +70,7 @@ foreach($json->verifications as $verification) {
 http_response_code(200);
 ```
 
-### Example Signature Verification
+### Example Signature Verification (PHP)
 
 ```php
     public function verifyWebhook(Request $request)
@@ -107,3 +107,4 @@ http_response_code(200);
         return response(200);
     }
 ```
+
