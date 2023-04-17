@@ -108,3 +108,50 @@ http_response_code(200);
     }
 ```
 
+
+
+### Example Signature Verification (JS)
+
+```javascript
+var express = require('express');
+const crypto = require('crypto')
+
+const secret = 'YOUR_TRUST_SIGNATURE';
+const sigHeaderName = 'signature'
+const sigHashAlg = 'sha256'
+
+var app = express();
+
+
+app.use(express.json({
+    verify: (req, res, buf, encoding) => {
+        if (buf && buf.length) {
+            req.rawBody = buf;
+        }
+    },
+}))
+
+function verifyPostData(req, res, next) {
+    if (!req.rawBody) {
+        return next('Request body not found')
+    }
+    const receivedSignature = Buffer.from(req.get(sigHeaderName) || '', 'utf8')
+    const hmacObject = crypto.createHmac(sigHashAlg, secret)
+    const currentSignature = Buffer.from(hmacObject.update(req.rawBody).digest('hex'), 'utf8')
+    if (receivedSignature.length !== currentSignature.length || !crypto.timingSafeEqual(currentSignature, receivedSignature)) {
+        return next(`signature didn't match`)
+    }
+    return next()
+}
+
+app.post('/', verifyPostData, function(req, res) {
+    res.status(200).send('Request body was signed')
+})
+// catch 404 and forward to error handler
+app.use(function(err, req, res, next) {
+    if (err) console.error(err)
+    res.status(403).send('Request body was not signed or verification failed')
+});
+
+module.exports = appav
+```
