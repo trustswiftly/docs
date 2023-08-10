@@ -40,6 +40,10 @@
 
 * [SAML2 SSO](single-sign-on/saml2-sso.md)
 
+## Stripe App
+
+* [Install and Demo Guide](stripe-app/install.md)
+
 ## Links
 
 * [Trustswiftly.com](https://trustswiftly.com)
