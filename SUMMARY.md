@@ -43,6 +43,7 @@
 ## Stripe App
 
 * [Install and Demo Guide](stripe-app/install.md)
+* [Disconnect Stripe App](stripe-app/disconnect-stripe-app.md)
 
 ## Links
 
