@@ -1,7 +1,7 @@
 ---
 description: >-
   The below instructions can be used for demo purposes and for live transactions
-  you can consult with our team for optimal setups with Radar rules.
+  you can consult with our team for optimal setup with Radar rules.
 ---
 
 # Install and Demo Guide
@@ -68,4 +68,4 @@ description: >-
 4. Enter the code to complete the verification.&#x20;
 5. Finally navigate to the Radar review queue to see if the payment was approved. If it was approved it should no longer be viewable here: [https://dashboard.stripe.com/radar/reviews](https://dashboard.stripe.com/radar/reviews)&#x20;
 
-![](https://lh4.googleusercontent.com/cJQOwgyAUuFGLDRWxWpu6nqBny8LAP4Mayyu0QK-Fmu8z5GtNrLnQMeZwf5zQFFLhJHDrxKjhOLowuxX-jMZ581jYjvVD2oEzdxVj5vUrJSIm9Dj9QkNpjGxeFEsGYGrGxPWL5jQ8CNwSlgj32UJjYw)
+![](https://lh4.googleusercontent.com/cJQOwgyAUuFGLDRWxWpu6nqBny8LAP4Mayyu0QK-Fmu8z5GtNrLnQMeZwf5zQFFLhJHDrxKjhOLowuxX-jMZ581jYjvVD2oEzdxVj5vUrJSIm9Dj9QkNpjGxeFEsGYGrGxPWL5jQ8CNwSlgj32UJjYw)![](../.gitbook/assets/image.png)
