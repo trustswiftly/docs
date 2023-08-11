@@ -6,6 +6,8 @@ description: >-
 
 # Install and Demo Guide
 
+`Note: If using test mode/ sandbox mode please enable the mode into the Stripe connect page`
+
 **Sign in to your Trust Swiftly tenant**
 
 1. Navigate to [https://\[COMPANY\].trustswiftly.com/login](https://stripetest.trustswiftly.com/login) (Replace \[company] with your specific tenant)
