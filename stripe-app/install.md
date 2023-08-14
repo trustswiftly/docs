@@ -20,7 +20,7 @@ description: >-
 **Install the Trust Swiftly Stripe App**
 
 1. Navigate to the **Connect Stripe App** page. [https://](https://stripetest.trustswiftly.com/settings/stripe\_app)[\[COMPANY\]](https://stripetest.trustswiftly.com/login)[.trustswiftly.com/settings/stripe\_app](https://stripetest.trustswiftly.com/settings/stripe\_app)&#x20;
-2. Follow the instructions to install the app by going to [https://dashboard.stripe.com/apps/install/channellink\*AYjeNxPAggAAAH8p%23EhcKFWFjY3RfMUlPbVZwS2Z0TVJvR0pCag](https://dashboard.stripe.com/apps/install/channellink\*AYjeNxPAggAAAH8p%23EhcKFWFjY3RfMUlPbVZwS2Z0TVJvR0pCag)
+2. Follow the instructions to install the app by going to Stripe's Marketplace and finding the Trust Swiftly app in the compliance category.&#x20;
 3. Copy and paste your domain into the settings [https://](https://stripetest.trustswiftly.com/)[\[COMPANY\]](https://stripetest.trustswiftly.com/login)[.trustswiftly.com](https://stripetest.trustswiftly.com/)
 4. After the app is installed on your Stripe account click the verify install button if not automatically updated.\
 
