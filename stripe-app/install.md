@@ -42,7 +42,7 @@ description: >-
 
 1. Navigate to Stripe Radar rules. [https://dashboard.stripe.com/settings/radar/rules](https://dashboard.stripe.com/settings/radar/rules)
 2. Scroll to the Review rules section and click the Add Rule button
-3. Create a review rule to send any payment over $500 and risk\_score > 500 to review or create your own logic [following our tips](https://trustswiftly.com/blog/optimal-fraud-prevention-with-stripe-radar-rules/) when you are ready for production. `Need help setting up Stripe Radar?` [`Contact us`](https://trustswiftly.com/contact-us/)`for a Stripe Radar rules optimization service.`&#x20;
+3. Create a review rule to send any payment over $500 and risk\_score > 50 to review or create your own logic [following our tips](https://trustswiftly.com/blog/optimal-fraud-prevention-with-stripe-radar-rules/) when you are ready for production. `Need help setting up Stripe Radar?` [`Contact us`](https://trustswiftly.com/contact-us/)`for a Stripe Radar rules optimization service.`&#x20;
 4. Click Test rule and save the rule.
 5. Any future payments that are sent to review will automatically be verified by Trust Swiftly.\
 
@@ -55,7 +55,7 @@ description: >-
 **Create a test payment that is put in review**
 
 1. Navigate to payment links in Stripe and create a test payment link [https://dashboard.stripe.com/payment-links/create](https://dashboard.stripe.com/payment-links/create)
-2. Add a new product called Test Review with a value of $5.
+2. Add a new product called Test Review with a value that will be triggered by your rule. For demo purposes you may need to create a unique rule based on email.&#x20;
 3. Check the option for Require customers to provide a phone number
 4. Click Create Link button in top right corner.&#x20;
 5. Copy the payment link and open a new incognito browser window so your other Trust Swiftly session is not impacted with the test.&#x20;
