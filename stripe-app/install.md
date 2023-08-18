@@ -43,11 +43,14 @@ description: >-
 1. Navigate to Stripe Radar rules. [https://dashboard.stripe.com/settings/radar/rules](https://dashboard.stripe.com/settings/radar/rules)
 2. Scroll to the Review rules section and click the Add Rule button
 3. Create a review rule to send any payment over $1 to review or create your own logic when you are ready for production. `Need help setting up Stripe Radar?` [`Contact us`](https://trustswiftly.com/contact-us/)`for a Stripe Radar rules optimization service.`&#x20;
-4. Click Test rule and save the rule.\
+4. Click Test rule and save the rule.
+5. Any future payments that are sent to review will automatically be verified by Trust Swiftly.\
 
 
 ![](https://lh6.googleusercontent.com/Hq6dxtSjLmlSIOPfXAA3P3DmXmAQGXCQvHbFWYg-yHbzpSB4QV3P2nWSC4gWYlgf9mYchgGBJjviEuJF5vZEdd1PbAqKG52W4P2yzNvoottmyeAI0QjVRQJU6\_e6ankcij6PtFoFEPipMrFjhmzc2Kg)\
 
+
+### Demo Steps
 
 **Create a test payment that is put in review**
 
