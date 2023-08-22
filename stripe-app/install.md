@@ -8,7 +8,7 @@ description: >-
 
 `Note: If using test mode/ sandbox mode please enable the mode into the Stripe connect page`
 
-* [ ] **Prerequisite**: [Create a Trust Swiftly account ](https://app.trustswiftly.com/create)(Deposit over $300 for a free initial consultation on your Stripe Rules. We help you optimize your rules for more revenue.)
+* [ ] **Prerequisite**: [Create a Trust Swiftly account ](https://app.trustswiftly.com/create?ref=partner)(Deposit over $300 for a free initial consultation on your Stripe Rules. We help you optimize your rules for more revenue.)
 
 **Sign in to your Trust Swiftly tenant**
 
