@@ -153,9 +153,12 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
 
 Be sure to add the required permissions for your use case to your AndroidManifest file. For example:
 
-```
-<uses-permission android:name="android.permission.CAMERA" />
-```
+<pre><code>&#x3C;uses-permission android:name="android.permission.CAMERA" />
+
+<strong>&#x3C;!-- Microphone permissions are not usually required, except when using a verify method that records video. -->
+</strong>&#x3C;!--  &#x3C;uses-permission android:name="android.permission.RECORD_AUDIO" />-->
+&#x3C;!--  &#x3C;uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />-->
+</code></pre>
 
 ### iOS WKWebView
 
