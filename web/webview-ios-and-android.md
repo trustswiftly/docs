@@ -221,6 +221,23 @@ struct WebView : UIViewRepresentable{
 
 The webcam access can auto be allowed as seen in this Apple Demo and code. [https://stackoverflow.com/questions/75310858/browser-also-asks-camera-permission-in-ios-webview](https://stackoverflow.com/questions/75310858/browser-also-asks-camera-permission-in-ios-webview)
 
+```swift
+import WebKit
+
+@available(iOS 15.0, *)
+public class TrustSwiftlyWebViewDelegate: NSObject, WKUIDelegate {
+	public func webView(
+		_ webView: WKWebView,
+		requestMediaCapturePermissionFor origin: WKSecurityOrigin,
+		initiatedByFrame frame: WKFrameInfo,
+		type: WKMediaCaptureType,
+		decisionHandler: @escaping (WKPermissionDecision) -> Void
+	) {
+		decisionHandler(.grant)
+	}
+}
+```
+
 **Common Issues**
 
 > ❗️Webkit Inline Media Playback
