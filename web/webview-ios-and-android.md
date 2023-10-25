@@ -149,7 +149,7 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
 }
 ```
 
-**Permissions**
+#### **Permissions**
 
 Be sure to add the required permissions for your use case to your AndroidManifest file. For example:
 
@@ -217,7 +217,7 @@ struct WebView : UIViewRepresentable{
 
 ```
 
-**Permissions**
+#### **Permissions**
 
 The webcam access can auto be allowed as seen in this Apple Demo and code. [https://stackoverflow.com/questions/75310858/browser-also-asks-camera-permission-in-ios-webview](https://stackoverflow.com/questions/75310858/browser-also-asks-camera-permission-in-ios-webview)
 
@@ -238,7 +238,7 @@ public class TrustSwiftlyWebViewDelegate: NSObject, WKUIDelegate {
 }
 ```
 
-**Common Issues**
+### **Common Issues**
 
 > ❗️Multiple signups
 >
