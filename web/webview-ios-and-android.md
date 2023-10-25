@@ -240,6 +240,16 @@ public class TrustSwiftlyWebViewDelegate: NSObject, WKUIDelegate {
 
 **Common Issues**
 
+> ❗️Multiple signups
+>
+> If testing your app and creating multiple verify sessions you should clear the cookies and cache of WKWebView inbetween new user sessions. (Refer to [this guide](https://stackoverflow.com/questions/27105094/how-to-remove-cache-in-wkwebview))
+>
+> ```swift
+> WKWebsiteDataStore.default().removeData(ofTypes: [WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache], modifiedSince: Date(timeIntervalSince1970: 0), completionHandler:{ })
+> ```
+>
+>
+>
 > ❗️Webkit Inline Media Playback
 >
 > Please ensure `allowsInlineMediaPlayback` is enabled when creating a webview on a webkit browser (mobile Safari). This defaults to false and the camera preview will incorrectly open as a fullscreen live broadcast.
