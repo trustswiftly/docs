@@ -324,11 +324,7 @@ An ID you can pass that correlates to your own system's user ID.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="phone" type="integer" required="false" %}
-Phone including international code. Example +13129450121. It must be in 
-
-[E164 format.](https://www.twilio.com/docs/glossary/what-e164)
-
-
+Phone including international code. Example +13129450121. It must be in [E164 format.](https://www.twilio.com/docs/glossary/what-e164)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="last_name" type="string" required="false" %}
@@ -344,7 +340,7 @@ A unique username for the given user.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="custom_verify_data" type="json string" %}
-A json string listing any data validation requirements for a user during document verification. 
+A json string listing any data validation requirements for a user during document verification.&#x20;
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
@@ -414,7 +410,7 @@ Customers email address.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="custom_verify_data" %}
-A json string listing any data validation requirements for a user during document verification. 
+A json string listing any data validation requirements for a user during document verification.&#x20;
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}

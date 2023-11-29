@@ -33,9 +33,10 @@
 
 * [Share hosted link](hosted/share-hosted-link.md)
 
-## Self Sign Up
+## Self Sign Up and Create Autofill
 
-* [Configure self verifications](self-sign-up/configure-self-verifications.md)
+* [Configure self verifications](self-sign-up-and-create-autofill/configure-self-verifications.md)
+* [Prefill User Creation](self-sign-up-and-create-autofill/prefill-user-creation.md)
 
 ## Single Sign On
 
