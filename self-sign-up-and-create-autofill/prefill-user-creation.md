@@ -1,6 +1,6 @@
 # Prefill User Creation
 
-Use the user parameter to dynamically preset user values by making a request with parameters.
+Use the user parameter to dynamically preset user values by making a request with data such as email, phone, first\_name, last\_name, email\_notify, sms\_notify, template\_id.
 
 ```
 /user/quick_create
