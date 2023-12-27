@@ -323,6 +323,10 @@ ID of the verification template you wish to assign to this user.
 An ID you can pass that correlates to your own system's user ID.
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="order_id" type="string" %}
+If the user is associated with a specific order or transaction.
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="phone" type="integer" required="false" %}
 Phone including international code. Example +13129450121. It must be in [E164 format.](https://www.twilio.com/docs/glossary/what-e164)
 {% endswagger-parameter %}
@@ -403,6 +407,10 @@ An ID you can pass that correlates to your own systems user ID.
 
 {% swagger-parameter in="body" name="template_id" type="string" required="false" %}
 ID of the verification template you wish to assign to this user.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="order_id" type="string" %}
+If the user is associated with a specific order or transaction.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="email" type="string" required="false" %}
