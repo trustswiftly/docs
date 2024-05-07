@@ -42,6 +42,10 @@
 
 * [SAML2 SSO](single-sign-on/saml2-sso.md)
 
+## Notifications
+
+* [Zoho Cliq](notifications/zoho-cliq.md)
+
 ## Stripe App
 
 * [Install and Demo Guide](stripe-app/install.md)
