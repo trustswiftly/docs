@@ -4,18 +4,20 @@ description: The API Key can be generated within your account settings.
 
 # Users
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users" method="get" summary="Get Users" %}
-{% swagger-description %}
+## Get Users
+
+<mark style="color:blue;">`GET`</mark> `https://{sub-domain}.trustswiftly.com/api/users`
+
 List all the users currently assigned a profile.
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
-**API Key**
+#### Headers
 
-is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endswagger-parameter %}
+| Name          | Type   | Description                                                                                                                               |
+| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
-{% swagger-response status="200" description="Succesful response" %}
+{% tabs %}
+{% tab title="200 Succesful response" %}
 ```
 {
     "data": [
@@ -125,8 +127,8 @@ is used for server-to-server communication to fetch sensitive data that you alre
     ]
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -139,18 +141,20 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/users' 
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}" method="get" summary="Get User" %}
-{% swagger-description %}
+## Get User
+
+<mark style="color:blue;">`GET`</mark> `https://{sub-domain}.trustswiftly.com/api/users/{id}`
+
 Retrieve a specific users profile.
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
-**API Key**
+#### Headers
 
-is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endswagger-parameter %}
+| Name          | Type   | Description                                                                                                                               |
+| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
-{% swagger-response status="200" description="" %}
+{% tabs %}
+{% tab title="200 " %}
 ```
 {
     "data": {
@@ -274,8 +278,8 @@ is used for server-to-server communication to fetch sensitive data that you alre
     }
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -288,66 +292,37 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/users/2
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users" method="post" summary="Create User" %}
-{% swagger-description %}
+## Create User
+
+<mark style="color:green;">`POST`</mark> `https://{sub-domain}.trustswiftly.com/api/users`
+
 Create a given users profile.
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
-**API Key**
+#### Headers
 
-is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endswagger-parameter %}
+| Name          | Type   | Description                                                                                                                               |
+| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
-{% swagger-parameter in="body" name="notice" type="string" required="false" %}
-Display a notice on the dashboard for users such as custom instructions.
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="email" type="string" required="false" %}
-Customer's email address.
-{% endswagger-parameter %}
+| Name                 | Type        | Description                                                                                                                            |
+| -------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| notice               | string      | Display a notice on the dashboard for users such as custom instructions.                                                               |
+| email                | string      | Customer's email address.                                                                                                              |
+| send\_link           | boolean     | Send a magic link to the user via email.                                                                                               |
+| template\_id         | string      | ID of the verification template you wish to assign to this user.                                                                       |
+| reference\_id        | string      | An ID you can pass that correlates to your own system's user ID.                                                                       |
+| phone                | integer     | Phone including international code. Example +13129450121. It must be in [E164 format.](https://www.twilio.com/docs/glossary/what-e164) |
+| last\_name           | string      | Users last name.                                                                                                                       |
+| first\_name          | string      | Users first name.                                                                                                                      |
+| username             | string      | A unique username for the given user.                                                                                                  |
+| send\_sms            | boolean     | Send a magic link to the user via SMS.                                                                                                 |
+| custom\_verify\_data | json string | A json string listing any data validation requirements for a user during document verification.                                        |
+| order\_id            | string      | If the user is associated with a specific order or transaction.                                                                        |
 
-{% swagger-parameter in="body" name="send_link" type="boolean" required="false" %}
-Send a magic link to the user via email.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="send_sms" type="boolean" %}
-Send a magic link to the user via SMS.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="template_id" type="string" required="false" %}
-ID of the verification template you wish to assign to this user.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="reference_id" type="string" required="false" %}
-An ID you can pass that correlates to your own system's user ID.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="order_id" type="string" %}
-If the user is associated with a specific order or transaction.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="phone" type="integer" required="false" %}
-Phone including international code. Example +13129450121. It must be in [E164 format.](https://www.twilio.com/docs/glossary/what-e164)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="last_name" type="string" required="false" %}
-Users last name.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="first_name" type="string" required="false" %}
-Users first name.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="username" type="string" required="false" %}
-A unique username for the given user.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="custom_verify_data" type="json string" %}
-A json string listing any data validation requirements for a user during document verification.&#x20;
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="" %}
+{% tabs %}
+{% tab title="200 " %}
 ```javascript
 {
   "status": "success",
@@ -356,8 +331,8 @@ A json string listing any data validation requirements for a user during documen
   "magic_link": "https:\/\/test.trustswiftly.com\\/security-verify?expires=1325603631&key=16RWTtJRKTwjFIQCGWDEZrWkW4Qq2DdvfUQhdadug3AVwWu5mbZht&signature=768898ec51b20a623ba813969215f23785b784f213d04c0046265b3c6"
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -374,58 +349,38 @@ curl --location --request POST 'https://{sub-domain}.trustswiftly.com/api/users'
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}" method="patch" summary="Update User " %}
-{% swagger-description %}
+## Update User&#x20;
+
+<mark style="color:purple;">`PATCH`</mark> `https://{sub-domain}.trustswiftly.com/api/users/{id}`
+
 Update a provided user.
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
-**API Key**
+#### Headers
 
-is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endswagger-parameter %}
+| Name          | Type   | Description                                                                                                                               |
+| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
-{% swagger-parameter in="body" name="username" type="string" required="false" %}
-A unique username for the given user.
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="first_name" type="string" required="false" %}
-Users first name
-{% endswagger-parameter %}
+| Name                 | Type    | Description                                                                                      |
+| -------------------- | ------- | ------------------------------------------------------------------------------------------------ |
+| username             | string  | A unique username for the given user.                                                            |
+| first\_name          | string  | Users first name                                                                                 |
+| last\_name           | string  | Users last name                                                                                  |
+| phone                | integer | Phone including international code.                                                              |
+| reference\_id        | string  | An ID you can pass that correlates to your own systems user ID.                                  |
+| template\_id         | string  | ID of the verification template you wish to assign to this user.                                 |
+| email                | string  | Customers email address.                                                                         |
+| custom\_verify\_data | String  | A json string listing any data validation requirements for a user during document verification.  |
+| order\_id            | string  | If the user is associated with a specific order or transaction.                                  |
 
-{% swagger-parameter in="body" name="last_name" type="string" required="false" %}
-Users last name
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="phone" type="integer" required="false" %}
-Phone including international code.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="reference_id" type="string" required="false" %}
-An ID you can pass that correlates to your own systems user ID.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="template_id" type="string" required="false" %}
-ID of the verification template you wish to assign to this user.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="order_id" type="string" %}
-If the user is associated with a specific order or transaction.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="email" type="string" required="false" %}
-Customers email address.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="custom_verify_data" %}
-A json string listing any data validation requirements for a user during document verification.&#x20;
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="" %}
+{% tabs %}
+{% tab title="200 " %}
 ```
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -443,30 +398,31 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}/verifications" method="patch" summary="Update Verification" %}
-{% swagger-description %}
+## Update Verification
+
+<mark style="color:purple;">`PATCH`</mark> `https://{sub-domain}.trustswiftly.com/api/users/{id}/verifications`
+
 Update a status of a verification
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
-**API Key**
+#### Headers
 
-is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endswagger-parameter %}
+| Name          | Type   | Description                                                                                                                               |
+| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
-{% swagger-parameter in="body" name="verification_id" type="string" required="false" %}
-The ID corresponding to the verification name
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="status" type="string" required="false" %}
-The status to update the verification
-{% endswagger-parameter %}
+| Name             | Type   | Description                                   |
+| ---------------- | ------ | --------------------------------------------- |
+| verification\_id | string | The ID corresponding to the verification name |
+| status           | string | The status to update the verification         |
 
-{% swagger-response status="200" description="" %}
+{% tabs %}
+{% tab title="200 " %}
 ```
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -483,25 +439,27 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}" method="delete" summary="Delete User" %}
-{% swagger-description %}
+## Delete User
+
+<mark style="color:red;">`DELETE`</mark> `https://{sub-domain}.trustswiftly.com/api/users/{id}`
+
 Delete a provided user.
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
-**API Key**
+#### Headers
 
-is used for server-to-server communication to fetch sensitive data that you already have access to
-{% endswagger-parameter %}
+| Name          | Type   | Description                                                                                                                              |
+| ------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to</p> |
 
-{% swagger-response status="200" description="" %}
+{% tabs %}
+{% tab title="200 " %}
 ```
 {
     "success": true
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -514,30 +472,34 @@ curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/api/user
 {% endtab %}
 {% endtabs %}
 
-{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/users/{id}/verify-url" method="post" summary="Get Magic Link" %}
-{% swagger-description %}
+## Get Magic Link
+
+<mark style="color:green;">`POST`</mark> `https://{sub-domain}.trustswiftly.com/api/users/{id}/verify-url`
+
 Generate a magic link used for user authentication
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="false" %}
-**API Key**
+#### Headers
 
-is used for server-to-server communication to fetch sensitive data that you already have access to.
-{% endswagger-parameter %}
+| Name          | Type   | Description                                                                                                                               |
+| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
-{% swagger-parameter in="body" name="expiration_hours" type="integer" required="false" %}
-Hour(s) in which the magic link will remain alive before expiring.
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-response status="200" description="" %}
+| Name              | Type    | Description                                                        |
+| ----------------- | ------- | ------------------------------------------------------------------ |
+| expiration\_hours | integer | Hour(s) in which the magic link will remain alive before expiring. |
+
+{% tabs %}
+{% tab title="200 " %}
 ```
 {
     "short_url": "https://tinyurl.com/y32d35rf",
     "full_url": "https://{sub-domain}.trustswiftly.com/security-verify?expires=1610753625&key=7&signature=3949637e17906a42bd3d0254af80a825f2696b9ba948cdf3654f0e354a2f6cef"
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="cURL" %}

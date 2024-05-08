@@ -14,4 +14,4 @@ For example a request to autofill is sent here:
 
 The user create page would have the information filled out and the admin would only need to click Create after reviewing the prefilled information.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
