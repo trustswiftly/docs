@@ -19,7 +19,7 @@ https://cliq.zoho.com/company/<zoho_company>/api/v2/bots/trustswiftly/incoming?z
 ```
 {% endcode %}
 
-
+<figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption><p>Find the webhook endpoint</p></figcaption></figure>
 
 * Add the Trust Swiftly bot to any channels you require
 
