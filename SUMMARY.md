@@ -40,7 +40,8 @@
 
 ## Single Sign On
 
-* [SAML2 SSO](single-sign-on/saml2-sso.md)
+* [SAML2 SSO (Okta, etc)](single-sign-on/saml2-sso/README.md)
+  * [Rippling SSO App](single-sign-on/saml2-sso/rippling-sso-app.md)
 
 ## Notifications
 

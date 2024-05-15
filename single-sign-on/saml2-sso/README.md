@@ -5,7 +5,7 @@ description: >-
   your team by centralizing user management.
 ---
 
-# SAML2 SSO
+# SAML2 SSO (Okta, etc)
 
 ### Adding Trust Swiftly to Okta
 
@@ -22,7 +22,7 @@ description: >-
      * Value: user.email
    * Get your Identity Provider metadata XML URL for Trust Swiftly to integrate back with Okta. This can be found under the Sign On tab in the SAML 2.0 callout by clicking the Identity Provider metadata link. Copy the URL and keep it handy for the next steps. The format of the URL should look like `https://dev12345.okta.com/app/4343431a/sso/saml/metadata`
 
-![](<../.gitbook/assets/image (38).png>)
+![](<../../.gitbook/assets/image (38).png>)
 
 ### Completing the Okta integration in Trust Swiftly
 
