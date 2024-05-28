@@ -29,7 +29,7 @@ https://cliq.zoho.com/company/<zoho_company>/api/v2/bots/trustswiftly/incoming?z
 
 ```javascript
 
-// Incoming Webhook Handler Code Snippet. You should create a bot name "Trust Swiftly" and Channel "Trust Swiftly"
+// Incoming Webhook Handler Code Snippet 
 response = Map();
 verification_name = body.get("verification_name");
 email = body.get("email");
@@ -40,10 +40,23 @@ first_name = body.get("first_name");
 last_name = body.get("last_name");
 phone = body.get("phone");
 date = body.get("date");
-response = {"text":"A new verification was updated: \n Method: " + verification_name + " \n Email: " + email + "\n Phone: " + phone + " \n User ID:" + user_id + "\n [View User URL](" + user_url + ") \n Status: " + status + " \n Date: " + date,"card":{"title":"Verification Update","theme":"modern-inline"},"buttons":{{"label":"View Details","type":"+","action":{"type":"open.url","data":{"web":user_url}}}}};
-response.put('bot',{"name":"Trust Swiftly","image":"https://trustswiftly.com/assets/img/favicon.png"});
-// Comment the below code if you do not have a channel called Trust Swiftly
-zoho.cliq.postToChannelAsBot('trustswiftly','trustswiftly',response);
-return response;
+userids = body.get("userids");
+verification_data = body.get("verification_data");
+if(body.get("userids") == null)
+{
+	response = {"text":"A new verification was updated: \n Method: " + verification_name + " \n Email: " + email + "\n Phone: " + phone + " \n User ID:" + user_id + "\n [View User URL](" + user_url + ") \n Status: " + status + " \n Date: " + date,"card":{"title":"Verification Update","theme":"modern-inline"},"buttons":{{"label":"View Details","type":"+","action":{"type":"open.url","data":{"web":user_url}}}}};
+	response.put('bot',{"name":"Trust Swiftly","image":"https://trustswiftly.com/assets/img/favicon.png"});
+	// Comment the below code if you do not have a channel called Trust Swiftly
+	zoho.cliq.postToChannelAsBot('trustswiftly','trustswiftly',response);
+	return response;
+}
+// Used for Knowledge approvals and specific user notifications
+else
+{
+	response = {"text":"A new verification requires review: \n " + verification_data + " \n Email: " + email + "\n Phone: " + phone + " \n User ID:" + user_id + "\n [View User URL](" + user_url + ") \n Reviewer: " + userids,"card":{"title":"Verification Update","theme":"modern-inline"},"buttons":{{"label":"View Details","type":"+","action":{"type":"open.url","data":{"web":user_url}}}}};
+	response.put('bot',{"name":"Trust Swiftly","image":"https://trustswiftly.com/assets/img/favicon.png"});
+	response.put("userids",userids);
+	return response;
+}
 
 ```
