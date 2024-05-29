@@ -313,7 +313,7 @@ Create a given users profile.
 | send\_link           | boolean     | Send a magic link to the user via email.                                                                                               |
 | template\_id         | string      | ID of the verification template you wish to assign to this user.                                                                       |
 | reference\_id        | string      | An ID you can pass that correlates to your own system's user ID.                                                                       |
-| phone                | integer     | Phone including international code. Example +13129450121. It must be in [E164 format.](https://www.twilio.com/docs/glossary/what-e164) |
+| phone                | string      | Phone including international code. Example +13129450121. It must be in [E164 format.](https://www.twilio.com/docs/glossary/what-e164) |
 | last\_name           | string      | Users last name.                                                                                                                       |
 | first\_name          | string      | Users first name.                                                                                                                      |
 | username             | string      | A unique username for the given user.                                                                                                  |
@@ -363,17 +363,17 @@ Update a provided user.
 
 #### Request Body
 
-| Name                 | Type    | Description                                                                                      |
-| -------------------- | ------- | ------------------------------------------------------------------------------------------------ |
-| username             | string  | A unique username for the given user.                                                            |
-| first\_name          | string  | Users first name                                                                                 |
-| last\_name           | string  | Users last name                                                                                  |
-| phone                | integer | Phone including international code.                                                              |
-| reference\_id        | string  | An ID you can pass that correlates to your own systems user ID.                                  |
-| template\_id         | string  | ID of the verification template you wish to assign to this user.                                 |
-| email                | string  | Customers email address.                                                                         |
-| custom\_verify\_data | String  | A json string listing any data validation requirements for a user during document verification.  |
-| order\_id            | string  | If the user is associated with a specific order or transaction.                                  |
+| Name                 | Type   | Description                                                                                      |
+| -------------------- | ------ | ------------------------------------------------------------------------------------------------ |
+| username             | string | A unique username for the given user.                                                            |
+| first\_name          | string | Users first name                                                                                 |
+| last\_name           | string | Users last name                                                                                  |
+| phone                | string | Phone including international code.                                                              |
+| reference\_id        | string | An ID you can pass that correlates to your own systems user ID.                                  |
+| template\_id         | string | ID of the verification template you wish to assign to this user.                                 |
+| email                | string | Customers email address.                                                                         |
+| custom\_verify\_data | String | A json string listing any data validation requirements for a user during document verification.  |
+| order\_id            | string | If the user is associated with a specific order or transaction.                                  |
 
 {% tabs %}
 {% tab title="200 " %}
