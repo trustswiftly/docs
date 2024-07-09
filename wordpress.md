@@ -1,14 +1,20 @@
 ---
 description: >-
   To integrate Trust Swiftly with Wordpress it can be done in a similar manner
-  as the HTML integration and link. Full plugin coming soon!
+  as the HTML integration and link.
 ---
 
 # WordPress
 
+## WooCommerce Plugin
+
+Our plugin for WooCommerce can be used to verify identities before and after checkout for basic verifications. [https://wordpress.org/plugins/trust-swiftly-verification/](https://wordpress.org/plugins/trust-swiftly-verification/)
+
+For other integrations with Wordpress custom code is advised to create users.&#x20;
+
 ## Sample WordPress Code
 
-Example code can be copied into functions.php which allows for using a shortcode to generate a verification link \[trustlink\]
+Example code can be copied into functions.php which allows for using a shortcode to generate a verification link \[trustlink]
 
 ```php
 add_shortcode('trustlink', 'generate_trustlink');
@@ -71,4 +77,3 @@ add_action('user_register', function ( $user_id ) {
     add_user_meta( $user_id, 'trust_user_data', $response['body'],true);
 });
 ```
-
