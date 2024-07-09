@@ -4,12 +4,9 @@
 
 ## Web
 
-* [HTML + Javascript](html-+-javascript.md)
 * [Integration](integration.md)
-* [Embed Security](embedded-security.md)
 * [Button Link](button-link.md)
 * [WordPress](wordpress.md)
-* [Example Test Page](example-test-page.md)
 * [WebView iOS and Android](web/webview-ios-and-android.md)
 
 ## API
