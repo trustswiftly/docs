@@ -201,7 +201,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct WebView : UIViewRepresentable{
+struct WebViewDemo : UIViewRepresentable {
     var url: URL
     func makeUIView(context: Context) -> WKWebView {
         let webConfiguration = WKWebViewConfiguration()
@@ -210,11 +210,13 @@ struct WebView : UIViewRepresentable{
         return WKWebView(frame:.zero, configuration: webConfiguration)
     }
     func updateUIView(_ webView: WKWebView, context: Context) {
+        WKWebsiteDataStore.default().removeData(ofTypes: [WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache], modifiedSince: Date(timeIntervalSince1970: 0), completionHandler:{ })
         let request = URLRequest(url: url)
+        webView.allowsBackForwardNavigationGestures = false
+        webView.scrollView.bounces = false
         webView.load(request)
     }
 }
-
 ```
 
 #### **Permissions**
@@ -261,3 +263,9 @@ public class TrustSwiftlyWebViewDelegate: NSObject, WKUIDelegate {
 > ❗️Allow External Network Requests
 >
 > Trust Swiftly makes external network calls within the Inquiry Flow that need to be allowlisted for the flow to properly function. Certain frameworks such as [Cordova](https://cordova.apache.org/docs/en/11.x/guide/appdev/allowlist/index.html#network-request-allow-list) require such requests to be allow listed. Please include `*.trustswiftly.com/*` in such an allow list if needed
+
+Make sure permissions are correctly set for your app bundle.
+
+* Camera and Microphone Permission
+
+<figure><img src="../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
