@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Developer Documentation](README.md)
 
 ## Web
 
