@@ -51,6 +51,10 @@
 * [Install and Demo Guide](stripe-app/install.md)
 * [Disconnect Stripe App](stripe-app/disconnect-stripe-app.md)
 
+## References
+
+* [Supported Documents](references/install.md)
+
 ## Links
 
 * [Trustswiftly.com](https://trustswiftly.com)
