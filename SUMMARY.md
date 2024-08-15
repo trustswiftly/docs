@@ -53,7 +53,7 @@
 
 ## References
 
-* [Supported Documents](references/install.md)
+* [Supported Documents](references/supported-documents.md)
 
 ## Links
 
