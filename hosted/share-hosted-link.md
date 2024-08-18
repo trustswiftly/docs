@@ -4,8 +4,8 @@ The hosted URL is another simple no-code way to getting started with Trust Swift
 
 1. After [adding a user](https://support.trustswiftly.com/how-to-create-a-new-user-to-verify.html) for verification you can find the URL option. On the Users page you can select Share Verify URL. This link is _sensitive_ and only meant for the user you plan to verify.
 
-![Select Share Verify URL](<../.gitbook/assets/image (14).png>)
+![Select Share Verify URL](<../.gitbook/assets/image (14) (1).png>)
 
 2\. Copy the link and share it with your user. Next if needed you can modify the expiration time of the link. You can also send an email notification with the link to start a verification.
 
-![](<../.gitbook/assets/image (15).png>)
+![](<../.gitbook/assets/image (15) (1).png>)

@@ -8,6 +8,7 @@
 * [Button Link](button-link.md)
 * [WordPress](wordpress.md)
 * [WebView iOS and Android](web/webview-ios-and-android.md)
+* [Bubble App Integration](web/bubble-app-integration.md)
 
 ## API
 

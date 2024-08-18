@@ -23,9 +23,9 @@ https://cliq.zoho.com/company/<zoho_company>/api/v2/bots/trustswiftly/incoming?z
 
 * Add the Trust Swiftly bot to any channels you require
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Make sure to add the bot to your channel.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Make sure to add the bot to your channel.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Example Notification in Cliq</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Example Notification in Cliq</p></figcaption></figure>
 
 ```javascript
 
