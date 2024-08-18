@@ -11,6 +11,10 @@ description: >-
 
 Trust Swiftly provides powerful identity verification tools to help fast-moving businesses ensure secure and seamless customer onboarding. This guide demonstrates how to integrate Trust Swiftly's verification services into a [Bubble.io](https://bubble.io/) app. The example app allows users to register, complete ID verification, and view their verification status—all within the Bubble platform. Following this guide will teach you how to create a user for verification, implement the verification process, and handle the verification status using Trust Swiftly's API and webhooks.
 
+{% hint style="info" %}
+The below guide is an example of a basic Bubble integration. For more advanced scenarios it is advised to customize the flow according to your app and business case.&#x20;
+{% endhint %}
+
 ### Prerequisites <a href="#ib80hoa63njf" id="ib80hoa63njf"></a>
 
 * A Bubble account with a basic understanding of creating and managing Bubble apps.
