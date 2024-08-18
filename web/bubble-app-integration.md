@@ -79,7 +79,7 @@ To verify a user through Trust Swiftly, you'll first need to create the user via
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;**Use Dynamic Data:**
+#### &#x20;**Use Dynamic Data:**
 
 To send dynamic user data from your Bubble app during registration, you'll need to link your form inputs to the API parameters.
 
