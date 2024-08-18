@@ -2,7 +2,7 @@
 description: >-
   Learn to integrate Bubble.io with Trust Swiftly for the ultimate identity
   verification experience. Add ID, Selfie, phone and more checks to your Bubble
-  app.
+  app using no-code.
 ---
 
 # Bubble App Integration
