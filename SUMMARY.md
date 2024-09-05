@@ -8,7 +8,7 @@
 * [Button Link](button-link.md)
 * [WordPress](wordpress.md)
 * [WebView iOS and Android](web/webview-ios-and-android.md)
-* [Bubble App Integration](web/bubble-app-integration.md)
+* [Bubble ID Verify Integration](web/bubble-id-verify-integration.md)
 * [FlutterFlow Identity Verification](web/flutterflow-identity-verification.md)
 * [Webflow ID Verification](web/webflow-id-verification.md)
 
