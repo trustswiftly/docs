@@ -30,7 +30,7 @@ Before you start making API calls to Trust Swiftly, you need to configure your A
 * In your FlutterFlow app, navigate to the "API Calls" tab
 * Click on the + Add API Call button to start creating a new API integration.
 
-![](../.gitbook/assets/0.png)
+![](<../.gitbook/assets/0 (1).png>)
 
 #### Create a User for Verification <a href="#na5hpzqhvkrf" id="na5hpzqhvkrf"></a>
 
@@ -128,10 +128,10 @@ To verify a user through Trust Swiftly, you'll first need to create the user via
    * Go to Verification Page and Click **Edit Parameters Icon.**
    * Click on “Add Parameters” and name your parameter as “email” and “magiclink” and define the type as string.
 
-![](../.gitbook/assets/8.png)
+![](<../.gitbook/assets/8 (1).png>)
 
 ![
-](../.gitbook/assets/9.png)
+](<../.gitbook/assets/9 (1).png>)
 
 **3. Configuring Parameters**
 
@@ -157,7 +157,7 @@ Example:
 * Provide the **JSON path** to extract the magic link from the API response. For example, if the API response contains the magic link at $.magic\_link, specify this path.
 * After configuring the parameters and selecting the appropriate action outputs, click **“Confirm”** to save your changes.
 
-![](../.gitbook/assets/11.png)
+![](<../.gitbook/assets/11 (1).png>)
 
 By following these steps, you can configure an action to invoke an API call when a register button is clicked, and ensure that the application navigates to a verification page while passing essential parameters such as email and magic link. This setup streamlines the registration and verification process, enhancing user experience and interaction within your app.
 
@@ -173,7 +173,7 @@ After successfully creating the user, the next step is to enable the user to ini
 This will redirect the user to magic link when the verify button is clicked
 
 ![
-](../.gitbook/assets/12.png) ![](../.gitbook/assets/13.png)
+](<../.gitbook/assets/12 (1).png>) ![](<../.gitbook/assets/13 (1).png>)
 
 **Set Up Email Notifications for Verification**
 
@@ -184,13 +184,13 @@ This will redirect the user to magic link when the verify button is clicked
 3. **Click Verification Button:**
    * Select the user and click on the “Verification” button to access the verification settings.
 
-![](../.gitbook/assets/14.png)
+![](<../.gitbook/assets/14 (1).png>)
 
 1. **Enable Email Notifications:**
    * In the verification settings, ensure that email notifications are enabled.
    * This setting allows Trust Swiftly to send the necessary verification emails to the user, including the magic link and any follow-up emails if additional verification is needed.
 
-![](../.gitbook/assets/15.png)
+![](<../.gitbook/assets/15 (1).png>)
 
 **Receive and Access the Magic Link**
 
@@ -203,7 +203,7 @@ This will redirect the user to magic link when the verify button is clicked
 1. **Verification Page:**
    * On the verification page, the user clicks the "Verify" button to start the verification process.
 
-![](../.gitbook/assets/16.png)
+![](<../.gitbook/assets/16 (1).png>)
 
 1. **Initial Verification Attempt:**
    * Trust Swiftly processes the verification request. If additional verification is required, the user will receive a follow-up email.
@@ -216,13 +216,13 @@ This will redirect the user to magic link when the verify button is clicked
      * “Due to an additional review we require another method of verification. Please complete the new request to verify yourself.”
      * Verify Identity Button: Includes a button or URL for completing the additional verification.
 
-![](../.gitbook/assets/17.png)
+![](<../.gitbook/assets/17 (1).png>)
 
 *
   * Click on Confirm Email button and it will redirect you another page
   * Enter your email in the field and click the “Send verification Email” button
 
-![](../.gitbook/assets/18.png)
+![](<../.gitbook/assets/18 (1).png>)
 
 
 
@@ -236,14 +236,14 @@ To keep track of the verification status, you need to set up a webhook with Trus
 2. **Create a New Webhook**:
    * Click on “Create Webhook” to start the setup process.
 
-![](../.gitbook/assets/19.png)
+![](<../.gitbook/assets/19 (1).png>)
 
 * **Webhook URL**: Enter the URL where Trust Swiftly will send the webhook notifications. This should be the endpoint of your FlutterFlow app that will handle incoming webhooks.
 * **Verifications:** Select “Email”
 * **Webhook Events**: Verification.completed
 * **Save**: Complete the setup by saving the webhook configuration.
 
-![](../.gitbook/assets/20.png)
+![](<../.gitbook/assets/20 (1).png>)
 
 **2. Configure Workflow in FlutterFlow**
 
