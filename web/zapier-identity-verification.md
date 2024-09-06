@@ -71,7 +71,7 @@ Using a [Zapier catch hook](https://help.zapier.com/hc/en-us/articles/8496288690
 
 ![](<../.gitbook/assets/4 (2).png>)
 
-1. Copy the Webhook URL i.e. [https://hooks.zapier.com/hooks/catch/123/111pt7tt/](https://hooks.zapier.com/hooks/catch/123/111pt7tt/)
+1. Copy the Webhook URL i.e. [`https://hooks.zapier.com/hooks/catch/XXX/XXX/`](https://hooks.zapier.com/hooks/catch/XXX/XXX/)
 2. Go to the Developer section in the Trust Swiftly Admin and [Setup and Handling Webhooks.](https://docs.trustswiftly.com/webhooks/handling-webhooks) Paste the webhook URL into it and select an event to receive notifications about.
 
 ![](<../.gitbook/assets/5 (2).png>)
