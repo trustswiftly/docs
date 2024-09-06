@@ -62,3 +62,7 @@
 
 * [Trustswiftly.com](https://trustswiftly.com)
 * [Sign Up](https://app.trustswiftly.com/create)
+
+***
+
+* [Zapier Identity Verification](zapier-identity-verification.md)
