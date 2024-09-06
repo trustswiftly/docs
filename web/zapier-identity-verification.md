@@ -30,11 +30,11 @@ Ensuring trust in digital products is increasingly crucial. One effective method
 
 1. Click on [**Make a Zap**](https://zapier.com/app/zaps) to start creating a new Zap.
 
-![](<.gitbook/assets/0 (2).png>)
+![](<../.gitbook/assets/0 (2).png>)
 
 1. Choose **Trust Swiftly** as your **Action**
 
-![](<.gitbook/assets/1 (2).png>)
+![](<../.gitbook/assets/1 (2).png>)
 
 **Step 4: Configure the Trigger**
 
@@ -52,7 +52,7 @@ Ensuring trust in digital products is increasingly crucial. One effective method
 1. Connect your chosen Action App account.
 2. Set up the action by mapping the data from Trust Swiftly to the fields in your Action App. You can use dynamic data to set the email of the user. The template ID is used to set which verifications the user sees for example ID and Selfie.
 
-![](<.gitbook/assets/2 (2).png>)
+![](<../.gitbook/assets/2 (2).png>)
 
 1. Test the action to ensure it works as expected.
 
@@ -61,7 +61,7 @@ Ensuring trust in digital products is increasingly crucial. One effective method
 1. Review your Zap setup.
 2. Click **Turn on Zap** to activate it.&#x20;
 
-<figure><img src=".gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 
 **Step 8: Receive Webhooks in Zapier**
 
@@ -69,20 +69,20 @@ Using a [Zapier catch hook](https://help.zapier.com/hc/en-us/articles/8496288690
 
 1. Edit your Zap and add a trigger. Search for **Webhooks by Zapier.** Then select a Catch Hook.
 
-![](<.gitbook/assets/4 (2).png>)
+![](<../.gitbook/assets/4 (2).png>)
 
 1. Copy the Webhook URL i.e. [https://hooks.zapier.com/hooks/catch/123/111pt7tt/](https://hooks.zapier.com/hooks/catch/123/111pt7tt/)
 2. Go to the Developer section in the Trust Swiftly Admin and [Setup and Handling Webhooks.](https://docs.trustswiftly.com/webhooks/handling-webhooks) Paste the webhook URL into it and select an event to receive notifications about.
 
-![](<.gitbook/assets/5 (2).png>)
+![](<../.gitbook/assets/5 (2).png>)
 
 1. Test the webhook after you completed a test verification. The results will show similar as below depending on the method you completed.
 
-![](<.gitbook/assets/6 (2).png>)
+![](<../.gitbook/assets/6 (2).png>)
 
 1. You can use the webhook data for subsequent steps by clicking the **+** icon and add another action such as sending a notification in a chat app or adding it to a database. Multiple steps can be used together to create complex automations.&#x20;
 
-![](<.gitbook/assets/7 (2).png>)
+![](<../.gitbook/assets/7 (2).png>)
 
 **Example Use Cases**
 

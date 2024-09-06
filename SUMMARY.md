@@ -11,6 +11,7 @@
 * [Bubble ID Verify Integration](web/bubble-id-verify-integration.md)
 * [FlutterFlow Identity Verification](web/flutterflow-identity-verification.md)
 * [Webflow ID Verification](web/webflow-id-verification.md)
+* [Zapier Identity Verification](web/zapier-identity-verification.md)
 
 ## API
 
@@ -62,7 +63,3 @@
 
 * [Trustswiftly.com](https://trustswiftly.com)
 * [Sign Up](https://app.trustswiftly.com/create)
-
-***
-
-* [Zapier Identity Verification](zapier-identity-verification.md)
