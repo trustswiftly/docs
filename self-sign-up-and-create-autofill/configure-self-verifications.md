@@ -14,3 +14,7 @@ Verify yourself at Trust Swiftly</a>
 ```
 
 ![Options to enable for self sign up](<../.gitbook/assets/image (13) (1).png>)
+
+Example signup page with custom content. This /signup URL can be shared for the quickest and least effort verifications.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Example Sign Up Register page</p></figcaption></figure>

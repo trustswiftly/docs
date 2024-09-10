@@ -6,6 +6,8 @@ description: >-
 
 # Integration
 
+## [**Alternate Integration Methods**](./)
+
 ## **Prerequisites**
 
 ### Step 1
