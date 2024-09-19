@@ -6,16 +6,16 @@ description: >-
 
 # Reverify User
 
-The reverification endpoint is useful for customers looking to streamline their identity verification process. There are multiple methods do reverifications and Trust Swiftly supports each one depending on the level of assurance required.&#x20;
+The reverification endpoint is useful for customers looking to streamline their identity verification process. There are multiple methods for reverifications and Trust Swiftly supports each one depending on the level of assurance required.&#x20;
 
 Example use cases:
 
 1. User enrolls / registers themselves with their base verification case. i.e. Identity Document + Selfie
 2. User revisits service in the future and is required to reverify themselves with only a selfie. Instead of asking them for multiple checks a quicker verification can be completed with just their face.&#x20;
 
-Other reverification use cases can be through a Passkey (Phone Authenticator) or OTP Authenticator. Using this method the API for reverify is not needed as the reverify API is only for Facial reverifications instead the normal Users API can be used to update the verification template.
+Other reverification use cases can be through a Passkey (Phone Authenticator) or OTP Authenticator. Using this method the API for reverify is not needed as the reverify API is only for Facial reverifications, instead the normal Users API can be used to update the verification template.
 
-1. User enrolls / registers themselves with their base verification case.&#x20;
+1. User enrolls / registers themselves with their base verification template.&#x20;
 2. User revisits service for another verification and only is required to authenticate through Face ID / Fingerprint or other bound device-based authenticator.&#x20;
 
 ## Reverify Document
