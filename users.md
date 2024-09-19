@@ -12,9 +12,9 @@ List all the users currently assigned a profile.
 
 #### Headers
 
-| Name          | Type   | Description                                                                                                                               |
-| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
+| Name          | Type   | Description                                                                                                                                                               |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><a href="authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
 {% tabs %}
 {% tab title="200 Succesful response" %}
@@ -300,9 +300,9 @@ Create a given users profile.
 
 #### Headers
 
-| Name          | Type   | Description                                                                                                                               |
-| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
+| Name          | Type   | Description                                                                                                                                                               |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><a href="authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
 #### Request Body
 
@@ -357,9 +357,9 @@ Update a provided user.
 
 #### Headers
 
-| Name          | Type   | Description                                                                                                                               |
-| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
+| Name          | Type   | Description                                                                                                                                                               |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><a href="authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
 #### Request Body
 
@@ -406,9 +406,9 @@ Update a status of a verification
 
 #### Headers
 
-| Name          | Type   | Description                                                                                                                               |
-| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
+| Name          | Type   | Description                                                                                                                                                               |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization | string | <p><a href="authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
 #### Request Body
 
@@ -447,9 +447,9 @@ Delete a provided user.
 
 #### Headers
 
-| Name          | Type   | Description                                                                                                                              |
-| ------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to</p> |
+| Name          | Type   | Description                                                                                                                                                              |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Authorization | string | <p><a href="authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to</p> |
 
 {% tabs %}
 {% tab title="200 " %}
@@ -480,9 +480,9 @@ Generate a magic link used for user authentication
 
 #### Headers
 
-| Name          | Type   | Description                                                                                                                               |
-| ------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Authorization | string | <p><strong>API Key</strong></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
+| Name          | Type   | Description                                                                                                                                                                                            |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Authorization | string | <p><a href="authentication.md#authorization-error-response"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
 
 #### Request Body
 
