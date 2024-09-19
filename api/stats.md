@@ -95,7 +95,7 @@ The document status can be checked using polling via the below endpoint or can a
     "name": "11/example@gmail.com_#11.jpg",
     "status": 1,
     "content": {
-      "url": "https://sub-domain.trustswiftly.com/doc/verify/media/11?expires=11&signature=11",
+      "url": "https://sub-domain.trustswiftly.com/image/11?expires=11&signature=11",
       "hash": "a1efcda2122a20dda6d9ea89be9c62ac",
       "name": "11/example@gmail.com_#11.jpg",
       "size": 218545,
