@@ -30,7 +30,7 @@ Get the workflow ID of the current and new documents in the Trust Swiftly dashbo
 
 #### Request Body
 
-<table><thead><tr><th width="230">Name</th><th width="92">Type</th><th>Description</th></tr></thead><tbody><tr><td>current_workflow_id</td><td>string</td><td>Display a notice on the dashboard for users such as custom instructions.</td></tr><tr><td>re_verify_workflow_id</td><td>string</td><td>Customer's email address.</td></tr><tr><td>user_id</td><td>string</td><td>Send a magic link to the user via email.</td></tr></tbody></table>
+<table><thead><tr><th width="230">Name</th><th width="92">Type</th><th>Description</th></tr></thead><tbody><tr><td>current_workflow_id</td><td>string</td><td>The document workflow id that has the reference image.</td></tr><tr><td>re_verify_workflow_id</td><td>string</td><td>The new workflow that has a different set of verifications.</td></tr><tr><td>user_id</td><td>string</td><td>The user id to reverfiy</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="200 " %}
