@@ -1,70 +1,81 @@
 ---
-description: >-
-  Use the reverify API to automatically verify the facial attributes of a user
-  on subsequent verifications.
+description: Get current stats for verifications.
 ---
 
-# Reverify User
+# Stats
 
-The reverification endpoint is useful for customers looking to streamline their identity verification process. There are multiple methods for reverifications and Trust Swiftly supports each one depending on the level of assurance required.&#x20;
+{% swagger baseUrl="https://{sub-domain}.trustswiftly.com" path="/api/stats" method="get" summary="Get Verification Stats" %}
+{% swagger-description %}
 
-Example use cases:
+{% endswagger-description %}
 
-1. User enrolls / registers themselves with their base verification case. i.e. Identity Document + Selfie
-2. User revisits service in the future and is required to reverify themselves with only a selfie. Instead of asking them for multiple checks a quicker verification can be completed with just their face.&#x20;
+{% swagger-parameter in="path" name="Authorization" type="string" %}
+**API Key**
 
-Other reverification use cases can be through a Passkey (Phone Authenticator) or OTP Authenticator. Using this method the API for reverify is not needed as the reverify API is only for Facial reverifications, instead the normal Users API can be used to update the verification template.
+ is used for server-to-server communication to fetch sensitive data that you already have access to.
+{% endswagger-parameter %}
 
-1. User enrolls / registers themselves with their base verification template.&#x20;
-2. User revisits service for another verification and only is required to authenticate through Face ID / Fingerprint or other bound device-based authenticator.&#x20;
-
-## Reverify Document
-
-<mark style="color:green;">`POST`</mark> `https://{sub-domain}.trustswiftly.com/api/document/reverify`
-
-Get the workflow ID of the current and new documents in the Trust Swiftly dashboard for document settings.
-
-#### Headers
-
-<table><thead><tr><th width="174">Name</th><th width="81">Type</th><th>Description</th></tr></thead><tbody><tr><td>Authorization</td><td>string</td><td><p><a href="../authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p></td></tr></tbody></table>
-
-#### Request Body
-
-<table><thead><tr><th width="230">Name</th><th width="92">Type</th><th>Description</th></tr></thead><tbody><tr><td>current_workflow_id</td><td>string</td><td>The document workflow id that has the reference image.</td></tr><tr><td>re_verify_workflow_id</td><td>string</td><td>The new workflow that has a different set of verifications.</td></tr><tr><td>user_id</td><td>string</td><td>The user id to reverfiy</td></tr></tbody></table>
-
-{% tabs %}
-{% tab title="200 " %}
-```json
+{% swagger-response status="200" description="" %}
+```
 {
-	"success": true
+  "users_per_month": {
+    "January": 0,
+    "February": 0,
+    "March": 1,
+    "April": 0,
+    "May": 0,
+    "June": 0,
+    "July": 0,
+    "August": 2,
+    "September": 0,
+    "October": 0,
+    "November": 0,
+    "December": 0
+  },
+  "users_per_status": {
+    "total": 3,
+    "new": 2,
+    "banned": 0,
+    "unconfirmed": 1
+  },
+  "latest_registrations": [
+    {
+      "id": 123,
+      "first_name": "John",
+      "last_name": "Doe",
+      "username": "johndoe",
+      "email": "john.doe@gmail.com",
+      "phone": "+381641234567",
+      "avatar": "http://yourwebsite.com/users/milos-avatar.jpg",
+      "address": "Some random street, 123, Serbia",
+      "country_id": 688,
+      "role_id": 1,
+      "status": "Active",
+      "birthday": "1989-01-03",
+      "last_login": "2017-04-27 16:47:59",
+      "two_factor_country_code": 381,
+      "two_factor_phone": "6412345678",
+      "two_factor_options": {
+        "option1": 4,
+        "option2": "option value"
+      },
+      "created_at": "2017-04-20 16:47:59",
+      "updated_at": "2017-04-27 10:47:59"
+    },
+    "..."
+  ]
 }
 ```
-{% endtab %}
-
-{% tab title="Error" %}
-{
-
-"Error\_type":"already\_assigned",
-
-"error\_message":"Already assigned"
-
-}
-{% endtab %}
-{% endtabs %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --request POST \
-  --url https://{sub-domain}.trustswiftly.com/api/user/document/reverify \
-  --header 'Authorization: Bearer {api_key}' \
-  --header 'Content-Type: application/json' \
-  --header 'User-Agent: insomnium/1.0' \
-  --data '{
-  "current_workflow_id": "flow_MzA",
-  "re_verify_workflow_id": "flow_Mjk",
-  "user_id": "647"
-}'
+curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/stats' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {api_key}'
 ```
 {% endtab %}
 {% endtabs %}
