@@ -300,26 +300,11 @@ Create a given users profile.
 
 #### Headers
 
-| Name          | Type   | Description                                                                                                                                                               |
-| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Authorization | string | <p><a href="authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p> |
+<table><thead><tr><th>Name</th><th width="162">Type</th><th>Description</th></tr></thead><tbody><tr><td>Authorization</td><td>string</td><td><p><a href="authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p></td></tr></tbody></table>
 
 #### Request Body
 
-| Name                 | Type        | Description                                                                                                                            |
-| -------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| notice               | string      | Display a notice on the dashboard for users such as custom instructions.                                                               |
-| email                | string      | Customer's email address.                                                                                                              |
-| send\_link           | boolean     | Send a magic link to the user via email.                                                                                               |
-| template\_id         | string      | ID of the verification template you wish to assign to this user.                                                                       |
-| reference\_id        | string      | An ID you can pass that correlates to your own system's user ID.                                                                       |
-| phone                | string      | Phone including international code. Example +13129450121. It must be in [E164 format.](https://www.twilio.com/docs/glossary/what-e164) |
-| last\_name           | string      | Users last name.                                                                                                                       |
-| first\_name          | string      | Users first name.                                                                                                                      |
-| username             | string      | A unique username for the given user.                                                                                                  |
-| send\_sms            | boolean     | Send a magic link to the user via SMS.                                                                                                 |
-| custom\_verify\_data | json string | A json string listing any data validation requirements for a user during document verification.                                        |
-| order\_id            | string      | If the user is associated with a specific order or transaction.                                                                        |
+<table><thead><tr><th>Name</th><th width="153">Type</th><th>Description</th></tr></thead><tbody><tr><td>notice</td><td>string</td><td>Display a notice on the dashboard for users such as custom instructions.</td></tr><tr><td>email</td><td>string</td><td>Customer's email address.</td></tr><tr><td>send_link</td><td>boolean</td><td>Send a magic link to the user via email.</td></tr><tr><td>template_id</td><td>string</td><td>ID of the verification template you wish to assign to this user.</td></tr><tr><td>reference_id</td><td>string</td><td>An ID you can pass that correlates to your own system's user ID.</td></tr><tr><td>phone</td><td>string</td><td>Phone including international code. Example +13129450121. It must be in <a href="https://www.twilio.com/docs/glossary/what-e164">E164 format.</a></td></tr><tr><td>last_name</td><td>string</td><td>Users last name.</td></tr><tr><td>first_name</td><td>string</td><td>Users first name.</td></tr><tr><td>username</td><td>string</td><td>A unique username for the given user.</td></tr><tr><td>send_sms</td><td>boolean</td><td>Send a magic link to the user via SMS.</td></tr><tr><td>custom_verify_data</td><td>json string</td><td>A json string listing any data validation requirements for a user during document verification. </td></tr><tr><td>order_id</td><td>string</td><td>If the user is associated with a specific order or transaction.</td></tr><tr><td>completion_url</td><td>string</td><td>Optional custom URL unique per user to redirect to when verifications are completed. Otherwise in General Settings a URL can be set as default.</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="200 " %}
