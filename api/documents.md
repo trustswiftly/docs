@@ -19,7 +19,7 @@ The documents endpoint is useful for customers looking to control the branding e
 
 #### Multi-part Form Parameters
 
-<table><thead><tr><th width="173">Name</th><th width="102">Type</th><th>Description</th></tr></thead><tbody><tr><td>template_id</td><td>string</td><td>The verification template id that has the single document workflow assigned to the user.</td></tr><tr><td>user_id</td><td>string</td><td>The user id of the user on Trust Swiftly.</td></tr><tr><td>verify_image</td><td>file</td><td>Full local path of image to analyze (JPG, PNG, PDF formats)</td></tr></tbody></table>
+<table><thead><tr><th width="173">Name</th><th width="102">Type</th><th>Description</th></tr></thead><tbody><tr><td>template_id</td><td>string</td><td>The verification template id that has the single document workflow assigned to the user.</td></tr><tr><td>user_id</td><td>string</td><td>The user id of the user on Trust Swiftly.</td></tr><tr><td>verify_image</td><td>file</td><td>Full local path of image to analyze (JPG, PNG, PDF formats, Less than 10 MB)</td></tr></tbody></table>
 
 _\*Make sure the user is already created with the template\_id assigned to them._
 
