@@ -9,6 +9,10 @@ description: >-
 
 The documents endpoint is useful for customers looking to control the branding experience or have asynchronous tasks to verify an identity. Use the below API to create a job to verify an ID document such as a DL or Passport. Ensure you have a template and workflow setup for the document to verify.
 
+{% hint style="danger" %}
+This API is for advanced use cases only. By using it you must develop your own document collection method and will miss out on important security checks from Trust Swiftly. Use our hosted solution for a seamless experience.&#x20;
+{% endhint %}
+
 ## Create Document Verification Job
 
 <mark style="color:green;">`POST`</mark>`https://{sub-domain}.trustswiftly.com/api/verify/document`
