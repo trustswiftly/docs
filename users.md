@@ -312,7 +312,6 @@ Create a given users profile.
 {
   "status": "success",
   "id": 69,
-  "user_id": "3639",
   "magic_link": "https:\/\/test.trustswiftly.com\\/security-verify?expires=1325603631&key=16RWTtJRKTwjFIQCGWDEZrWkW4Qq2DdvfUQhdadug3AVwWu5mbZht&signature=768898ec51b20a623ba813969215f23785b784f213d04c0046265b3c6"
 }
 ```
