@@ -20,7 +20,7 @@ Other reverification use cases can be through a Passkey (Phone Authenticator) or
 
 ## Reverify Document
 
-<mark style="color:green;">`POST`</mark> `https://{sub-domain}.trustswiftly.com/api/document/reverify`
+<mark style="color:green;">`POST`</mark> `https://{sub-domain}.trustswiftly.com`/api/user/document/reverify
 
 Get the workflow ID of the current and new documents in the Trust Swiftly dashboard for document settings.
 
