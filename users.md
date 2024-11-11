@@ -135,7 +135,7 @@ List all the users currently assigned a profile.
 ```bash
 curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/users' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
+--header 'Authorization: Bearer {api_key}' \
 --header 'User-Agent: TrustSwiftly/1.0'
 ```
 {% endtab %}
@@ -286,7 +286,7 @@ Retrieve a specific users profile.
 ```bash
 curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/users/2' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
+--header 'Authorization: Bearer {api_key}' \
 --header 'User-Agent: TrustSwiftly/1.0'
 ```
 {% endtab %}
@@ -323,7 +323,7 @@ Create a given users profile.
 ```bash
 curl --location --request POST 'https://{sub-domain}.trustswiftly.com/api/users' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
+--header 'Authorization: Bearer {api_key}' \
 --header 'User-Agent: TrustSwiftly/1.0' \
 --data-raw '{
   "email": "testing@test.com",
@@ -371,7 +371,7 @@ Update a provided user.
 ```bash
 curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users/1' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer 2|GM2loELoTfc8rXC0PoC4WagW2eEQzE1AxhsqQ8Sn' \
+--header 'Authorization: Bearer {api_key}' \
 --header 'User-Agent: TrustSwiftly/1.0' \
 --data-raw '{
     "first_name": "New",
@@ -413,7 +413,7 @@ Update a status of a verification
 ```bash
 curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users/1' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer 2|GM2loELoTfc8rXC0PoC4WagW2eEQzE1AxhsqQ8Sn' \
+--header 'Authorization: Bearer {api_key}' \
 --header 'User-Agent: TrustSwiftly/1.0' \
 --data-raw '{
   "verification_id": "7",
@@ -449,7 +449,7 @@ Delete a provided user.
 {% tab title="cURL" %}
 ```bash
 curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/api/users/1' \
---header 'Authorization: Bearer 1|GqRQaD0nMBmGkIKLiPuOPLAckxhupWyjVEZKjsj1' \
+--header 'Authorization: Bearer {api_key}' \
 --header 'User-Agent: TrustSwiftly/1.0' \
 --data-raw ''
 ```
@@ -490,7 +490,7 @@ Generate a magic link used for user authentication
 ```bash
 curl --location --request POST 'https://{sub-domain}.trustswiftly.com/api/users/1/verify-url' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer 1|GM2loELoTfc8rXC0PoC4WagW2eEQzE1AxhsqQ8Sn' \
+--header 'Authorization: Bearer {api_key}' \
 --header 'User-Agent: TrustSwiftly/1.0' \
 --data-raw '{
   "expiration_hours": 24
