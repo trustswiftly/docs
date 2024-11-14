@@ -304,7 +304,7 @@ Create a given users profile.
 
 #### Request Body
 
-<table><thead><tr><th>Name</th><th width="153">Type</th><th>Description</th></tr></thead><tbody><tr><td>notice</td><td>string</td><td>Display a notice on the dashboard for users such as custom instructions.</td></tr><tr><td>email</td><td>string</td><td>Customer's email address.</td></tr><tr><td>send_link</td><td>boolean</td><td>Send a magic link to the user via email.</td></tr><tr><td>template_id</td><td>string</td><td>ID of the verification template you wish to assign to this user.</td></tr><tr><td>reference_id</td><td>string</td><td>An ID you can pass that correlates to your own system's user ID.</td></tr><tr><td>phone</td><td>string</td><td>Phone including international code. Example +13129450121. It must be in <a href="https://www.twilio.com/docs/glossary/what-e164">E164 format.</a></td></tr><tr><td>last_name</td><td>string</td><td>Users last name.</td></tr><tr><td>first_name</td><td>string</td><td>Users first name.</td></tr><tr><td>username</td><td>string</td><td>A unique username for the given user.</td></tr><tr><td>send_sms</td><td>boolean</td><td>Send a magic link to the user via SMS.</td></tr><tr><td>custom_verify_data</td><td>json string</td><td>A json string listing any data validation requirements for a user during document verification. i.e. "custom_verify_data": {"last_name": "Smith"}</td></tr><tr><td>order_id</td><td>string</td><td>If the user is associated with a specific order or transaction.</td></tr><tr><td>completion_url</td><td>string</td><td>Optional custom URL unique per user to redirect to when verifications are completed. Otherwise in General Settings a URL can be set as default.</td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th width="153">Type</th><th>Description</th></tr></thead><tbody><tr><td>notice</td><td>string</td><td>Display a notice on the dashboard for users such as custom instructions.</td></tr><tr><td>email</td><td>string</td><td>Customer's email address.</td></tr><tr><td>send_link</td><td>boolean</td><td>Send a verify link to the user via email.</td></tr><tr><td>template_id</td><td>string</td><td>ID of the verification template you wish to assign to this user.</td></tr><tr><td>reference_id</td><td>string</td><td>An ID you can pass that correlates to your own system's user ID.</td></tr><tr><td>phone</td><td>string</td><td>Phone including international code. Example +13129450121. It must be in <a href="https://www.twilio.com/docs/glossary/what-e164">E164 format.</a></td></tr><tr><td>last_name</td><td>string</td><td>Users last name.</td></tr><tr><td>first_name</td><td>string</td><td>Users first name.</td></tr><tr><td>username</td><td>string</td><td>A unique username for the given user.</td></tr><tr><td>send_sms</td><td>boolean</td><td>Send a verify link to the user via SMS.</td></tr><tr><td>custom_verify_data</td><td>json string</td><td>A json string listing any data validation requirements for a user during document verification. i.e. "custom_verify_data": {"last_name": "Smith"}</td></tr><tr><td>order_id</td><td>string</td><td>If the user is associated with a specific order or transaction.</td></tr><tr><td>completion_url</td><td>string</td><td>Optional custom URL unique per user to redirect to when verifications are completed. Otherwise in General Settings a URL can be set as default.</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="200 " %}
@@ -456,11 +456,11 @@ curl --location --request DELETE 'https://{sub-domain}.trustswiftly.com/api/user
 {% endtab %}
 {% endtabs %}
 
-## Get Magic Link
+## Get Verify Link
 
 <mark style="color:green;">`POST`</mark> `https://{sub-domain}.trustswiftly.com/api/users/{id}/verify-url`
 
-Generate a magic link used for user authentication
+Generate a verify link used for user authentication
 
 #### Headers
 
