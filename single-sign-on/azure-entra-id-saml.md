@@ -1,5 +1,8 @@
 ---
-description: Setup SSO with Entra using a custom app for SAML authentication.
+description: >-
+  For added security Trust Swiftly is compatible with Azure SSO which allows
+  your admins to not reenter their password to access the app. Setup SSO with
+  Entra using a custom app for SAML authentication.
 ---
 
 # Azure Entra ID SAML
@@ -27,15 +30,15 @@ https://[COMPANY].trustswiftly.com/auth/saml2/login
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-5. In the **Attributes & Claims** section click Edit. On this popup edit the Unique User Identifier (Name ID) so the identifier format is set to **Email address.**
+6. In the **Attributes & Claims** section click Edit. On this popup edit the Unique User Identifier (Name ID) so the identifier format is set to **Email address.**
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-5. Next update the **name** claim by click the edit and changing the value to **user.displayname**
+7. Next update the **name** claim by click the edit and changing the value to **user.displayname**
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-5. In the SAML Certificates section copy the App Federation Metadata Url and paste it in your Trust Swiftly Auth settings /settings/auth and save it for the Single Sign On input.
+8. In the SAML Certificates section copy the App Federation Metadata Url and paste it in your Trust Swiftly Auth settings page `https://[COMPANY].trustswiftly.com/settings/auth` and save it for the Single Sign On input.
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
