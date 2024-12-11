@@ -31,7 +31,7 @@ Before making API calls to Trust Swiftly, you must configure your API key in Bub
 * Open the API Connector plugin and create a new "Create User" API.
 * Click the "Add another call" button.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Create a User for Verification <a href="#na5hpzqhvkrf" id="na5hpzqhvkrf"></a>
 
@@ -77,7 +77,7 @@ To verify a user through Trust Swiftly, you'll first need to create the user via
 
 ○      Click the "Initialize Call" button to test the API call. If successful, Bubble will display the API response. Save the call configuration once it's successfully initialized.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### &#x20;**Use Dynamic Data:**
 
@@ -87,13 +87,13 @@ To send dynamic user data from your Bubble app during registration, you'll need 
 
 ○      After that add another action. Click on “plugins” and select the API call you just configured.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
 ○      Once Clicked another panel will appear and there, add all the parameters you want in your JSON body and in the Value field add the form values.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
@@ -142,7 +142,7 @@ After successfully creating the user, the next step is to enable the user to ini
 
 ■      In the email body, include the magic link retrieved from the database. You can format it as follows:
 
-&#x20;       <img src="../.gitbook/assets/image (4).png" alt="" data-size="original">
+&#x20;       <img src="../.gitbook/assets/image (4) (1).png" alt="" data-size="original">
 
 3. **Verify Email Sending:**
 
@@ -170,7 +170,7 @@ Before managing the verification process, you need to ensure that email notifica
 
 ○      Select the user and click on the “Verification” button to access the verification settings.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 4. Enable Email Notifications:
 
@@ -178,7 +178,7 @@ Before managing the verification process, you need to ensure that email notifica
 
 ○      This setting allows Trust Swiftly to send the necessary verification emails to the user, including the magic link and any follow-up emails if additional verification is needed.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
@@ -196,7 +196,7 @@ Before managing the verification process, you need to ensure that email notifica
 
 ○      On the verification page, the user clicks the "Verify" button to start the verification process.
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 2. Initial Verification Attempt:
 
@@ -214,13 +214,13 @@ Before managing the verification process, you need to ensure that email notifica
 
 ■      Verify Identity Button: Includes a button or URL for completing the additional verification.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 ○      Click on Confirm Email button and it will redirect you another page
 
 ○      Enter your email in the field and click the “Send verification Email” button
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Set Up Webhook for Verification Status <a href="#tw1o0sw15r4f" id="tw1o0sw15r4f"></a>
 

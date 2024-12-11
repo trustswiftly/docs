@@ -17,4 +17,4 @@ Verify yourself at Trust Swiftly</a>
 
 Example signup page with custom content. This /signup URL can be shared for the quickest and least effort verifications.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Example Sign Up Register page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>Example Sign Up Register page</p></figcaption></figure>

@@ -17,24 +17,25 @@ description: Setup SSO with Entra using a custom app for SAML authentication.
 
 
 4. In the **Manage** section of the app select **Single sign-on** then click the **SAML** box.
-5. Click **Edit** next to the Basic SAML Configuration
+5. Click **Edit** next to the Basic SAML Configuration. Then copy and paste the below into their respective inputs. Click Save to complete.
 
-<pre class="language-html"><code class="lang-html"><strong>https://app.rippling.com/api/platform/sso/idp-metadata/XXXXXXXXXXXXXX
-</strong></code></pre>
-
-
-
-5. Paste it in your Trust Swiftly Auth settings /settings/auth and save it.
-6. In Rippling for the paste the Trust Swiftly metadata URL&#x20;
-
-```
-https://[COMPANY].trustswiftly.com/auth/saml2/metadata
+```html
+https://[COMPANY].trustswiftly.com/auth/saml2
+https://[COMPANY].trustswiftly.com/auth/saml2/callback
+https://[COMPANY].trustswiftly.com/auth/saml2/login
 ```
 
-7. Edit the app for advanced SSO configuration to match the below settings. Make sure SP initiated login is checked.&#x20;
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+5. In the **Attributes & Claims** section click Edit. On this popup edit the Unique User Identifier (Name ID) so the identifier format is set to **Email address.**
 
-<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+5. Next update the **name** claim by click the edit and changing the value to **user.displayname**
+
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+5. In the SAML Certificates section copy the App Federation Metadata Url and paste it in your Trust Swiftly Auth settings /settings/auth and save it for the Single Sign On input.
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
