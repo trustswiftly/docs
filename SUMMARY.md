@@ -43,8 +43,9 @@
 
 ## Single Sign On
 
-* [SAML2 SSO (Okta, etc)](single-sign-on/saml2-sso/README.md)
-  * [Rippling SSO App](single-sign-on/saml2-sso/rippling-sso-app.md)
+* [SAML2 SSO (Okta, etc)](single-sign-on/saml2-sso.md)
+* [Rippling SSO App](single-sign-on/rippling-sso-app.md)
+* [Azure Entra ID SAML](single-sign-on/azure-entra-id-saml.md)
 
 ## Notifications
 
