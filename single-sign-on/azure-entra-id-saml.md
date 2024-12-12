@@ -20,7 +20,7 @@ description: >-
 
 
 4. In the **Manage** section of the app select **Single sign-on** then click the **SAML** box.
-5. Click **Edit** next to the Basic SAML Configuration. Then copy and paste the below into their respective inputs. Click Save to complete.
+5. Click **Edit** next to the Basic SAML Configuration. Then copy and paste the below into their respective inputs. Click Save to complete. Replace \[COMPANY] with your actual name.
 
 ```html
 https://[COMPANY].trustswiftly.com/auth/saml2
@@ -34,7 +34,7 @@ https://[COMPANY].trustswiftly.com/auth/saml2/login
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-7. Next update the **name** claim by click the edit and changing the value to **user.displayname**
+7. Next update the **Claim name:** _name_ by clicking the edit icon and changing the value to **user.displayname**
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
@@ -42,3 +42,4 @@ https://[COMPANY].trustswiftly.com/auth/saml2/login
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
+9. After this is completed and tested you can enable the Force SAML setting for added security. Only SAML authenticated sessions will be allowed.&#x20;
