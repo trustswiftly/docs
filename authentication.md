@@ -37,10 +37,12 @@ curl --location --request GET 'https://{sub-domain}.trustswiftly.com/api/users' 
 {% endtab %}
 {% endtabs %}
 
+Replace `{sub-domain}` with the relevant name of your Trust Swiftly account. i.e. the endpoint might be [https://example.trustswiftly.com](https://example.trustswiftly.com/)
+
 #### Validate All Keys&#x20;
 
-To check your credentials are correct you can use the verify-credentials endpoint.&#x20;
+To check your credentials are correct you can use the verify-credentials endpoint with your API key.
 
 ```
-// Some code
+POST /api/verify-credentials
 ```
