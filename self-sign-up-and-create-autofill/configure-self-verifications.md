@@ -13,6 +13,12 @@ To enable self sign up for getting verified you can enable the setting at [https
 Verify yourself at Trust Swiftly</a>
 ```
 
+```html
+Pre-population is also possible by using the following parameters:
+email, first_name, last_name, phone
+/signup?email=test@example.com&first_name=test&last_name=test&phone=%2B13129450121
+```
+
 ![Options to enable for self sign up](<../.gitbook/assets/image (13) (1).png>)
 
 Example signup page with custom content. This /signup URL can be shared for the quickest and least effort verifications.
