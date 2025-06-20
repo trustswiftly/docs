@@ -1,5 +1,5 @@
 ---
-description: The API Key can be generated within your account settings.
+description: The API Key can be generated within your developer settings.
 ---
 
 # Users
