@@ -7,88 +7,132 @@ description: >-
 
 # Documents
 
-The documents endpoint is useful for customers looking to control the branding experience or have asynchronous tasks to verify an identity. Use the below API to create a job to verify an ID document such as a DL or Passport. Ensure you have a template and workflow setup for the document to verify.
+#### Direct Document Verification API
+
+This API is for advanced use cases where you need to programmatically submit an identity document (e.g., a driver's license or passport) for analysis. This allows you to build your own document collection UI while still using Trust Swiftly's powerful verification engine on the backend.
 
 {% hint style="danger" %}
-This API is for advanced use cases only. By using it you must develop your own document collection method and will miss out on important security checks from Trust Swiftly. Use our hosted solution for a seamless experience.&#x20;
+**Warning: Advanced Use Only**\
+By using this API, you are responsible for building your own secure document collection method. You may miss out on important security features and data collection checks provided by Trust Swiftly's hosted UI. We recommend our standard, hosted solution for the most secure and seamless experience.
 {% endhint %}
 
-## Create Document Verification Job
+***
+
+#### How It Works: An Asynchronous Flow
+
+Document verification is not instantaneous. The process is asynchronous and follows these steps:
+
+1. **Prerequisite:** Ensure a user exists in Trust Swiftly and is assigned to a **Verification Template** that is configured for a single document check.
+2. **Step 1: Create a Verification Job.** You upload the document image via a `multipart/form-data` request. The API accepts the job and immediately returns a unique `doc_id`.
+3. **Step 2: Poll for Status.** You use the `doc_id` to periodically call the status endpoint. This endpoint will initially show a "processing" status.
+4. **Step 3: Receive Results.** After a few seconds, the status endpoint will return a "Success" or "Failure" status, along with the complete analysis data. Alternatively, you can listen for a webhook to be notified of completion.
+
+***
+
+#### Prerequisite: Assign a Template to a User
+
+Before you can submit a document for a user, that user must already exist in Trust Swiftly and be assigned to the correct **Verification Template**. This template tells our system what rules to apply to the document check.
+
+You can do this by calling the Create User or Update User endpoint and providing the appropriate `template_id`.
+
+***
+
+#### Step 1: Create Document Verification Job
+
+This endpoint accepts a document image and queues it for analysis.
 
 <mark style="color:green;">`POST`</mark>`https://{sub-domain}.trustswiftly.com/api/verify/document`
 
-#### Request Header
+**Request (multipart/form-data)**
 
-<table><thead><tr><th width="169">Name</th><th width="108">Type</th><th>Description</th></tr></thead><tbody><tr><td>Authorization</td><td>string</td><td><p><a href="../authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p></td></tr></tbody></table>
+<table><thead><tr><th width="147.33331298828125">Parameter</th><th width="97">Type</th><th width="94.333251953125">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>user_id</code></td><td>string</td><td>Yes</td><td>The user ID from Trust Swiftly (e.g., <code>645</code>).</td></tr><tr><td><code>template_id</code></td><td>string</td><td>Yes</td><td>The ID of the template assigned to the user (e.g., <code>tmpl_MTA</code>).</td></tr><tr><td><code>verify_image</code></td><td>file</td><td>Yes</td><td>The document image file (JPG, PNG, PDF). Must be less than 10MB.</td></tr></tbody></table>
 
-#### Multi-part Form Parameters
+**Example `cURL` Request**
 
-<table><thead><tr><th width="173">Name</th><th width="102">Type</th><th>Description</th></tr></thead><tbody><tr><td>template_id</td><td>string</td><td>The verification template id that has the single document workflow assigned to the user.</td></tr><tr><td>user_id</td><td>string</td><td>The user id of the user on Trust Swiftly.</td></tr><tr><td>verify_image</td><td>file</td><td>Full local path of image to analyze (JPG, PNG, PDF formats, Less than 10 MB)</td></tr></tbody></table>
+**Note:** The `@` symbol before the file path tells `cURL` to upload the contents of the file.
 
-_\*Make sure the user is already created with the template\_id assigned to them._
+```bash
+curl --request POST \
+  --url https://{sub-domain}.trustswiftly.com/api/verify/document \
+  --header 'Authorization: Bearer YOUR_API_KEY' \
+  --header 'Content-Type: multipart/form-data' \
+  --form 'user_id=645' \
+  --form 'template_id=tmpl_MTA' \
+  --form 'verify_image=@/path/to/your/drivers_license.jpg'
+```
 
-{% tabs %}
-{% tab title="200 " %}
+**Success Response**
+
+A successful request returns a `200 OK` status and the `doc_id` for your new verification job. You must store this ID to check the status in the next step.
+
 ```json
 {
     "success": true,
     "doc_id": "313237"
 }
 ```
-{% endtab %}
 
-{% tab title="Failure" %}
-{
+***
 
-&#x20;  'error\_type' => 'api\_template\_error',
+#### Step 2: Get Status of Document Verification Job
 
-&#x20;  'error\_message' => 'Invalid templateId provided.',
+After waiting a few seconds, begin polling this endpoint with the `doc_id` from Step 1 to check the job status and retrieve the results once complete.
 
-}
+<mark style="color:green;">`POST`</mark>` ``https://{sub-domain}.trustswiftly.com/api/verify/document/status`
 
-{
+**Request (application/json)**
 
-&#x20;  'error\_type' => 'api\_user\_error',
+<table><thead><tr><th width="128.3333740234375">Parameter</th><th width="90.6666259765625">Type</th><th width="92">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>user_id</code></td><td>string</td><td>Yes</td><td>The user ID from the original request.</td></tr><tr><td><code>doc_id</code></td><td>string</td><td>Yes</td><td>The document ID received from the job creation endpoint.</td></tr></tbody></table>
 
-&#x20;  'error\_message' => 'User Not Found'
+**Example `cURL` Request**
 
-}
-{% endtab %}
-{% endtabs %}
-
-
-
-{% tabs %}
-{% tab title="cURL" %}
 ```bash
 curl --request POST \
-  --url https://{sub-domain}.trustswiftly.com/api/verify/document \
-  --header 'Authorization: Bearer {api_key}' \
-  --header 'Content-Type: multipart/form-data' \
-  --header 'User-Agent: insomnium/1.0' \
-  --form template_id=tmpl_MTA \
-  --form user_id=645 \
-  --form 'verify_image=@C:\Users\123\photo5827714315489229223.jpg'
+  --url https://{sub-domain}.trustswiftly.com/api/verify/document/status \
+  --header 'Authorization: Bearer YOUR_API_KEY' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "doc_id": "313237",
+    "user_id": "645"
+  }'
 ```
-{% endtab %}
-{% endtabs %}
 
-## Get Status of Document Verification Job
+**Success Response**
 
-The document status can be checked using polling via the below endpoint or can await a webhook for completion status. Typically, response times require a few seconds to analyze the document.&#x20;
+When processing is complete, the `document_status` field will change from a processing state to `Success` or a failure state. The full extraction and analysis data is contained within the `document_data` object.
 
-<mark style="color:green;">`POST`</mark>`https://{sub-domain}.trustswiftly.com/api/verify/document/status`
+```json
+{
+  "success": true,
+  "doc_id": "31323933",
+  "document_status": "Success",
+  "document_data": { ... }
+}
+```
 
-#### Request Header
+***
 
-<table><thead><tr><th width="169">Name</th><th width="108">Type</th><th>Description</th></tr></thead><tbody><tr><td>Authorization</td><td>string</td><td><p><a href="../authentication.md"><strong>API Key</strong></a></p><p>is used for server-to-server communication to fetch sensitive data that you already have access to.</p></td></tr></tbody></table>
+#### Failure Response
 
-#### Request Body JSON
+```json
+{
+   "error_type": "invalid_document_id",
+   "error_message": "Invalid Document Id"
+}
 
-<table><thead><tr><th width="203">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>doc_id</td><td>string</td><td>The doc_id from the original request to verify an image.</td></tr><tr><td>user_id</td><td>string</td><td>The user id of the user on Trust Swiftly from the original request.</td></tr></tbody></table>
+Fail 2
+{ "success": false, "doc_id": "31323930",
+ "document_status": "Failed", "reason": null }
+```
 
-{% tabs %}
-{% tab title="200 " %}
+#### Understanding the `document_data` Object
+
+The `document_data` object contains a rich set of information. Here are the key sections:
+
+<details>
+
+<summary><strong>Full Response Success (Click to expand)</strong></summary>
+
 ```json
 {
   "success": true,
@@ -347,33 +391,38 @@ The document status can be checked using polling via the below endpoint or can a
   }
 }
 ```
-{% endtab %}
 
-{% tab title="Failure" %}
-{
+</details>
 
-&#x20;  "error\_type": "invalid\_document\_id",
+<details>
 
-&#x20;  "error\_message": "Invalid Document Id"
+<summary><strong>`document_processor` (Click to expand)</strong></summary>
 
-}
+This object contains the core data extracted from the document via Optical Character Recognition (OCR), such as name, date of birth, address, and document numbers, along with a confidence score for each field.
 
-{ "success": false, "doc\_id": "31323930", "document\_status": "Failed", "reason": null }
-{% endtab %}
-{% endtabs %}
+</details>
 
-{% tabs %}
-{% tab title="cURL" %}
-```bash
-curl --request POST \
-  --url https://{sub-domain}.trustswiftly.com/api/verify/document/status \
-  --header 'Authorization: Bearer {api_key}' \
-  --header 'Content-Type: application/json' \
-  --header 'User-Agent: insomnium/1.0' \
-  --data '{
-  "doc_id": "31323930",
-  "user_id": "645"
-}'
-```
-{% endtab %}
-{% endtabs %}
+<details>
+
+<summary><strong>`ai_analysis` (Click to expand)</strong></summary>
+
+This provides signals about the authenticity of the document image itself, including checks for whether it's a picture of a screen (\`internet\_detection\`) or if it matches a known selfie (\`selfie\_check\`).
+
+</details>
+
+<details>
+
+<summary><strong>`dlp_analysis` (Click to expand)</strong></summary>
+
+This provides Data Loss Prevention (DLP) analysis, identifying all types of Personally Identifiable Information (PII) found in the document, such as names, addresses, and dates.
+
+</details>
+
+<details>
+
+<summary><strong>`face_annotation` (Click to expand)</strong></summary>
+
+If a face is present on the document, this provides analysis of the facial attributes, such as the likelihood of headwear or if the image is blurred.
+
+</details>
+
