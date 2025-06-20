@@ -1,7 +1,5 @@
 # Setup and Handling Webhooks
 
-The first step to adding WebHooks to your account is to build your own custom endpoint. Creating a WebHook endpoint on your server is no different from creating any page on your website. With PHP, you might create a new .php file on your server; with a Ruby framework like Sinatra, you would add a new route with the desired URL.
-
 ## Add Webhook Endpoint
 
 1. The first step to receiving webhooks is to enable it in your settings page. `https://{sub-domain}.trustswiftly.com/settings/webhooks`
@@ -39,3 +37,13 @@ $signature = hash_hmac('sha256', $payloadJson, $webhook_secret);
 To test, view logs, edit or delete a webhook click on one of the action buttons. Sending a test webhook can be useful for debugging your setup.
 
 ![](<../.gitbook/assets/image (32).png>)
+
+## Handling Webhooks Reliably
+
+Once you have configured your webhook endpoint and are [verifying signatures](code-examples.md), the next step is to process the incoming data reliably. A well-built webhook consumer is fast, resilient to duplicate events, and does not depend on the order in which events are received.
+
+The best practice for achieving this is to follow a simple but powerful pattern: **Acknowledge First, Process Later.**
+
+This means your public-facing webhook endpoint should do the absolute minimum amount of work required before telling Trust Swiftly that the event was received. Any complex business logic should be handed off to a background process.
+
+The first step to adding WebHooks to your account is to build your own custom endpoint. Creating a WebHook endpoint on your server is no different from creating any page on your website. With PHP, you might create a new .php file on your server; with a Ruby framework like Sinatra, you would add a new route with the desired URL.

@@ -184,8 +184,6 @@ echo 'Webhook received successfully.';
     }
 ```
 
-
-
 ### Example Signature Verification (JS)
 
 ```javascript
@@ -280,7 +278,7 @@ app.listen(PORT, () => {
 });
 ```
 
-#### Python Example (using Flask)
+### Python Example (using Flask)
 
 This example uses the Flask web framework to create a simple endpoint for receiving the webhook. The standard hashlib and hmac libraries are used for signature verification.
 
@@ -293,7 +291,7 @@ from flask import Flask, request, abort
 app = Flask(__name__)
 
 # It's best practice to load secrets from environment variables.
-TRUST_SWIFTLY_WEBHOOK_SECRET = os.environ.get('TRUST_SWIFTLY_SECRET', 'rk7UVi3ldDguT05m')
+TRUST_SWIFTLY_WEBHOOK_SECRET = os.environ.get('TRUST_SWIFTLY_SECRET', 'XXXX')
 
 @app.route('/webhooks/trustswiftly', methods=['POST'])
 def trust_swiftly_webhook():
@@ -340,15 +338,11 @@ if __name__ == '__main__':
     # For demonstration purposes. Use a production-ready WSGI server for deployment.
     # To run:
     # 1. pip install Flask
-    # 2. TRUST_SWIFTLY_SECRET=rk7UVi3ldDguT05m python your_app_file.py
+    # 2. TRUST_SWIFTLY_SECRET=XXXX python your_app_file.py
     app.run(port=5000, debug=True)
 ```
 
-
-
-
-
-#### Laravel / PHP Example
+### Laravel / PHP Example
 
 ```php
 <?php
