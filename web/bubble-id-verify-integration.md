@@ -31,7 +31,7 @@ Before making API calls to Trust Swiftly, you must configure your API key in Bub
 * Open the API Connector plugin and create a new "Create User" API.
 * Click the "Add another call" button.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Create a User for Verification <a href="#na5hpzqhvkrf" id="na5hpzqhvkrf"></a>
 
@@ -77,7 +77,7 @@ To verify a user through Trust Swiftly, you'll first need to create the user via
 
 ○      Click the "Initialize Call" button to test the API call. If successful, Bubble will display the API response. Save the call configuration once it's successfully initialized.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### &#x20;**Use Dynamic Data:**
 

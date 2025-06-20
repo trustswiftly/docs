@@ -6,73 +6,86 @@ description: >-
 
 # Install and Demo Guide
 
-`Note: If using test mode/ sandbox mode please enable the mode into the Stripe connect page`
+**Stripe App Integration Guide**
 
-* [ ] **Prerequisite**: [Create a Trust Swiftly account ](https://app.trustswiftly.com/create)(Deposit over $300 for a free initial consultation on your Stripe Rules. We help you optimize your rules for more revenue.)
+Automate your payment review process, reduce manual work, and fight fraud by integrating Trust Swiftly directly with your Stripe account. This guide will walk you through setting up the Trust Swiftly Stripe App, configuring Stripe Radar rules, and testing the end-to-end workflow.
 
-**Sign in to your Trust Swiftly tenant**
+When a payment is sent to your review queue in Stripe, Trust Swiftly automatically triggers a verification process for the customer. If they pass, the review is approved automatically.
 
-1. Navigate to [https://\[COMPANY\].trustswiftly.com/login](https://stripetest.trustswiftly.com/login) (Replace \[company] with your specific tenant)
-2. Enter in the your account username and password
-3. Click Log In\
+**Prerequisites**
 
+Before you begin, ensure you have the following:
 
-![](https://lh5.googleusercontent.com/x8tAyPzkWktteKO368-Pmduxw4FZzWqGCkQrsC6LuLxNrVMTWge_7Q_ZGkFDsfLx0cI3F6v0Ak3XDGb7Q1CnjQslcTd2DVi9OeN1F4AWGQcucqSoQHfbYlfGhWxHoLGXxjvGAionY1hT2fUtrdqspRg)
+* **A Trust Swiftly Account:** Sign up at [trustswiftly.com](https://trustswiftly.com).
+  * **Free Radar Consultation:** To help you maximize revenue, we offer a free initial consultation on optimizing your Stripe Radar rules for new customers with a deposit of $300 or more.
+* **A Stripe Account** with administrator access.
 
-**Install the Trust Swiftly Stripe App**
+***
 
-1. Navigate to the **Connect Stripe App** page. [https://](https://stripetest.trustswiftly.com/settings/stripe_app)[\[COMPANY\]](https://stripetest.trustswiftly.com/login)[.trustswiftly.com/settings/stripe\_app](https://stripetest.trustswiftly.com/settings/stripe_app)&#x20;
-2. Follow the instructions to install the app by going to Stripe's Marketplace and finding the Trust Swiftly app in the compliance category.&#x20;
-3. Copy and paste your domain into the settings [https://](https://stripetest.trustswiftly.com/)[\[COMPANY\]](https://stripetest.trustswiftly.com/login)[.trustswiftly.com](https://stripetest.trustswiftly.com/)
-4. After the app is installed on your Stripe account click the verify install button if not automatically updated.\
+#### **Part 1: Installation and Connection**
 
+First, you'll log in to Trust Swiftly and install the app from the Stripe Marketplace.
 
-![](https://lh3.googleusercontent.com/cBeU6ThMHqIfR_ydAxbdTJ0DVoUekYrjWSnjjeHIq-uS_UXp2n1g7gZGr75jKDD1EutkXZ3Xsr-lbnQrG_tUJ8BBWb5tDQGNNetjcyQANDq1At21XpyeXsPqUIwpz3bvTOnaf6-fN9WkRloLFpyyyDE)
+1. **Sign in to Trust Swiftly**
+   * Navigate to your tenant URL: `https://[COMPANY].trustswiftly.com/login` (replace `[COMPANY]` with your unique name).
+   * Enter your admin username and password.
+2. **Install the Trust Swiftly Stripe App**
+   * Go to the Stripe App connection page in your settings: `https://[COMPANY].trustswiftly.com/settings/stripe_app`
+   * You will be guided to find the **Trust Swiftly** app in the Stripe Marketplace (under the "Compliance & Identity" category).
+   * During the installation process in Stripe, you will be asked to provide your domain. Enter your full Trust Swiftly tenant URL: `https://[COMPANY].trustswiftly.com`.
+3. **Verify the Installation**
+   * After the app is installed, return to the Trust Swiftly settings page.
+   * The status should update automatically. If it doesn't, click the **Verify Install** button.
 
-**Configure Stripe App Options**
+> **Important Note on Test Mode:** If you are operating in Stripe's test mode, you must enable "Test mode" on the Trust Swiftly Stripe App connection page to ensure transactions are handled correctly.
 
-1. Select a value for the Default Verification Template field for one setup in your account.
-2. Enable the toggles for Approve Reviews Automatically and User Email Notifications
-3. Click Update Settings to save.
+***
 
-![](https://lh3.googleusercontent.com/j9KcvR8c5m_YIoVRWiH4uPs6JJS_aXZg9n3GX6BiYMHzYUIiTrvTKwBtGqT-mSAGrYOnD93RBCwSmxv6ycMaQIzz4RDjz6jR0nZo4b2AZWYHKkQ7IgSKXN01nlxYAEAbPvQMzXuyG_NJODBHu358i7Q)\
+#### **Part 2: Configuration in Trust Swiftly**
 
+Next, configure how the app behaves within your Trust Swiftly dashboard.
 
-**Configure Stripe Radar to send payments to review**
+1. Navigate back to the **Connect Stripe App** page (`.../settings/stripe_app`).
+2. **Default Verification Template:** Select a verification template that will be sent to customers whose payments are sent to review.
+3. **Approve Reviews Automatically:** Enable this toggle so that when a user successfully passes verification, the corresponding review in Stripe is automatically approved.
+4. **User Email Notifications:** Enable this to ensure users receive an email with the link to complete their verification.
+5. Click **Update Settings** to save.
 
-1. Navigate to Stripe Radar rules. [https://dashboard.stripe.com/settings/radar/rules](https://dashboard.stripe.com/settings/radar/rules)
-2. Scroll to the Review rules section and click the Add Rule button
-3. Create a review rule to send any payment over $500 and risk\_score > 50 to review or create your own logic [following our tips](https://trustswiftly.com/blog/optimal-fraud-prevention-with-stripe-radar-rules/) when you are ready for production. `Need help setting up Stripe Radar?` [`Contact us`](https://trustswiftly.com/contact-us/)`for a Stripe Radar rules optimization service.`&#x20;
-4. Click Test rule and save the rule.
-5. Any future payments that are sent to review will automatically be verified by Trust Swiftly.\
+***
 
+#### **Part 3: Configure Stripe Radar Rules**
 
-![](https://lh6.googleusercontent.com/Hq6dxtSjLmlSIOPfXAA3P3DmXmAQGXCQvHbFWYg-yHbzpSB4QV3P2nWSC4gWYlgf9mYchgGBJjviEuJF5vZEdd1PbAqKG52W4P2yzNvoottmyeAI0QjVRQJU6_e6ankcij6PtFoFEPipMrFjhmzc2Kg)\
+For the integration to work, you must tell Stripe which payments to send to the review queue.
 
+1. Navigate to your **Stripe Radar rules**: [dashboard.stripe.com/settings/radar/rules](https://dashboard.stripe.com/settings/radar/rules).
+2. Scroll down to the **"When should a payment be placed in review?"** section.
+3. Click **+ Add rule**.
+4. Create a condition to trigger a review. For example, you can create a rule for high-risk payments:   `Request a review if :risk_score: > 50 and :amount_in_usd: > 500.00`
+5. Click **Test rule** to see how it behaves, then click **Save** to enable it.
 
-### Demo Steps
+> **Need help with Radar?** Setting up effective Radar rules is key to maximizing revenue and minimizing fraud. [**Contact our team**](https://trustswiftly.com/contact) for help with a custom-tailored optimization service.
 
-**Create a test payment that is put in review**
+***
 
-1. Navigate to payment links in Stripe and create a test payment link [https://dashboard.stripe.com/payment-links/create](https://dashboard.stripe.com/payment-links/create)
-2. Add a new product called Test Review with a value that will be triggered by your rule. For demo purposes you may need to create a unique rule based on email.&#x20;
-3. Check the option for Require customers to provide a phone number
-4. Click Create Link button in top right corner.&#x20;
-5. Copy the payment link and open a new incognito browser window so your other Trust Swiftly session is not impacted with the test.&#x20;
-6. Populate the payment fields with phone number, email address, and credit card details and click the Pay button.&#x20;
-7. Now navigate to the Radar review queue to verify the payment was placed in the list [https://dashboard.stripe.com/radar/reviews](https://dashboard.stripe.com/radar/reviews) \
+#### **Part 4: Demo and Test the Workflow**
 
+Follow these steps to perform an end-to-end test and see the integration in action.
 
-![](https://lh3.googleusercontent.com/Iv_raYjCZfOgWI0XIvo6jPljR1FnvIRZ9SZmXzfNOjX2pWXhRhOXQL9v_jafYDchaqRVfWdrJbeoYBVcDJ3kTFmo1DnaAbEfapdPu7PtVA-gLqla48Z8ccpCMCSBJmdHuEPM9FUNLHgOeMqBx11GaQ8)
-
-
-
-**Complete the Trust Swiftly verification**
-
-1. Check the email you used for the test payment and click the Verify button to start.
-2. Next on the dashboard click Verify now
-3. Next click the Send SMS/Call Code.
-4. Enter the code to complete the verification.&#x20;
-5. Finally navigate to the Radar review queue to see if the payment was approved. If it was approved it should no longer be viewable here: [https://dashboard.stripe.com/radar/reviews](https://dashboard.stripe.com/radar/reviews)&#x20;
-
-![](https://lh4.googleusercontent.com/cJQOwgyAUuFGLDRWxWpu6nqBny8LAP4Mayyu0QK-Fmu8z5GtNrLnQMeZwf5zQFFLhJHDrxKjhOLowuxX-jMZ581jYjvVD2oEzdxVj5vUrJSIm9Dj9QkNpjGxeFEsGYGrGxPWL5jQ8CNwSlgj32UJjYw)![](<../.gitbook/assets/image (1) (1) (1) (1) (1).png>)
+1. **Create a Test Payment**
+   * In your Stripe dashboard, go to **Payment Links** and create a new link.
+   * Add a new product with a price that will be triggered by the Radar rule you just created (e.g., $501).
+   * Under the advanced options, ensure you **require customers to provide a phone number**.
+   * Click **Create link**.
+2. **Simulate a Customer Purchase**
+   * Copy the payment link and open it in a **new incognito browser window**. This prevents session conflicts.
+   * Fill out the payment details using a test email and credit card, then click **Pay**.
+3. **Verify the Payment is in Review**
+   * Navigate to your **Radar for Reviews** queue in Stripe: [dashboard.stripe.com/radar/reviews](https://dashboard.stripe.com/radar/reviews).
+   * You should see the payment you just made listed here.
+4. **Complete the Verification (as the customer)**
+   * Check the inbox for the email address you used in the test payment.
+   * Open the email from Trust Swiftly and click the **Verify** button.
+   * You will be taken to the verification flow. Complete the steps (e.g., enter an SMS code).
+5. **Confirm Automatic Approval**
+   * Return to your Radar review queue in Stripe.
+   * Once the verification is passed, the payment should automatically disappear from the review list, indicating it has been approved.

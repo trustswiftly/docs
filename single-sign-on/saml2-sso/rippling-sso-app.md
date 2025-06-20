@@ -1,5 +1,5 @@
 ---
-description: Setup SSO with Rippling using a custom app.
+description: Setup SSO with Rippling using a custom application
 ---
 
 # Rippling SSO App

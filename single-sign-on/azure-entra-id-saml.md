@@ -28,7 +28,7 @@ https://[COMPANY].trustswiftly.com/auth/saml2/callback
 https://[COMPANY].trustswiftly.com/auth/saml2/login
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 6. In the **Attributes & Claims** section click Edit. On this popup edit the Unique User Identifier (Name ID) so the identifier format is set to **Email address.**
 
@@ -42,4 +42,4 @@ https://[COMPANY].trustswiftly.com/auth/saml2/login
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-9. After this is completed and tested you can enable the Force SAML setting for added security. Only SAML authenticated sessions will be allowed.&#x20;
+9. After this is completed and tested you can enable the Enforce Single Sign On setting for added security. Only SAML authenticated sessions will be allowed.&#x20;

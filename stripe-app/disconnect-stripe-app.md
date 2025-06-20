@@ -6,7 +6,7 @@ description: >-
 
 # Disconnect Stripe App
 
-Visit your apps page to select Trust Swiftly [https://dashboard.stripe.com/apps](https://dashboard.stripe.com/apps)
+Visit your apps page to select Trust Swiftly [https://dashboard.stripe.com/apps](https://dashboard.stripe.com/apps) then uninstall it.
 
 ![](<../.gitbook/assets/image (40).png>)
 

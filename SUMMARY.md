@@ -51,7 +51,7 @@
 
 * [Slack](notifications/slack.md)
 * [Zoho Cliq](notifications/zoho-cliq.md)
-* [Email and Web Push](notifications/email-and-web-push.md)
+* [Email and Chat](notifications/email-and-chat.md)
 
 ## Stripe App
 
