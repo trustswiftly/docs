@@ -6,7 +6,7 @@
 
 * [Integration](integration.md)
 * [Button Link](button-link.md)
-* [WordPress](wordpress.md)
+* [Integrating with WordPress](wordpress.md)
 * [WebView iOS and Android](web/webview-ios-and-android.md)
 * [Bubble ID Verify Integration](web/bubble-id-verify-integration.md)
 * [FlutterFlow Identity Verification](web/flutterflow-identity-verification.md)
