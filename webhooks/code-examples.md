@@ -283,63 +283,109 @@ app.listen(PORT, () => {
 This example uses the Flask web framework to create a simple endpoint for receiving the webhook. The standard hashlib and hmac libraries are used for signature verification.
 
 ```python
+# File: trustswiftly_webhook_handler.py
+
 import hmac
 import hashlib
 import os
+import json
 from flask import Flask, request, abort
 
 app = Flask(__name__)
 
-# It's best practice to load secrets from environment variables.
-TRUST_SWIFTLY_WEBHOOK_SECRET = os.environ.get('TRUST_SWIFTLY_SECRET', 'XXXX')
+# It's best practice to load the webhook secret from an environment variable.
+# NEVER hardcode secrets in your application.
+TRUST_SWIFTLY_WEBHOOK_SECRET = os.environ.get('TRUST_SWIFTLY_WEBHOOK_SECRET')
+
+if not TRUST_SWIFTLY_WEBHOOK_SECRET:
+    raise ValueError("TRUST_SWIFTLY_WEBHOOK_SECRET environment variable not set.")
+
 
 @app.route('/webhooks/trustswiftly', methods=['POST'])
 def trust_swiftly_webhook():
     """
-    Receives and verifies a webhook from Trust Swiftly.
+    Receives and securely verifies a webhook from Trust Swiftly.
     """
-    # 1. Get the signature from the request headers
+    # --- 1. Signature Verification ---
+    # The signature is calculated on the raw, unmodified request body.
+    # It is crucial to use the raw bytes (`request.data`) for the calculation.
+    
+    # Get the signature from the request headers.
     received_signature = request.headers.get('Signature')
     if not received_signature:
-        print("Signature header not found.")
-        abort(400, 'Signature header is required.')
+        print("Webhook failed: 'Signature' header not found.")
+        abort(400, "Signature header is required.")
 
-    # 2. Get the raw request body.
-    # request.data contains the raw byte string of the body.
-    payload = request.data
+    # Get the raw request body as bytes.
+    payload_bytes = request.data
 
-    # 3. Compute the expected signature
-    # The hash must be calculated on the raw request body (bytes).
+    # Compute the expected signature using the shared secret.
+    # The secret must be UTF-8 encoded bytes.
     computed_hash = hmac.new(
         TRUST_SWIFTLY_WEBHOOK_SECRET.encode('utf-8'),
-        payload,
+        payload_bytes,
         hashlib.sha256
     )
     computed_signature = computed_hash.hexdigest()
 
-    # 4. Compare the signatures securely
-    # Use hmac.compare_digest for a secure, constant-time comparison.
+    # Securely compare the received signature with the one we computed.
+    # hmac.compare_digest is essential to prevent timing attacks.
     if not hmac.compare_digest(computed_signature, received_signature):
-        print("Signature mismatch.")
-        print(f"Computed: {computed_signature}")
-        print(f"Received: {received_signature}")
-        abort(403, 'Tampered Request: Signature mismatch.')
+        print("Webhook failed: Signature mismatch.")
+        # For debugging, you can print the signatures, but be careful in production.
+        # print(f"  Computed: {computed_signature}")
+        # print(f"  Received: {received_signature}")
+        abort(403, "Tampered Request: Signature mismatch.")
 
-    # If the signature is valid, process the payload
     print("Signature verified successfully!")
-    webhook_data = request.get_json()
-    
-    # TODO: Add your business logic here
-    print(f"Received event: {webhook_data.get('event')}")
 
+    # --- 2. Process the Webhook Payload ---
+    # Once the signature is verified, you can safely process the JSON data.
+    try:
+        webhook_data = json.loads(payload_bytes)
+    except json.JSONDecodeError:
+        print("Webhook failed: Invalid JSON payload.")
+        abort(400, "Invalid JSON.")
+
+    # TODO: Add your business logic here.
+    # For example, you can use a queue to handle the event asynchronously.
+    event_type = webhook_data.get('event_type') or webhook_data.get('event') # Handle new and old formats
+    print(f"Received event '{event_type}' for Trust ID: {webhook_data.get('trust_id')}")
+
+    # --- 3. Acknowledge Receipt ---
+    # Respond with a 200 OK to let Trust Swiftly know you've received the webhook.
+    # If you don't respond with 2xx, Trust Swiftly will retry sending the webhook.
     return "Webhook received and verified.", 200
 
+
 if __name__ == '__main__':
-    # For demonstration purposes. Use a production-ready WSGI server for deployment.
-    # To run:
-    # 1. pip install Flask
-    # 2. TRUST_SWIFTLY_SECRET=XXXX python your_app_file.py
+    # This is a basic development server. For production, use a WSGI server like Gunicorn or uWSGI.
+    #
+    # To run this example:
+    # 1. Install Flask: pip install Flask
+    # 2. Set the environment variable: export TRUST_SWIFTLY_WEBHOOK_SECRET='your_actual_secret'
+    # 3. Run the script: python trustswiftly_webhook_handler.py
+    #
+    # --- How to Test with cURL ---
+    # To correctly test this endpoint, your curl command must replicate the exact
+    # payload your server sends, including the escaped forward slash `\/`.
+    #
+    # secret='your_actual_secret'
+    #
+    # # Note the escaped slash `\/` in the JSON string. This is crucial.
+    # payload='{"event":"user.status.changed","name":"Phone \/ SMS"}'
+    #
+    # # Generate the signature based on this exact payload
+    # sig=$(echo -n "$payload" | openssl dgst -sha256 -hmac "$secret" | cut -d ' ' -f2)
+    #
+    # # Send the request
+    # curl -X POST http://127.0.0.1:5000/webhooks/trustswiftly \
+    #   -H "Content-Type: application/json" \
+    #   -H "Signature: $sig" \
+    #   -d "$payload"
+    #
     app.run(port=5000, debug=True)
+
 ```
 
 ### Laravel / PHP Example
