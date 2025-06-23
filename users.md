@@ -349,13 +349,14 @@ Update a provided user.
 
 | Name                 | Type   | Description                                                                                      |
 | -------------------- | ------ | ------------------------------------------------------------------------------------------------ |
+| email                | string | Customers email address.                                                                         |
 | username             | string | A unique username for the given user.                                                            |
 | first\_name          | string | Users first name                                                                                 |
 | last\_name           | string | Users last name                                                                                  |
+| status               | string | The user's status. Accepted values: Unconfirmed, Active, Verified, Banned, Review.               |
 | phone                | string | Phone including international code.                                                              |
 | reference\_id        | string | An ID you can pass that correlates to your own systems user ID.                                  |
 | template\_id         | string | ID of the verification template you wish to assign to this user.                                 |
-| email                | string | Customers email address.                                                                         |
 | custom\_verify\_data | String | A json string listing any data validation requirements for a user during document verification.  |
 | order\_id            | string | If the user is associated with a specific order or transaction.                                  |
 
