@@ -1,8 +1,10 @@
 ---
-description: Filtering and sorting results can help speed up responses and data collection.
+description: >-
+  Filtering and sorting results can help speed up responses and data collection
+  by allowing you to request only the data you need.
 ---
 
-# Filtering and Sorting
+# Filtering and Sorting Users
 
 You can refine the results from list endpoints by using `filter` and `sort` query parameters. This allows you to request only the data you need and in the order you want it.
 
@@ -10,17 +12,20 @@ These parameters can be combined with each other and with our Pagination paramet
 
 ***
 
-#### Filtering Results
+**Filtering Results**
 
 To filter a list, use the `filter` query parameter with a specific field name in square brackets.
 
-**Syntax:**`?filter[parameter_name]=value`
+**Syntax:** `?filter[parameter_name]=value`
 
 There are two types of filters available, depending on the parameter. Each endpoint's documentation will specify which filters are available and what type they are.
 
-<table><thead><tr><th width="171.66668701171875">Filter Type</th><th>Description</th><th>Example Use Case</th></tr></thead><tbody><tr><td><strong>Exact Match</strong></td><td>Returns records where the attribute exactly matches the provided value.</td><td>Filtering for a specific status, like <code>active</code> users.</td></tr><tr><td><strong>Partial Match</strong></td><td>Performs a "wildcard" or "contains" search on a text-based field.</td><td>Searching for a user by a piece of their name or email.</td></tr></tbody></table>
+| Filter Type       | Description                                                             | Example Use Case                                        |
+| ----------------- | ----------------------------------------------------------------------- | ------------------------------------------------------- |
+| **Exact Match**   | Returns records where the attribute exactly matches the provided value. | Filtering for a specific status, like `active` users.   |
+| **Partial Match** | Performs a "wildcard" or "contains" search on a text-based field.       | Searching for a user by a piece of their name or email. |
 
-**Example: Filtering by a search term**
+**Example: Filtering by a partial search term**
 
 This request will return all users where the searchable fields (like name or email) contain the string "John".
 
@@ -33,11 +38,14 @@ curl --request GET \
 
 ***
 
-#### Sorting Results
+**Sorting Results**
 
 To sort a list, use the `sort` query parameter followed by the field name you wish to sort by.
 
-<table><thead><tr><th width="197.66668701171875">Sort Order</th><th width="185.6666259765625">Syntax</th><th>Description</th></tr></thead><tbody><tr><td><strong>Ascending</strong></td><td><code>?sort=field_name</code></td><td>Sorts from A-Z, or oldest to newest.</td></tr><tr><td><strong>Descending</strong></td><td><code>?sort=-field_name</code></td><td><strong>Prefix with a minus sign (-)</strong>. Sorts from Z-A, or newest to oldest.</td></tr></tbody></table>
+| Sort Order     | Syntax              | Description                                                            |
+| -------------- | ------------------- | ---------------------------------------------------------------------- |
+| **Ascending**  | `?sort=field_name`  | Sorts from A-Z, or oldest to newest.                                   |
+| **Descending** | `?sort=-field_name` | **Prefix with a minus sign (-)**. Sorts from Z-A, or newest to oldest. |
 
 **Example: Sorting by creation date**
 
@@ -52,11 +60,11 @@ curl --request GET \
 
 ***
 
-#### Combining Operations
+**Combining Operations**
 
 You can combine filtering, sorting, and pagination into a single request by separating the parameters with an ampersand (`&`).
 
-**Example: Complex Query**
+**Example 1: Filtering and Sorting**
 
 This request demonstrates a powerful combination:
 
@@ -71,17 +79,33 @@ curl --request GET \
   --header 'Accept: application/json'
 ```
 
+**Example 2: Combining Multiple Filters**
+
+This request combines two different filters to find users who have "john" in their name/username **AND** whose email is exactly `support@example.com`.
+
+```bash
+curl --request GET \
+  --url 'https://{sub-domain}.trustswiftly.com/api/users?filter[search]=john&filter[email]=support@example.com' \
+  --header 'Authorization: Bearer YOUR_API_KEY' \
+  --header 'Accept: application/json'
+```
+
 ***
 
-#### Available Fields per Endpoint
+**Available Fields for `/api/users`**
 
-This page provides a general guide. The specific fields that you can filter or sort by are defined in the documentation for each individual API endpoint.
+The following tables outline the specific filtering and sorting capabilities for the `/users` endpoint.
 
-**Example for the `/users` endpoint:**
+**Filtering:**
 
-| Parameter Name | Filter Type | Sortable |
-| -------------- | ----------- | -------- |
-| `status`       | Exact       | Yes      |
-| `search`       | Partial     | No       |
-| `created_at`   | N/A         | Yes      |
-| `email`        | Exact       | Yes      |
+| Parameter        | Filter Type   | Description                                                                                        |
+| ---------------- | ------------- | -------------------------------------------------------------------------------------------------- |
+| `filter[search]` | Partial Match | Performs a "contains" search across the `username`, `first_name`, `last_name`, and `email` fields. |
+| `filter[email]`  | Exact Match   | Finds a user with the exact email address specified.                                               |
+| `filter[status]` | Exact Match   | Finds all users with a specific status (e.g., `active`, `banned`, `unconfirmed`).                  |
+
+**Sorting:**
+
+| Parameter | Available Fields                                                               |
+| --------- | ------------------------------------------------------------------------------ |
+| `sort`    | `id` (default), `first_name`, `last_name`, `email`, `created_at`, `updated_at` |

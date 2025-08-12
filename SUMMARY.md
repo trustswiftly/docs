@@ -24,7 +24,7 @@
 * [Templates](templates.md)
 * [Errors](errors.md)
 * [Pagination](pagination.md)
-* [Filtering and Sorting](filtering-and-sorting.md)
+* [Filtering and Sorting Users](filtering-and-sorting.md)
 * [Rate Limits](rate-limits.md)
 
 ## Webhooks
