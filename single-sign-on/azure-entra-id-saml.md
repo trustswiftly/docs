@@ -28,7 +28,7 @@ https://[COMPANY].trustswiftly.com/auth/saml2/callback
 https://[COMPANY].trustswiftly.com/auth/saml2/login
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 6. In the **Attributes & Claims** section click Edit. On this popup edit the Unique User Identifier (Name ID) so the identifier format is set to **Email address.**
 

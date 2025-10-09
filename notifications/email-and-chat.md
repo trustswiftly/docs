@@ -37,7 +37,7 @@ On the right side of the page, you can manage global email settings:
 * **Disable Reset/Reassign Verification Updated Email for Users:** Turn off the email that is sent to a user when their verification is reset or reassigned by an admin.
 * **Send Verification Completed Email:** Enable this to send an email to a user once they have successfully completed all of their required verifications.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 **Live Chat Integration**
 
