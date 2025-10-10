@@ -50,12 +50,13 @@ After verifying the signature, you can safely parse the JSON payload. Our webhoo
 
 Your handler should be built to recognize the `type` field in the payload. Common event types include:
 
-| Event Type                | Description                                                                   |
-| ------------------------- | ----------------------------------------------------------------------------- |
-| `verification.pending`    | Fired when a verification process has been initiated but is not yet complete. |
-| `verification.in-process` | Fired when a multi-step verification is partially complete.                   |
-| `verification.completed`  | Fired when a verification has been successfully approved.                     |
-| `verification.rejected`   | Fired when a verification has been reviewed and rejected.                     |
+| Event Type                | Description                                                                         |
+| ------------------------- | ----------------------------------------------------------------------------------- |
+| `verification.pending`    | Fired when a verification process has been initiated but is not yet complete.       |
+| `verification.in-process` | Fired when a multi-step verification is partially complete.                         |
+| `verification.completed`  | Fired when a verification has been successfully approved.                           |
+| `verification.rejected`   | Fired when a verification has been reviewed and rejected.                           |
+| `user.status.changed`     | Fired when a user status has been changed from Active, Verified, Review, or Banned. |
 
 ### Step 4: Best Practices for Reliable Handling
 
