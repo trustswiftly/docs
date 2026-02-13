@@ -49,6 +49,14 @@ _(**Note:** Replace `{your_subdomain}` with your actual Trust Swiftly subdomain)
 
 **Step 3: Drag and Click** Drag the formula down for all your rows. You now have a clickable link for every user that will instantly set up their account creation page.
 
+> **Need a starting point?** Create a CSV and copy the data below into your spreadsheet to test the formula immediately.
+>
+> ```csv
+> First Name,Last Name,Email,Phone
+> John,Smith,jsmith@example.com,13125551234
+> Jane,Doe,jdoe@test.com,14155559876
+> ```
+
 ***
 
 #### Example Usage
