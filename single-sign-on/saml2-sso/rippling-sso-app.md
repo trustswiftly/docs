@@ -18,8 +18,7 @@ description: Setup SSO with Rippling using a custom application
 
     * **What type of app would you like to create?** - Make sure you select **Single Sign-On (SAML)** from the list.
 
-    \
-
+    <br>
 4. Copy the IdP Metadata URL from Rippling. i.e. similar too
 
 <pre class="language-html"><code class="lang-html"><strong>https://app.rippling.com/api/platform/sso/idp-metadata/XXXXXXXXXXXXXX

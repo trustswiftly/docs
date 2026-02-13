@@ -39,7 +39,7 @@
 ## Self Sign Up and Create Autofill
 
 * [Configure self verifications](self-sign-up-and-create-autofill/configure-self-verifications.md)
-* [Prefill User Creation](self-sign-up-and-create-autofill/prefill-user-creation.md)
+* [Quick Create: Prefill User Data](self-sign-up-and-create-autofill/quick-create-prefill-user-data.md)
 
 ## Single Sign On
 
