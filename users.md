@@ -397,10 +397,11 @@ Update a status of a verification
 
 #### Request Body
 
-| Name             | Type   | Description                                   |
-| ---------------- | ------ | --------------------------------------------- |
-| verification\_id | string | The ID corresponding to the verification name |
-| status           | string | The status to update the verification         |
+| Name                  | Type   | Description                                     |
+| --------------------- | ------ | ----------------------------------------------- |
+| verification\_id      | string | The ID corresponding to the verification name.  |
+| status                | string | The status to update the verification           |
+| current\_workflow\_id | string | Optional unless verification\_id = 3            |
 
 {% tabs %}
 {% tab title="200 " %}
@@ -412,7 +413,7 @@ Update a status of a verification
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users/1' \
+curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users/1/verifications' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {api_key}' \
 --header 'User-Agent: TrustSwiftly/1.0' \
