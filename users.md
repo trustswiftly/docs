@@ -425,6 +425,104 @@ curl --location --request PATCH 'https://{sub-domain}.trustswiftly.com/api/users
 {% endtab %}
 {% endtabs %}
 
+
+
+### Fetch verification mappings
+
+```http
+GET /api/settings/verifications
+```
+
+The response includes stable `key` values and numeric `id` values for verification methods and statuses. API requests accept either form.
+
+Common method keys:
+
+| Key            | ID | Name          |
+| -------------- | -: | ------------- |
+| `document_id`  |  3 | Document / ID |
+| `secure_card`  |  7 | Secure Card   |
+| `geolocation`  |  8 | Geolocation   |
+| `biometric_id` | 13 | Biometric ID  |
+| `liveness`     | 20 | Liveness      |
+| `knowledge`    | 21 | Knowledge     |
+
+Common status keys:
+
+| Key                  | ID |
+| -------------------- | -: |
+| `assigned`           |  0 |
+| `processing`         |  1 |
+| `complete`           |  2 |
+| `rejected`           |  3 |
+| `complete_in_review` |  4 |
+| `reset`              |  5 |
+| `removed`            |  6 |
+
+### Update a verification status
+
+```http
+PATCH /api/users/{user_id}/verifications
+```
+
+```json
+{
+  "verification_id": "geolocation",
+  "status": "complete"
+}
+```
+
+The legacy numeric form still works:
+
+```json
+{
+  "verification_id": 8,
+  "status": 2
+}
+```
+
+### Mark a document workflow complete
+
+For Document / ID, include `current_workflow_id`. Fetch workflow IDs from:
+
+```http
+GET /api/settings/workflow
+```
+
+That endpoint returns:
+
+* `id`: legacy public ID, accepted by the update API.
+* `encoded_id`: stable encoded ID, accepted by the update API.
+* `raw_id`: internal workflow ID.
+
+```http
+PATCH /api/users/{user_id}/verifications
+```
+
+```json
+{
+  "verification_id": "document_id",
+  "status": "complete",
+  "current_workflow_id": "flow_MQ",
+  "remarks": "Approved after manual review"
+}
+```
+
+The API marks the selected user workflow complete. The overall `document_id` verification is marked complete once all of the user's assigned document workflows are complete or complete in review.
+
+### Remove an assigned verification method
+
+```http
+DELETE /api/users/{user_id}/verifications/{verification_key_or_id}
+```
+
+Example:
+
+```http
+DELETE /api/users/123/verifications/secure_card
+```
+
+This removes a method only while it is still `assigned`. Completed or rejected methods return `verification_not_removable` so historical verification evidence is not deleted accidentally. For Document / ID, assigned document workflows are also removed when the method is removed.
+
 ## Delete User
 
 <mark style="color:red;">`DELETE`</mark> `https://{sub-domain}.trustswiftly.com/api/users/{id}`
